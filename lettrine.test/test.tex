@@ -1,0 +1,30 @@
+\documentclass[a5paper, 12pt]{book}
+
+\usepackage{fontspec}
+\setmainfont{EB Garamond}
+
+\usepackage[autocompile]{gregoriotex}
+
+\begin{document}
+
+{
+\begin{center}
+	1 antiphona \textsc{viii c}
+\end{center}
+\vspace{-2.5em}
+\grechangestyle{initial}{\fontsize{100}{100}\selectfont}
+\grechangestyle{firstsyllableinitial}{\color{white}}
+\grechangestyle{firstword}{}
+\gregorioscore{zelus}
+}
+
+{
+\greannotation{Anti-}
+\greannotation{phona}
+\gresetinitiallines{1}
+\grechangedim{annotationraise}{-5mm}{scalable}
+\grechangestyle{initial}{\color{white}}
+\gregorioscore{zelus}
+}
+
+\end{document}
