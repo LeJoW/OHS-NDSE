@@ -12,7 +12,7 @@
 
 ###### Capitulum {Philipp. 2, 5-7}
 
-Fratres : Hoc enim sentíte in vobis, quod et in Christo Iesu : +
+: Fratres : Hoc enim sentíte in vobis, quod et in Christo Iesu : +
 qui, cum in forma Dei esset, non rapínam arbitrátus est esse se æquálem Deo :
 sed semetípsum exinanívit, formam servi accípiens, \*
 in similitúdinem hóminum factus, et hábitu invéntus ut homo.
@@ -21,6 +21,7 @@ in similitúdinem hóminum factus, et hábitu invéntus ut homo.
 !3[](versiculi/erue_a_framea)
 
 !2[](varia/kyrie_eleison)
+
 !2[](varia/pater_noster_secreto)
 
 > Deinde dicitur :
@@ -29,7 +30,7 @@ in similitúdinem hóminum factus, et hábitu invéntus ut homo.
 
 ###### Orémus. {Oratio}
 
-Omnípotens sempitérne Deus, qui humáno géneri,
+: Omnípotens sempitérne Deus, qui humáno géneri,
 ad imitándum humilitátis exémplum, Salvatórem nostrum carnem súmere,
 et crucem subíre fecísti : concéde propítius ; ut et patiéntiæ ipsíus habére documénta,
 et resurrectiónis consórtia mereámur.
@@ -40,13 +41,14 @@ qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
 > Post orationem additur
 
 !3[](versiculi/dominus_vobiscum)
+
 !3[](versiculi/benedicamus_domino.simplex)
 
->> Ante Missam pontificalem dicitur
+&> Ante Missam pontificalem dicitur
 
 !2[mode](versiculi/benedicamus_domino.pontificalis)
 
-### Ad solemnem palmarum processionem in honorem Christi Regis
+### De solemni processione in honorem Christi Regis <Ad processionem>
 
 ### Ad Missam
 
