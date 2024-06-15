@@ -1,4 +1,4 @@
-import { BlockConfigType } from "../Engine.i";
+import { BlockConfigType } from "../Engine/Engine.i";
 
 const blockConfig: BlockConfigType = {
     desc: [
@@ -35,21 +35,19 @@ const blockConfig: BlockConfigType = {
         {
             test: /^:+\s*([\S\s]+)$/,
             callback: function lecture(_, text) {
-                return ["\\begin{lectio}", text, "\\end{lectio}"].join("\n");
+                return [
+                    "\\begin{lectio}",
+                    text.length > 0
+                        ? `\\initial{${text[0]}}${text.slice(1)}`
+                        : text,
+                    "\\end{lectio}",
+                ].join("\n");
             },
         },
         {
             test: /^!(\d+)\[([\S]*)\]\(([\S]+)\)$/,
             callback: function gabc(_, style, annotation, file) {
-                return [
-                    "\\begin{gabc}",
-                    "\\begin{description}",
-                    "\\item[style] " + style,
-                    "\\item[annotation] " + annotation,
-                    "\\item[file] \\verb|" + file + ".gabc|",
-                    "\\end{description}",
-                    "\\end{gabc}",
-                ].join("\n");
+                return `\\gabc{${style}}{${annotation}}{${file}}`;
             },
         },
         {
@@ -61,7 +59,7 @@ const blockConfig: BlockConfigType = {
                         return `psaumes/${ps}.txt`;
                     });
                 return [
-                    "\\begin{gabc}",
+                    "\\begin{psaum}",
                     "\\begin{description}",
                     "\\item[style] " + style,
                     "\\item[file] \\verb|" + file + ".gabc|",
@@ -73,7 +71,7 @@ const blockConfig: BlockConfigType = {
                         .join("\n"),
                     "\\end{enumerate}",
                     "\\end{description}",
-                    "\\end{gabc}",
+                    "\\end{psaum}",
                 ].join("\n");
             },
         },

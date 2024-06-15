@@ -1,5 +1,5 @@
-import Document from "./Document.i";
-import Engine from "./Engine.i";
+import Document from "../Document/Document.i";
+import Engine from "../Engine/Engine.i";
 
 export default class Parser {
     private engine: Engine;

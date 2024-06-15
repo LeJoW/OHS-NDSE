@@ -1,0 +1,22 @@
+\newcommand*{\pdfnumberofpages}[1]{%
+	\directlua{%
+		local doc = pdfe.open("\luaescapestring{#1}")
+		local pages
+		if (doc) then
+		pages = pdfe.getnofpages(doc)
+		else
+		pages = 0
+		end
+		tex.write(pages)
+	}%
+}
+
+\newcounter{count}
+\newcommand{\gabc}[1]{
+	\setcounter{count}{0}
+	\whiledo{\value{count}<\pdfnumberofpages{#1}}{
+		\stepcounter{count}
+		\includegraphics[page=\thecount,width=1\linewidth]{#1}
+
+	}
+}

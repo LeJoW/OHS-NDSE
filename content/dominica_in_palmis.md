@@ -1,8 +1,8 @@
-## Dominica secunda passionis seu in palmis {Duplex I classis}
+## Dominica secunda passionis \\ seu in palmis {Duplex I classis}
 
 ### Ad Tertiam
 
-!1[](deus)
+!1[](Deus_in_adiutorium)
 
 ###### Hymnus
 
@@ -16,7 +16,7 @@
 qui, cum in forma Dei esset, non rapínam arbitrátus est esse se æquálem Deo :
 sed semetípsum exinanívit, formam servi accípiens, \*
 in similitúdinem hóminum factus, et hábitu invéntus ut homo.
-\R. Deo grátias.
+\R Deo grátias.
 
 !3[](versiculi/erue_a_framea)
 
@@ -36,7 +36,7 @@ et crucem subíre fecísti : concéde propítius ; ut et patiéntiæ ipsíus hab
 et resurrectiónis consórtia mereámur.
 Per eúndem Dóminum nostrum Iesum Christum Fílium tuum,
 qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
-\R. Amen.
+\R Amen.
 
 > Post orationem additur
 

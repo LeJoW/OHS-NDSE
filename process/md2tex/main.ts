@@ -2,9 +2,9 @@ import { readFile } from "fs";
 
 import blockConfig from "./config/blocks";
 import strConfig from "./config/strings";
-import Document from "./Document";
-import Engine from "./Engine";
-import Parser from "./Parser";
+import Document from "./Document/Document";
+import Engine from "./Engine/Engine";
+import Parser from "./Parser/Parser";
 
 const [exec, script, inputFile] = process.argv;
 

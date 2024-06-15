@@ -1,0 +1,48 @@
+\newcommand\hh[3][]{
+	\begin{center}
+		{\Huge\MakeUppercase{#2}\par}
+
+		{\it #1}
+	\end{center}
+}
+
+\newcommand\hhh[3][]{
+	\begin{center}
+		{\it\MakeUppercase{#2}}
+	\end{center}
+}
+
+\newcommand\hhhh[3][]{
+	\chapitre[#3]{#2}
+}
+\newcommand\hhhhhh[3][]{
+	\vspace{1em}
+	\needspace{2em}
+	\def\detail{#1}
+	\ifx\empty\detail
+		\begin{center}
+			#2
+		\end{center}
+	\else
+		\hfill#2\hfill\hfill{\it #1}\hfill
+	\fi
+}
+
+\newfontfamily\versiculum[Path=./fonts/]{versiculum.ttf}
+\newcommand{\R}{{\versiculum{r}}~}
+\newcommand{\initial}[1]{\lettrine[lines=2, loversize=0.15]{#1}{}}
+
+\newcommand{\gabc}[3]{
+
+	\input{../gabc/#3.gtex}
+
+}
+
+\newenvironment{psaum}{}{\par}
+\newenvironment{lectio}{}{\par}
+\newenvironment{rubric}{
+	\vspace{1.5em}
+	\it}{
+	\vspace{1em}
+}
+\newenvironment{remplacement}{\P }{}

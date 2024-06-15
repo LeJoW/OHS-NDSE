@@ -1,4 +1,4 @@
-import { StringConfigType } from "../Engine.i";
+import { StringConfigType } from "../Engine/Engine.i";
 
 const charsReplacement: { [key: string]: string } = {
     á: "\\'a",

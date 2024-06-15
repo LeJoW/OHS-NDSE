@@ -1,6 +1,6 @@
 import Parser from "./Parser";
-import Document from "./Document";
-import Engine from "./Engine";
+import Document from "../Document/Document";
+import Engine from "../Engine/Engine";
 
 const content = `Nothing to see *here*.
 But set a title :

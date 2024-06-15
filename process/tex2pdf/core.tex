@@ -1,17 +1,16 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a5paper,14pt]{extarticle}
 \usepackage[twoside,
-    inner=1.5cm,
-    outer=4cm,  
+    inner=1cm,
+    outer=1.1cm,  
     top=2.5cm,  
-    bottom=5cm, 
-    marginparsep=10mm,
-    marginparwidth=3cm
+    bottom=2cm
 ]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage[french]{babel}
 \usepackage{ccfonts}
+\usepackage{fontspec}
 \usepackage[sc,osf]{mathpazo}
 \usepackage{microtype}
 \usepackage{hyperref}
@@ -19,9 +18,15 @@
 \usepackage{mdframed}
 \usepackage{tabularx}
 \usepackage{needspace}
-
+\usepackage{lettrine}
+\usepackage{gregoriotex}
 \input{styles}
 \input{definitions}
+
+\usepackage[savepos]{zref}
+\usepackage{multicol}
+
+\setmainfont{EB Garamond}
 
 \begin{document}
 \UseRawInputEncoding{\input{include}}

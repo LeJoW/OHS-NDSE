@@ -1,0 +1,32 @@
+\newcommand{\dayTitle}[2]{
+	\begin{center}
+		{\Huge\MakeUppercase{#2}\par}
+
+		{\it #1}
+	\end{center}
+}
+
+\newcommand{\officeTitle}[1]{
+	\begin{center}
+		{\it\MakeUppercase{#1}}
+	\end{center}
+}
+
+\newcommand{\sectionTitle}[1]{
+	\begin{center}
+		{\MakeUppercase{#1}}
+	\end{center}
+}
+
+\newcommand{\chapterTitle}[1]{
+	\vspace{1em}
+	\needspace{2em}
+	\def\detail{#1}
+	\ifx\empty\detail
+		\begin{center}
+			#2
+		\end{center}
+	\else
+		\hfill#2\hfill\hfill{\it #1}\hfill
+	\fi
+}
