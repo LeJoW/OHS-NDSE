@@ -8,7 +8,7 @@
 \GreHeader{book}{Graduale Romanum, 1961, p. 232 & The Liber Usualis, 1961, p. 742}%
 \GreHeader{transcriber}{Andrew Hinkley}%
 \GreEndHeaders %
-\GreBeginScore{ead6323f7e8961fc9f735e7c3231358764c37711}{14}{5}{0}{0}{}{4}{\GreInitialClefPosition{4}{0}}%
+\GreBeginScore{27a4962ec7fbaccf68c3006aa47c5170ac706c82}{14}{5}{0}{0}{}{4}{\GreInitialClefPosition{4}{0}}%
 \GreMode{\GreModeNumber{1}}{}{}%
 \GreSetLargestClef{c}{4}{3}{c}{0}{3}%
 \GreScoreOpening{%
@@ -112,21 +112,21 @@
 }{}{}%
 }%
 %
-\GreSyllable{\GreSetThisSyllable{c}{ó}{n}{c}{ón}}{}{\GreUnstyled}{0}{\GreSetNextSyllable{d}{o}{}{d}{o}}{}{{8}{0}}{}{%
+\GreSyllable{\GreSetThisSyllable{c}{ó}{n}{c}{ón}}{}{\GreUnstyled}{0}{\GreSetNextSyllable{d}{o}{l}{d}{ol}}{}{{8}{0}}{}{%
 \GreSyllableNoteCount{1}%
 \GreGlyph{\GreCPPunctum}{12}{\GreNextCustos{11}{}}{0}%
 {%
 \GreGlyphHeights{12}{12}%
 }{}{}%
 }%
-\GreSyllable{\GreSetThisSyllable{d}{o}{}{d}{o}}{}{\GreUnstyled}{0}{\GreSetNextSyllable{l}{e}{ns\GreProtrusion{\GreProtrusionFactor{comma}}{,}}{l}{ens\GreProtrusion{\GreProtrusionFactor{comma}}{,}}}{}{{0}{0}}{}{%
+\GreSyllable{\GreSetThisSyllable{d}{o}{l}{d}{ol}}{}{\GreUnstyled}{0}{\GreSetNextSyllable{}{e}{ns\GreProtrusion{\GreProtrusionFactor{comma}}{,}}{e}{ns\GreProtrusion{\GreProtrusionFactor{comma}}{,}}}{}{{0}{0}}{}{%
 \GreSyllableNoteCount{2}%
 \GreGlyph{\GreCPFlexusOneNothing}{11}{\GreNextCustos{10}{}}{8}%
 {%
 \GreGlyphHeights{11}{10}%
 }{}{}%
 }%
-\GreSyllable{\GreSetThisSyllable{l}{e}{ns\GreProtrusion{\GreProtrusionFactor{comma}}{,}}{l}{ens\GreProtrusion{\GreProtrusionFactor{comma}}{,}}}{}{\GreUnstyled}{1}{\GreSetNextSyllable{}{}{}{}{}}{}{{13}{0}}{}{%
+\GreSyllable{\GreSetThisSyllable{}{e}{ns\GreProtrusion{\GreProtrusionFactor{comma}}{,}}{e}{ns\GreProtrusion{\GreProtrusionFactor{comma}}{,}}}{}{\GreUnstyled}{1}{\GreSetNextSyllable{}{}{}{}{}}{}{{13}{0}}{}{%
 \GreSyllableNoteCount{1}%
 \GreGlyph{\GreCPPunctum}{10}{\GreNextCustos{10}{}}{0}%
 {%

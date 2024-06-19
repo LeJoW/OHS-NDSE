@@ -1,16 +1,10 @@
-\usepackage{titlesec}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[CE]{\dayTitleShort}
+\fancyhead[CO]{\officeTitleShort}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot{}
 
-\titleformat{\section}[hang]
-{\centering\huge\MakeUppercase} % Format de la police
-{}{1em} % Format du numéro de section
-{} % Texte avant le titre de section
-
-\titleformat{\subsection}[hang]
-{\centering\it\MakeUppercase} % Format de la police
-{}{1em} % Format du numéro de section
-{} % Texte avant le titre de section
-
-\grechangedim{intersyllablespacenotes}{0.4cm}{fixed}
-\grechangestyle{translation}{}
-
-\spaceskip=6pt plus 1pt minus 1pt
+%\grechangedim{intersyllablespacenotes}{0.4cm}{fixed}
+%\grechangestyle{translation}{}

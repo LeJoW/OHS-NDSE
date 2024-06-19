@@ -1,16 +1,16 @@
-## Dominica secunda passionis \\ seu in palmis {Duplex I classis}
+## Dominica secunda passionis \\ seu in palmis <Dominica II Passionis> {Duplex I classis}
 
 ### Ad Tertiam
 
 !1[](Deus_in_adiutorium)
 
-###### Hymnus
+#### Hymnus
 
 !2[mode](Nunc_Sancte)
 
 !2{Pueri_Hebraeorum_vestimenta}[118e,118f,118g]
 
-###### Capitulum {Philipp. 2, 5-7}
+#### Capitulum {Philipp. 2, 5-7}
 
 : Fratres : Hoc enim sentíte in vobis, quod et in Christo Iesu : +
 qui, cum in forma Dei esset, non rapínam arbitrátus est esse se æquálem Deo :
@@ -28,11 +28,11 @@ in similitúdinem hóminum factus, et hábitu invéntus ut homo.
 
 !2[](versiculi/dominus_vobiscum)
 
-###### Orémus. {Oratio}
+#### Orémus. {Oratio}
 
 : Omnípotens sempitérne Deus, qui humáno géneri,
 ad imitándum humilitátis exémplum, Salvatórem nostrum carnem súmere,
-et crucem subíre fecísti : concéde propítius ; ut et patiéntiæ ipsíus habére documénta,
+et crucem subíre fecísti : + concéde propítius ; ut et patiéntiæ ipsíus habére documénta, \*
 et resurrectiónis consórtia mereámur.
 Per eúndem Dóminum nostrum Iesum Christum Fílium tuum,
 qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.

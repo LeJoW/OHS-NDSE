@@ -1,3 +1,5 @@
+\usepackage{pdfpages}
+
 \newcommand*{\pdfnumberofpages}[1]{%
 	\directlua{%
 		local doc = pdfe.open("\luaescapestring{#1}")
@@ -11,12 +13,14 @@
 	}%
 }
 
-\newcounter{count}
+\newcounter{gabcCount}
 \newcommand{\gabc}[1]{
-	\setcounter{count}{0}
-	\whiledo{\value{count}<\pdfnumberofpages{#1}}{
-		\stepcounter{count}
-		\includegraphics[page=\thecount,width=1\linewidth]{#1}
+	\setcounter{gabcCount}{0}
+	\setlength{\parindent}{0pt}
+	\setlength{\parskip}{0pt}
+	\whiledo{\value{gabcCount}<\pdfnumberofpages{#1}}{
+		\stepcounter{gabcCount}
+		\includegraphics[page=\thegabcCount,width=1\linewidth]{#1}
 
 	}
 }

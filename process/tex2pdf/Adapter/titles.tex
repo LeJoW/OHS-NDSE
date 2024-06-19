@@ -1,15 +1,30 @@
-\newcommand{\dayTitle}[2]{
-	\begin{center}
-		{\Huge\MakeUppercase{#2}\par}
+\def\dayTitleShort{}
+\def\officeTitleShort{}
 
-		{\it #1}
-	\end{center}
+\newdimen\titleSpaceLength
+\titleSpaceLength=\fontdimen2\font
+
+\newcommand{\titleSpace}{\hspace{\titleSpaceLength}}
+
+\newcommand{\dayTitle}[3]{
+\thispagestyle{empty}
+\begin{center}
+	{\titleSpaceLength=1.1em \onehalfspacing \Large\MakeUppercase{#1}\par}
+
+	{\vspace{1em}}
+	{\it #2}
+\end{center}
+{\addvspace{1em}}
+\def\dayTitleShort{#3}
 }
 
 \newcommand{\officeTitle}[1]{
-	\begin{center}
-		{\it\MakeUppercase{#1}}
-	\end{center}
+{\addvspace{1.5em}}
+\begin{center}
+	{\it\MakeUppercase{#1}}
+\end{center}
+{\addvspace{1em}}
+\def\officeTitleShort{#1}
 }
 
 \newcommand{\sectionTitle}[1]{
@@ -18,15 +33,15 @@
 	\end{center}
 }
 
-\newcommand{\chapterTitle}[1]{
+\newcommand{\chapterTitle}[2]{
 	\vspace{1em}
 	\needspace{2em}
-	\def\detail{#1}
+	\def\detail{#2}
 	\ifx\empty\detail
 		\begin{center}
-			#2
+			#1
 		\end{center}
 	\else
-		\hfill#2\hfill\hfill{\it #1}\hfill
+		\hfill#1\hfill\hfill{\it #2}\hfill
 	\fi
 }

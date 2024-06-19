@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.16.0 (TeX Live 2023/Homebrew)  (format=lualatex 2023.3.11)  14 JUN 2024 20:59
+This is LuaHBTeX, Version 1.16.0 (TeX Live 2023/Homebrew)  (format=lualatex 2023.3.11)  16 JUN 2024 14:22
  restricted system commands enabled.
 **pange.tex
 (./pange.tex
@@ -1553,6 +1553,10 @@ Module gregoriotex Info: Found pange2.gabc directly on input line 24
 Module gregoriotex Info: Looking in  on input line 24
 Module gregoriotex Info: Found pange2-6_0_0-beta1.gtex directly on input line 24
 
+Module gregoriotex Info: pange2.gabc has been modified and pange2-6_0_0-beta1.gt
+ex needs to be updated. Recompiling the gabc file. on input line 24
+Module gregoriotex Info: compiling the score pange2.gabc... on input line 24
+Module gregoriotex Info: will use gregorio on input line 24
  (./pange2-6_0_0-beta1.gtex
 Removing  `luaotfload.harf.finalize_vlist' from `post_linebreak_filter'.
 Inserting `gregoriotex.post_linebreak' in `post_linebreak_filter'.
@@ -1626,14 +1630,15 @@ Package rerunfilecheck Info: File `pange.out' has not changed.
 
 Here is how much of LuaTeX's memory you used:
  46298 strings out of 478285
- 382232,1977958 words of node,token memory allocated
+ 382210,1977958 words of node,token memory allocated
  2177 words of node memory still in use:
    12 hlist, 2 vlist, 5 rule, 38 glue, 8 kern, 1 penalty, 5 glyph, 492 attribute
 , 104 glue_spec, 41 attribute_list, 2 write, 1 user_defined nodes
-   avail lists: 1:10,2:84655,3:4322,4:99,5:7001,6:466,7:7490,9:9108,10:97,12:1
+   avail lists: 1:8,2:83283,3:4323,4:113,5:6916,6:443,7:7423,8:1,9:8774,10:104,1
+2:1
  65338 multiletter control sequences out of 65536+600000
  42 fonts using 13793231 bytes
- 100i,5n,98p,1001b,10204s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 100i,5n,98p,1001b,10070s stack positions out of 10000i,1000n,20000p,200000b,200000s
 Module gregoriotex Info: Writing pange.gaux on input line 0
 Module gregoriotex Warning: Line heights or variable brace lengths may have chan
 ged. Rerun to fix. on input line 0
@@ -1644,7 +1649,7 @@ ist/fonts/opentype/public/ebgaramond/EBGaramond-Bold.otf></usr/local/Cellar/texl
 ive/20230313_3/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond-Regu
 lar.otf></usr/local/Cellar/texmf-local/fonts/truetype/public/gregoriotex/greextr
 a.ttf>
-Output written on pange.pdf (24 pages, 35125 bytes).
+Output written on pange.pdf (24 pages, 35140 bytes).
 
 PDF statistics: 147 PDF objects out of 1000 (max. 8388607)
  104 compressed objects within 2 object streams

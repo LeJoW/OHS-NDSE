@@ -7,8 +7,6 @@ export class Converter implements ConverterInterface {
 
     system: System;
 
-    tmp = "./build";
-
     constructor(input: string, output: string, system: System) {
         if (!system.isDir(input)) throw new NotADirError(input);
         this.inputDir = input;
@@ -19,17 +17,32 @@ export class Converter implements ConverterInterface {
     }
 
     tryConvertingFromFile(inputPath: string): boolean {
-        const file = `${this.inputDir}/${inputPath}.tex`;
+        const targetFile = `${this.outputDir}/${inputPath}.pdf`;
+
+        if (this.system.fileExists(targetFile)) {
+            return true;
+        }
+
+        const file = `${this.inputDir}/${inputPath}`;
+        const sourceFile = this.system.getAbsolutePath(`${file}.tex`);
+
+        if (!this.system.fileExists(sourceFile)) {
+            return false;
+        }
+
         const hierarchy = this.system.getFileRelativeHierarchy(inputPath);
         const fileName = this.system.getFileName(inputPath);
 
         this.system.createRelativeHierarchy(this.outputDir, hierarchy);
 
-        return this.system.exec(
-            [
-                `lualatex --output-directory=${this.tmp} ${file}`,
-                `mv ${this.tmp}/${fileName}.pdf ${this.outputDir}/${inputPath}.pdf`,
-            ].join(";")
-        );
+        const cmd = [
+            `cd "${this.system.parentDir(sourceFile)}"`,
+            `lualatex --shell-escape --output-directory="${this.system.tmp}" "${sourceFile}"`,
+            `mv "${this.system.tmp}/${fileName}.pdf" "${this.system.parentDir(
+                targetFile
+            )}"`,
+        ].join(" && ");
+
+        return this.system.exec(cmd);
     }
 }

@@ -1,21 +1,17 @@
 import { StringConfigType } from "../Engine/Engine.i";
+import { Adapter } from "../../tex2pdf/Adapter/Adapter";
 
-const charsReplacement: { [key: string]: string } = {
-    á: "\\'a",
-    é: "\\'e",
-    í: "\\'i",
-    ó: "\\'o",
-    ú: "\\'u",
-    æ: "{\\ae}",
-    œ: "{\\oe}",
-    ǽ: "\\'{\\ae}",
-};
-
-const strConfig: StringConfigType = [
+const strConfig = (adapter: Adapter): StringConfigType => [
     {
         test: /([áéíóúǽæ])/g,
         callback: function accent(_, char) {
-            return charsReplacement[char] ? charsReplacement[char] : char;
+            return adapter.replaceUnreadeableChar(char);
+        },
+    },
+    {
+        test: /((\s\\\*)|(\\R)|(\s\+))/g,
+        callback: function symbols(_, symbol) {
+            return adapter.replaceSymbols(symbol);
         },
     },
 ];

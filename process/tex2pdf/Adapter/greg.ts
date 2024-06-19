@@ -1,27 +1,30 @@
 import { Adapter } from "./Adapter.i";
-import { Converter } from "../../gabc2pdf/Converter.i";
+import { existsSync } from "fs";
 
-function buildChant(file: string, style: string, converter: Converter) {
-    if (!converter.tryConvertingFromFile(file)) {
-        return `Cannot build file \\verb|${file}|`;
+const buildChant: Adapter["makeChant"] = function (
+    file: string,
+    style: string
+) {
+    const pdfInput = `../content/gabc/${file}.pdf`;
+    if (!existsSync(pdfInput)) {
+        return `Cannot find file \\verb|${file}|`;
     }
-    return `\\gabc{${file}}`;
-}
+    return `\\gabc{../${pdfInput}}`;
+};
 
-function buildPsalterium(
+const buildPsalterium: Adapter["makePs"] = function (
     { file, style }: { file: string; style: string },
-    list: string[],
-    converter: Converter
+    list: string[]
 ) {
     return `
-        ${buildChant(file, style, converter)}
-        \\begin{enumerate}
-        ${list.map(function (ps) {
-            return `\\item ${ps}`;
-        })}
-        \\end{enumerate}
-        ${buildChant(file, "ant", converter)}
+${buildChant(file, style)}
+\\begin{enumerate}
+${list.map(function (ps) {
+    return `\\item ${ps}`;
+})}
+\\end{enumerate}
+${buildChant(file, "ant")}
     `;
-}
+};
 
 export { buildChant, buildPsalterium };

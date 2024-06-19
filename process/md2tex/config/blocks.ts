@@ -1,6 +1,7 @@
 import { BlockConfigType } from "../Engine/Engine.i";
+import { Adapter } from "../../tex2pdf/Adapter/Adapter.i";
 
-const blockConfig: BlockConfigType = {
+const blockConfig = (adapter: Adapter): BlockConfigType => ({
     desc: [
         {
             test: /^(#+)\s+([\S\s]+?)\s*(?:<([\S\s]+?)>)?\s*(?:\{([\S\s]+?)\})?\s*$/i,
@@ -11,74 +12,64 @@ const blockConfig: BlockConfigType = {
                 summary = "",
                 subTitle = ""
             ) {
-                return `\\${"h".repeat(
-                    titleLevel.length
-                )}[${subTitle}]{${title}}{${summary ? summary : title}}`;
+                switch (titleLevel) {
+                    case "##":
+                        return adapter.makeDayTite(
+                            title,
+                            subTitle,
+                            summary.length > 0 ? summary : title
+                        );
+                    case "###":
+                        return adapter.makeOfficeTitle(
+                            title,
+                            summary.length > 0 ? summary : title
+                        );
+                    case "####":
+                        return adapter.makeChapterTitle(title, subTitle);
+                    default:
+                        return adapter.makeSectionTitle(title);
+                }
             },
         },
         {
             test: /^>{1}\s+([\s\S]+)/,
             callback: function rubrique(_, text) {
-                return ["\\begin{rubric}", text, "\\end{rubric}"].join("\n");
+                return adapter.makeRubric(text);
             },
         },
         {
             test: /^(?:&>){1}\s+([\s\S]+)/,
             callback: function remplacement(_, text) {
-                return [
-                    "\\begin{remplacement}",
-                    text,
-                    "\\end{remplacement}",
-                ].join("\n");
+                return adapter.makeReplace(text);
             },
         },
         {
             test: /^:+\s*([\S\s]+)$/,
             callback: function lecture(_, text) {
-                return [
-                    "\\begin{lectio}",
-                    text.length > 0
-                        ? `\\initial{${text[0]}}${text.slice(1)}`
-                        : text,
-                    "\\end{lectio}",
-                ].join("\n");
+                return adapter.makeLesson(text);
             },
         },
         {
             test: /^!(\d+)\[([\S]*)\]\(([\S]+)\)$/,
             callback: function gabc(_, style, annotation, file) {
-                return `\\gabc{${style}}{${annotation}}{${file}}`;
+                return adapter.makeChant(file, style);
             },
         },
         {
             test: /!(\d+)\{([\S]+)\}\[([\S]+)\]/,
             callback: function psautier(_, style, file, psaumes) {
-                const psaumesListe = psaumes
-                    .split(",")
-                    .map(function (ps: string) {
-                        return `psaumes/${ps}.txt`;
-                    });
-                return [
-                    "\\begin{psaum}",
-                    "\\begin{description}",
-                    "\\item[style] " + style,
-                    "\\item[file] \\verb|" + file + ".gabc|",
-                    "\\begin{enumerate}",
-                    psaumesListe
-                        .map(function (ps) {
-                            return `\\item  \\verb|${ps}|`;
-                        })
-                        .join("\n"),
-                    "\\end{enumerate}",
-                    "\\end{description}",
-                    "\\end{psaum}",
-                ].join("\n");
+                return adapter.makePs(
+                    { file, style },
+                    psaumes.split(",").map(function (ps) {
+                        return ps.trim();
+                    })
+                );
             },
         },
     ],
     defaultCase: function (paragraph: string) {
-        return paragraph;
+        return adapter.paragraphStd(paragraph);
     },
-};
+});
 
 export default blockConfig;

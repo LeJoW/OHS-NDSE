@@ -1,9 +1,9 @@
 \documentclass[a5paper,14pt]{extarticle}
 \usepackage[twoside,
     inner=1cm,
-    outer=1.1cm,  
-    top=2.5cm,  
-    bottom=2cm
+    width=10.2cm,
+    top=2.5cm,
+    includefoot
 ]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -14,20 +14,21 @@
 \usepackage[sc,osf]{mathpazo}
 \usepackage{microtype}
 \usepackage{hyperref}
-\usepackage{tikz}
-\usepackage{mdframed}
 \usepackage{tabularx}
 \usepackage{needspace}
 \usepackage{lettrine}
-\usepackage{gregoriotex}
-\input{styles}
-\input{definitions}
+\usepackage{fancyhdr}
+\usepackage[document]{ragged2e}
+\usepackage{setspace}
 
-\usepackage[savepos]{zref}
-\usepackage{multicol}
+\input{source/hyphens.tex}
+
+\input{definitions}
+\input{styles}
 
 \setmainfont{EB Garamond}
 
 \begin{document}
+\fontdimen2\font = 2\fontdimen2\font
 \UseRawInputEncoding{\input{include}}
 \end{document}

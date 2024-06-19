@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "@types/jest": "^29.5.12"
+  },
+  "dependencies": {
+    "commader": "^1.0.0",
+    "commander": "^12.1.0"
   }
 }
