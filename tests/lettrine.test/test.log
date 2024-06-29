@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.16.0 (TeX Live 2023/Homebrew)  (format=lualatex 2023.3.11)  2 APR 2024 21:53
+This is LuaHBTeX, Version 1.16.0 (TeX Live 2023/Homebrew)  (format=lualatex 2023.3.11)  29 JUN 2024 12:15
  restricted system commands enabled.
 **test.tex
 (./test.tex
@@ -59,6 +59,218 @@ luaotfload | db : Font names database loaded from /usr/local/Cellar/texlive/2023
 \belowcaptionskip=\skip49
 \bibindent=\dimen139
 )
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/mathdesign/mat
+hdesign.sty
+Package: mathdesign 2013/08/29 v2.31 Math Design Project
+
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/graphics/keyva
+l.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/base/ifthen.st
+y
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/mathdesign/mdu
+gm/mdugm.cfg)
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/mathdesign/mdu
+gm/mdugm.sty
+Package: mdugm 2013/08/29 v2.31 urw garamondno8 + mdugm (Math Design Project)
+
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/mathdesign/mdf
+ont.def
+File: mdfont.def 2013/08/29 v2.31 (Math Design Project)
+)
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/mathdesign/mds
+ffont.def
+File: mdsffont.def 2013/08/29 v2.31 (Math Design Project)
+
+
+LaTeX Info: Font shape OT1/phv/mc/n has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 53.
+
+
+LaTeX Info: Font shape OT1/phv/mc/sc has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 56.
+
+
+LaTeX Info: Font shape OT1/phv/mc/sl has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 59.
+
+
+LaTeX Info: Font shape OT1/phv/mc/it has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 79.
+
+
+LaTeX Info: Font shape T1/phv/mc/n has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 102.
+
+
+LaTeX Info: Font shape T1/phv/mc/sc has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 105.
+
+
+LaTeX Info: Font shape T1/phv/mc/sl has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 108.
+
+
+LaTeX Info: Font shape T1/phv/mc/it has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 128.
+
+
+LaTeX Info: Font shape OT1/uhv/mc/n has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 259.
+
+
+LaTeX Info: Font shape OT1/uhv/mc/sc has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 262.
+
+
+LaTeX Info: Font shape OT1/uhv/mc/sl has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 265.
+
+
+LaTeX Info: Font shape OT1/uhv/mc/it has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 268.
+
+
+LaTeX Info: Font shape T1/uhv/mc/n has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 313.
+
+
+LaTeX Info: Font shape T1/uhv/mc/sc has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 316.
+
+
+LaTeX Info: Font shape T1/uhv/mc/sl has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 319.
+
+
+LaTeX Info: Font shape T1/uhv/mc/it has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 322.
+
+)
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/mathdesign/mdt
+tfont.def
+File: mdttfont.def 2013/08/29 v2.31 (Math Design Project)
+)
+\symmdcal=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mdcal' in version `bold'
+(Font)                  OMS/mdugm/m/n --> OMS/mdugm/b/n on input line 97.
+\symmdscr=\mathgroup5
+LaTeX Font Info:    Overwriting symbol font `mdscr' in version `bold'
+(Font)                  OMS/mdugm/m/n --> OMS/mdugm/b/n on input line 103.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/xmdeuf/m/n --> U/xmdeuf/b/n on input line 110.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/mdugm/m/n on input line 121.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/mdugm/m/it on input line 122.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/mdugm/m/n on input line 123.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/mdugm/m/n on input line 124.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/mdugm/b/n on input line 126.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/mdugm/b/it on input line 127.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/mdugm/b/n on input line 128.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/mdugm/b/n on input line 129.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/mdugm/m/n --> TU/mdugm/m/n on input line 131.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/mdugm/b/n on input line 132.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/mdugm/m/it on input line 133.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 134.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 135.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/mdugm/b/n --> TU/mdugm/b/n on input line 137.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/mdugm/b/n on input line 138.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/mdugm/b/it on input line 139.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 140.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 141.
+\symlettersupright=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lettersupright' in version `bold'
+(Font)                  OML/mdugm/m/n --> OML/mdugm/b/n on input line 144.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 145.
+LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `normal'
+(Font)                  OMS/mdugm/m/n --> OMS/mdugm/m/n on input line 167.
+
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/xkeyval/xkeyva
+l.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/xkeyval/xkey
+val.tex
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/xkeyval/xkvu
+tils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+)
+\XKV@depth=\count192
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+LaTeX Font Info:    Trying to load font information for TU+mdugm on input line 
+186.
+LaTeX Font Info:    No file TUmdugm.fd. on input line 186.
+
+
+LaTeX Font Warning: Font shape `TU/mdugm/m/n' undefined
+(Font)              using `TU/lmr/m/n' instead on input line 186.
+
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 449.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 450.
+\symmathdesignA=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `mathdesignA' in version `bold'
+(Font)                  MDA/mdugm/m/n --> MDA/mdugm/b/n on input line 491.
+\symmathdesignB=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `mathdesignB' in version `bold'
+(Font)                  MDB/mdugm/m/n --> MDB/mdugm/b/n on input line 498.
+\@emptytoks=\toks19
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 532.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 533.
+\rulethickness=\skip50
+)
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/base/fontenc.s
+ty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+mdugm on input line 
+112.
+
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/mathdesign/mdu
+gm/t1mdugm.fd
+File: t1mdugm.fd 2013/08/29 Fontinst v1.933 font definitions for T1/mdugm.
+)))
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/base/fontenc.s
+ty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
 (/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/fontspec/fonts
 pec.sty
 (/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/l3packages/xpa
@@ -70,7 +282,7 @@ Package: expl3 2023-02-22 L3 programming layer (loader)
 (/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/l3backend/l3ba
 ckend-luatex.def
 File: l3backend-luatex.def 2023-01-16 L3 backend support: PDF output (LuaTeX)
-\l__color_backend_stack_int=\count192
+\l__color_backend_stack_int=\count193
 \l__pdf_internal_box=\box51
 ))
 Package: xparse 2023-02-02 L3 Experimental document command parser
@@ -81,17 +293,17 @@ Lua module: fontspec 2022/01/15 2.8a Font selection for XeLaTeX and LuaLaTeX
 pec-luatex.sty
 Package: fontspec-luatex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaT
 eX
-\l__fontspec_script_int=\count193
-\l__fontspec_language_int=\count194
-\l__fontspec_strnum_int=\count195
-\l__fontspec_tmp_int=\count196
-\l__fontspec_tmpa_int=\count197
-\l__fontspec_tmpb_int=\count198
-\l__fontspec_tmpc_int=\count199
-\l__fontspec_em_int=\count266
-\l__fontspec_emdef_int=\count267
-\l__fontspec_strong_int=\count268
-\l__fontspec_strongdef_int=\count269
+\l__fontspec_script_int=\count194
+\l__fontspec_language_int=\count195
+\l__fontspec_strnum_int=\count196
+\l__fontspec_tmp_int=\count197
+\l__fontspec_tmpa_int=\count198
+\l__fontspec_tmpb_int=\count199
+\l__fontspec_tmpc_int=\count266
+\l__fontspec_em_int=\count267
+\l__fontspec_emdef_int=\count268
+\l__fontspec_strong_int=\count269
+\l__fontspec_strongdef_int=\count270
 \l__fontspec_tmpa_dim=\dimen140
 \l__fontspec_tmpb_dim=\dimen141
 \l__fontspec_tmpc_dim=\dimen142
@@ -101,43 +313,12 @@ ty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
 (/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/fontspec/fonts
-pec.cfg)))
-luaotfload | cache : Lookup cache loaded from /usr/local/Cellar/texlive/20230313
-_3/share/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
+pec.cfg)
 
-Package fontspec Info: Font family 'EBGaramond(0)' created for font 'EB
-(fontspec)             Garamond' with options [Ligatures=TeX].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"EBGaramond:mode=node;script=latn;language=dflt;+tlig
-;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->"EBGaramond:mode=node;script=latn;language=dflt;+tlig
-;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"EBGaramond/B:mode=node;script=latn;language=dflt;+tl
-ig;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"EBGaramond/B:mode=node;script=latn;language=dflt;+tl
-ig;+smcp;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"EBGaramond/I:mode=node;script=latn;language=dflt;+tl
-ig;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"EBGaramond/I:mode=node;script=latn;language=dflt;+tl
-ig;+smcp;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"EBGaramond/BI:mode=node;script=latn;language=dflt;+t
-lig;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"EBGaramond/BI:mode=node;script=latn;language=dflt;+t
-lig;+smcp;"
+LaTeX Font Warning: Font shape `TU/lmr/mb/n' undefined
+(Font)              using `TU/lmr/m/n' instead on input line 3901.
 
-
-(/usr/local/Cellar/texmf-local/tex/lualatex/gregoriotex/gregoriotex.sty
+)) (/usr/local/Cellar/texmf-local/tex/lualatex/gregoriotex/gregoriotex.sty
 Package: gregoriotex 2021/02/23 v6.0.0-beta1 GregorioTeX system.
 
 (/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/iftex/iftex.
@@ -180,11 +361,6 @@ Inserting `luacolor.process' in `pre_shipout_filter'.
 tions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 
-(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/graphics/keyva
-l.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
-)
 (/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/ltxcmds/ltxc
 mds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
@@ -221,7 +397,7 @@ Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX
 (/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/luatex/ctablestack/c
 tablestack.sty
 Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
-\@catcodetablestackcnt=\count270
+\@catcodetablestackcnt=\count271
 )
 \CatcodeTableOther=\catcodetable12
 \CatcodeTableExpl=\catcodetable13
@@ -231,15 +407,15 @@ plib.sty
 Package: luamplib 2022/01/12 v2.23.0 mplib package for LuaTeX
 Lua module: luamplib 2022/01/12 2.23.0 Lua package to typeset Metapost with LuaT
 eX's MPLib.
-\mplibtmptoks=\toks17
+\mplibtmptoks=\toks20
 \mplibscratchbox=\box52
 )
 (/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/xstring/xstr
 ing.sty
 (/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/xstring/xstr
 ing.tex
-\integerpart=\count271
-\decimalpart=\count272
+\integerpart=\count272
+\decimalpart=\count273
 )
 Package: xstring 2023/01/14 v1.85 String manipulations (CT)
 )
@@ -262,25 +438,25 @@ Module gregoriotex Info: Reading test.gaux on input line 125
 Inserting `gregoriotex.write_greaux' in `finish_pdffile'.
 \gre@gaux=\write3
 \gre@read@temp=\read2
-\gre@factor=\count273
+\gre@factor=\count274
 
 (/usr/local/Cellar/texmf-local/tex/luatex/gregoriotex/gregoriotex-spaces.tex
-\gre@saved@prescore@hyphenpenalty=\count274
-\gre@saved@prescore@exhyphenpenalty=\count275
-\gre@saved@prescore@exhyphenchar=\count276
-\gre@saved@prescore@doublehyphendemerits=\count277
-\gre@saved@prescore@finalhyphendemerits=\count278
-\gre@saved@prescore@brokenpenalty=\count279
-\gre@saved@prescore@looseness=\count280
-\gre@saved@prescore@tolerance=\count281
-\gre@saved@prescore@pretolerance=\count282
-\gre@saved@prescore@emergencystretch=\skip50
-\gre@saved@prescore@widowpenalty=\count283
-\gre@saved@prescore@clubpenalty=\count284
-\gre@saved@prescore@parskip=\skip51
-\gre@saved@prescore@lineskip=\skip52
-\gre@saved@prescore@baselineskip=\skip53
-\gre@saved@prescore@lineskiplimit=\skip54
+\gre@saved@prescore@hyphenpenalty=\count275
+\gre@saved@prescore@exhyphenpenalty=\count276
+\gre@saved@prescore@exhyphenchar=\count277
+\gre@saved@prescore@doublehyphendemerits=\count278
+\gre@saved@prescore@finalhyphendemerits=\count279
+\gre@saved@prescore@brokenpenalty=\count280
+\gre@saved@prescore@looseness=\count281
+\gre@saved@prescore@tolerance=\count282
+\gre@saved@prescore@pretolerance=\count283
+\gre@saved@prescore@emergencystretch=\skip51
+\gre@saved@prescore@widowpenalty=\count284
+\gre@saved@prescore@clubpenalty=\count285
+\gre@saved@prescore@parskip=\skip52
+\gre@saved@prescore@lineskip=\skip53
+\gre@saved@prescore@baselineskip=\skip54
+\gre@saved@prescore@lineskiplimit=\skip55
 \gre@dimen@textlower=\dimen145
 \gre@dimen@stafflinewidth=\dimen146
 \gre@dimen@linewidth=\dimen147
@@ -289,13 +465,13 @@ Inserting `gregoriotex.write_greaux' in `finish_pdffile'.
 \gre@dimen@stafflinediff=\dimen150
 \gre@dimen@constantglyphraise=\dimen151
 \gre@dimen@staffheight=\dimen152
-\gre@skip@syllablefinalskip=\skip55
-\gre@skip@minTextDistance=\skip56
-\gre@skip@minNotesDistance=\skip57
+\gre@skip@syllablefinalskip=\skip56
+\gre@skip@minTextDistance=\skip57
+\gre@skip@minNotesDistance=\skip58
 \gre@dimen@curTextDistance=\dimen153
 \gre@dimen@curNotesDistance=\dimen154
-\gre@skip@minShiftText=\skip58
-\gre@skip@minShiftNotes=\skip59
+\gre@skip@minShiftText=\skip59
+\gre@skip@minShiftNotes=\skip60
 \gre@dimen@bolshift=\dimen155
 \gre@dimen@bolextra=\dimen156
 \gre@dimen@clefwidth@current=\dimen157
@@ -307,10 +483,10 @@ Inserting `gregoriotex.write_greaux' in `finish_pdffile'.
 \gre@dimen@additionaltopspace=\dimen163
 \gre@dimen@additionaltopspacealt=\dimen164
 \gre@dimen@additionaltopspacenabc=\dimen165
-\gre@space@count@additionaltopspacethreshold=\count285
-\gre@space@count@additionaltopspacealtthreshold=\count286
-\gre@space@count@additionaltopspacenabcthreshold=\count287
-\gre@space@count@noteadditionalspacelinestextthreshold=\count288
+\gre@space@count@additionaltopspacethreshold=\count286
+\gre@space@count@additionaltopspacealtthreshold=\count287
+\gre@space@count@additionaltopspacenabcthreshold=\count288
+\gre@space@count@noteadditionalspacelinestextthreshold=\count289
 \gre@saved@prediscretionary@dimen@additionalbottomspace=\dimen166
 \gre@saved@prediscretionary@dimen@additionaltopspace=\dimen167
 \gre@saved@prediscretionary@dimen@additionaltopspacealt=\dimen168
@@ -323,19 +499,19 @@ Inserting `gregoriotex.write_greaux' in `finish_pdffile'.
 \gre@dimen@enddifference=\dimen175
 \gre@dimen@previousenddifference=\dimen176
 \gre@dimen@currenttranslationheight=\dimen177
-\gre@skip@nextbegindifference=\skip60
+\gre@skip@nextbegindifference=\skip61
 \gre@dimen@annotationtrueraise=\dimen178
 \gre@dimen@commentarytrueraise=\dimen179
-\gre@skip@bar@requirement=\skip61
-\gre@skip@bar@allocation=\skip62
+\gre@skip@bar@requirement=\skip62
+\gre@skip@bar@allocation=\skip63
 \gre@dimen@bar@shift=\dimen180
-\gre@skip@text@requirement=\skip63
-\gre@skip@text@allocation=\skip64
+\gre@skip@text@requirement=\skip64
+\gre@skip@text@allocation=\skip65
 \gre@dimen@text@shift=\dimen181
 \gre@dimen@adjustedpreviousenddifference=\dimen182
 \gre@skip@adjustednextbegindifference=\dimen183
-\gre@skip@punctummorashift=\skip65
-\gre@skip@alterationshift=\skip66
+\gre@skip@punctummorashift=\skip66
+\gre@skip@alterationshift=\skip67
 \gre@dimen@begindifference=\dimen184
 \gre@dimen@lastglyphwidth=\dimen185
 \gre@dimen@notesaligncenter=\dimen186
@@ -347,38 +523,38 @@ Inserting `gregoriotex.write_greaux' in `finish_pdffile'.
 \gre@dimen@temp@three=\dimen192
 \gre@dimen@temp@four=\dimen193
 \gre@dimen@temp@five=\dimen194
-\gre@skip@temp@one=\skip67
-\gre@skip@temp@two=\skip68
-\gre@skip@temp@three=\skip69
-\gre@skip@temp@four=\skip70
-\gre@count@temp@one=\count289
-\gre@count@temp@two=\count290
-\gre@count@temp@three=\count291
-\gre@space@count@newlinepenalty=\count292
-\gre@space@count@nobreakpenalty=\count293
-\gre@space@count@endofwordpenalty=\count294
-\gre@space@count@endofsyllablepenalty=\count295
-\gre@space@count@endafterbarpenalty=\count296
-\gre@space@count@endafterbaraltpenalty=\count297
-\gre@space@count@finalpenalty=\count298
-\gre@space@count@endofelementpenalty=\count299
-\gre@space@count@hyphenpenalty=\count300
-\gre@space@count@brokenpenalty=\count301
-\gre@space@count@looseness=\count302
-\gre@space@count@tolerance=\count303
-\gre@space@count@pretolerance=\count304
-\gre@space@count@widowpenalty=\count305
-\gre@space@count@clubpenalty=\count306
-\greconffactor=\count307
+\gre@skip@temp@one=\skip68
+\gre@skip@temp@two=\skip69
+\gre@skip@temp@three=\skip70
+\gre@skip@temp@four=\skip71
+\gre@count@temp@one=\count290
+\gre@count@temp@two=\count291
+\gre@count@temp@three=\count292
+\gre@space@count@newlinepenalty=\count293
+\gre@space@count@nobreakpenalty=\count294
+\gre@space@count@endofwordpenalty=\count295
+\gre@space@count@endofsyllablepenalty=\count296
+\gre@space@count@endafterbarpenalty=\count297
+\gre@space@count@endafterbaraltpenalty=\count298
+\gre@space@count@finalpenalty=\count299
+\gre@space@count@endofelementpenalty=\count300
+\gre@space@count@hyphenpenalty=\count301
+\gre@space@count@brokenpenalty=\count302
+\gre@space@count@looseness=\count303
+\gre@space@count@tolerance=\count304
+\gre@space@count@pretolerance=\count305
+\gre@space@count@widowpenalty=\count306
+\gre@space@count@clubpenalty=\count307
+\greconffactor=\count308
 )
 \gre@box@temp@width=\box53
 \gre@box@initial=\box54
-\gre@biginitial=\count308
-\gre@knownline=\count309
+\gre@biginitial=\count309
+\gre@knownline=\count310
 \gre@box@annotation=\box55
 \gre@box@add=\box56
 \gre@box@old=\box57
-\gre@count@annotationvalign=\count310
+\gre@count@annotationvalign=\count311
 \gre@box@commentary=\box58
 \gre@box@lines=\box59
 Module gregoriotex Info: Registering variant font greciliae as gre@font@variant@
@@ -387,6 +563,8 @@ Module gregoriotex Info: Registering variant font greciliae-hollow as gre@font@v
 ariant@B. on input line 987
 Module gregoriotex Info: Registering variant font greciliae-hole as gre@font@var
 iant@C. on input line 987
+luaotfload | cache : Lookup cache loaded from /usr/local/Cellar/texlive/20230313
+_3/share/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
 Module gregoriotex Info: Mapping font greciliae on input line 992
 Module gregoriotex Info: Mapping font greciliae-hollow on input line 992
 Module gregoriotex Info: Mapping font greciliae-hole on input line 992
@@ -399,31 +577,31 @@ Module gregoriotex Info: Mapping font greciliae-hole on input line 992
 \gre@box@temp@cleftwo=\box62
 \greslurheight=\dimen195
 \gre@box@temp@sign=\box63
-\gre@count@shiftaftermora=\count311
+\gre@count@shiftaftermora=\count312
 \gre@dimen@morawidth=\dimen196
-\gre@skip@bar@lastskip=\skip71
-\gre@count@lastglyphiscavum=\count312
+\gre@skip@bar@lastskip=\skip72
+\gre@count@lastglyphiscavum=\count313
 )
 (/usr/local/Cellar/texmf-local/tex/luatex/gregoriotex/gregoriotex-syllable.tex
-\gre@generate@pointandclick=\count313
+\gre@generate@pointandclick=\count314
 \gre@box@syllablenotes=\box64
 \gre@box@syllabletext=\box65
-\gre@clivisalignment=\count314
-\gre@count@unbreakabletotalnotes=\count315
-\gre@count@unbreakableinitialnotes=\count316
-\gre@count@unbreakablefinalnotes=\count317
-\gre@count@syllablenotes=\count318
+\gre@clivisalignment=\count315
+\gre@count@unbreakabletotalnotes=\count316
+\gre@count@unbreakableinitialnotes=\count317
+\gre@count@unbreakablefinalnotes=\count318
+\gre@count@syllablenotes=\count319
 )
-\gre@variableheightexpansion=\count319
-\gre@lastoflinecount=\count320
-\gre@saved@prenlba@nobreakpenalty=\count321
-\gre@saved@prenlba@endofwordpenalty=\count322
-\gre@saved@prenlba@endofsyllablepenalty=\count323
-\gre@saved@prenlba@endafterbarpenalty=\count324
-\gre@saved@prenlba@endafterbaraltpenalty=\count325
-\gre@saved@prenlba@endofelementpenalty=\count326
-\gre@saved@prenlba@hyphenpenalty=\count327
-\gre@lasteuouaeindex=\count328
+\gre@variableheightexpansion=\count320
+\gre@lastoflinecount=\count321
+\gre@saved@prenlba@nobreakpenalty=\count322
+\gre@saved@prenlba@endofwordpenalty=\count323
+\gre@saved@prenlba@endofsyllablepenalty=\count324
+\gre@saved@prenlba@endafterbarpenalty=\count325
+\gre@saved@prenlba@endafterbaraltpenalty=\count326
+\gre@saved@prenlba@endofelementpenalty=\count327
+\gre@saved@prenlba@hyphenpenalty=\count328
+\gre@lasteuouaeindex=\count329
 (/usr/local/Cellar/texmf-local/tex/luatex/gregoriotex/gregoriotex-symbols.tex
 Module gregoriotex Info: Registering variant font greextra as gre@font@variant@D
 . on input line 53
@@ -440,104 +618,61 @@ ex) (/usr/local/Cellar/texmf-local/tex/luatex/gregoriotex/gregoriotex-nabc.tex))
 ) (./test.aux)
 \openout1 = test.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 8
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 9
 .
 
 (/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-
-Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
-(fontspec)             this).
-
-\symlegacymaths=\mathgroup4
-LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 8.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 8.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 8.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 8.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 8.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 8.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 8.
-LaTeX Font Info:    Redeclaring math accent \check on input line 8.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 8.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 8.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 8.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 8.
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 8.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/EBGaramond(0)/m/n on input line 8.
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 8.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/EBGaramond(0)/m/n on input line 8.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/EBGaramond(0)/m/n --> TU/EBGaramond(0)/m/n on input 
-line 8.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/EBGaramond(0)/m/it on input line 8.
-
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/EBGaramond(0)/b/n on input line 8.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 8.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 8.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/EBGaramond(0)/m/n --> TU/EBGaramond(0)/b/n on input 
-line 8.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/EBGaramond(0)/b/it on input line 8
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 9.
+LaTeX Font Info:    Trying to load font information for MDA+cmr on input line 9
 .
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 8.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 8.
+
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/mathdesign/mda
+cmr.fd
+File: mdacmr.fd 
+)
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 9.
+LaTeX Font Info:    Trying to load font information for MDB+cmr on input line 9
+.
+
+(/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/mathdesign/mdb
+cmr.fd
+File: mdbcmr.fd 
+)
+LaTeX Font Info:    ... okay on input line 9.
 
 (/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/context/base/mkii/su
 pp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
+\scratchcounter=\count330
 \scratchdimen=\dimen259
 \scratchbox=\box66
-\nofMPsegments=\count330
-\nofMParguments=\count331
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count332
+\nofMPsegments=\count331
+\nofMParguments=\count332
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count333
 \MPscratchDim=\dimen260
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
-\everyMPtoPDFconversion=\toks19
+\MPnumerator=\count334
+\makeMPintoPDFobject=\count335
+\everyMPtoPDFconversion=\toks22
 )
 (/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/epstopdf-pkg/e
 pstopdf-base.sty
@@ -550,55 +685,63 @@ stopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Module gregoriotex Info: Looking in  on input line 18
-Module gregoriotex Info: Found zelus.gabc directly on input line 18
-Module gregoriotex Info: Looking in  on input line 18
-Module gregoriotex Info: Found zelus-6_0_0-beta1.gtex directly on input line 18
- (./zelus-6_0_0-beta1.gtex
-Removing  `luaotfload.harf.finalize_vlist' from `post_linebreak_filter'.
-Inserting `gregoriotex.post_linebreak' in `post_linebreak_filter'.
-Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
-Inserting `gregoriotex.disable_hyphenation' in `hyphenate'.
-Removing  `gregoriotex.post_linebreak' from `post_linebreak_filter'.
-Removing  `gregoriotex.disable_hyphenation' from `hyphenate'.)
-Module gregoriotex Info: Looking in  on input line 27
-Module gregoriotex Info: Found zelus.gabc directly on input line 27
-Module gregoriotex Info: Looking in  on input line 27
-Module gregoriotex Info: Found zelus-6_0_0-beta1.gtex directly on input line 27
- (./zelus-6_0_0-beta1.gtex
-Removing  `luaotfload.harf.finalize_vlist' from `post_linebreak_filter'.
-Inserting `gregoriotex.post_linebreak' in `post_linebreak_filter'.
-Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
-Inserting `gregoriotex.disable_hyphenation' in `hyphenate'.
-Removing  `gregoriotex.post_linebreak' from `post_linebreak_filter'.
-Removing  `gregoriotex.disable_hyphenation' from `hyphenate'.)
-LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sl' in size <12> not availab
-le
-(Font)              Font shape `TU/EBGaramond(0)/m/it' tried instead on input l
-ine 30.
- [1{/usr/local/Cellar/texlive/20230313_3/share/texmf-dist/fonts/map/pdftex/updma
-p/pdftex.map}
 
-] (./test.aux))
+LaTeX Font Warning: Font shape `TU/lmr/m/fsc' undefined
+(Font)              using `TU/lmr/m/n' instead on input line 13.
+
+Module gregoriotex Info: Looking in  on input line 19
+Module gregoriotex Info: Found zelus.gabc directly on input line 19
+Module gregoriotex Info: Looking in  on input line 19
+Module gregoriotex Info: Found zelus-6_0_0-beta1.gtex directly on input line 19
+(./zelus-6_0_0-beta1.gtex
+Removing  `luaotfload.harf.finalize_vlist' from `post_linebreak_filter'.
+Inserting `gregoriotex.post_linebreak' in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
+Inserting `gregoriotex.disable_hyphenation' in `hyphenate'.
+Removing  `gregoriotex.post_linebreak' from `post_linebreak_filter'.
+Removing  `gregoriotex.disable_hyphenation' from `hyphenate'.)
+Module gregoriotex Info: Looking in  on input line 38
+Module gregoriotex Info: Found zelus.gabc directly on input line 38
+Module gregoriotex Info: Looking in  on input line 38
+Module gregoriotex Info: Found zelus-6_0_0-beta1.gtex directly on input line 38
+ (./zelus-6_0_0-beta1.gtex
+Removing  `luaotfload.harf.finalize_vlist' from `post_linebreak_filter'.
+Inserting `gregoriotex.post_linebreak' in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
+Inserting `gregoriotex.disable_hyphenation' in `hyphenate'.
+Removing  `gregoriotex.post_linebreak' from `post_linebreak_filter'.
+Removing  `gregoriotex.disable_hyphenation' from `hyphenate'.) [1{/usr/local/Cel
+lar/texlive/20230313_3/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+(./test.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+)
 
 Here is how much of LuaTeX's memory you used:
- 22737 strings out of 478285
+ 24521 strings out of 478285
  100000,1977958 words of node,token memory allocated
- 537 words of node memory still in use:
-   4 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 3 glyph, 24 attribute, 60 glue_spec
+ 542 words of node memory still in use:
+   4 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 3 glyph, 24 attribute, 61 glue_spec
 , 6 attribute_list, 1 write, 1 user_defined nodes
-   avail lists: 2:7350,3:1246,4:7,5:1992,6:160,7:1852,9:2342,10:5,11:2
- 42707 multiletter control sequences out of 65536+600000
- 36 fonts using 11661967 bytes
- 72i,5n,84p,586b,1046s stack positions out of 10000i,1000n,20000p,200000b,200000s
+   avail lists: 2:7366,3:1248,4:9,5:1994,6:160,7:1846,9:2340,10:6,11:2
+ 44371 multiletter control sequences out of 65536+600000
+ 26 fonts using 4172567 bytes
+ 72i,5n,73p,586b,1036s stack positions out of 10000i,1000n,20000p,200000b,200000s
+Module gregoriotex Info: Writing test.gaux on input line 0
+Module gregoriotex Warning: Line heights or variable brace lengths may have chan
+ged. Rerun to fix. on input line 0
 </usr/local/Cellar/texmf-local/fonts/truetype/public/gregoriotex/greextra.ttf></
 usr/local/Cellar/texmf-local/fonts/truetype/public/gregoriotex/greciliae.ttf></u
-sr/local/Cellar/texlive/20230313_3/share/texmf-dist/fonts/opentype/public/ebgara
-mond/EBGaramond-Regular.otf>
-Output written on test.pdf (1 page, 12589 bytes).
+sr/local/Cellar/texlive/20230313_3/share/texmf-dist/fonts/opentype/public/lm/lmr
+oman17-regular.otf></usr/local/Cellar/texlive/20230313_3/share/texmf-dist/fonts/
+opentype/public/lm/lmroman12-regular.otf>
+Output written on test.pdf (1 page, 12702 bytes).
 
-PDF statistics: 29 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
+PDF statistics: 36 PDF objects out of 1000 (max. 8388607)
+ 20 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

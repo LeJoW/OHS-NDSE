@@ -1,17 +1,16 @@
-\documentclass[a5paper,14pt]{extarticle}
+\documentclass[a5paper,12pt]{extarticle}
 \usepackage[twoside,
-    inner=1cm,
+    paperwidth=13cm,
+    paperheight=19.7cm,
+    outer=1.4cm,
     width=10.2cm,
-    top=2.5cm,
-    includefoot
+    bottom=1.5cm,
+    headheight=1cm,
+    footskip=0cm,
+    headsep=5mm
 ]{geometry}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\input{share}
 \usepackage{textcomp}
-\usepackage[french]{babel}
-\usepackage{ccfonts}
-\usepackage{fontspec}
-\usepackage[sc,osf]{mathpazo}
 \usepackage{microtype}
 \usepackage{hyperref}
 \usepackage{tabularx}
@@ -20,15 +19,12 @@
 \usepackage{fancyhdr}
 \usepackage[document]{ragged2e}
 \usepackage{setspace}
-
-\input{source/hyphens.tex}
-
-\input{definitions}
+\input{source/hyphens}
+\input{adapter/adapter}
 \input{styles}
 
-\setmainfont{EB Garamond}
-
 \begin{document}
-\fontdimen2\font = 2\fontdimen2\font
+\fontdimen2\font = 1ex
+
 \UseRawInputEncoding{\input{include}}
 \end{document}

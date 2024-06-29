@@ -2,13 +2,21 @@
 
 ### Ad Tertiam
 
-!1[](Deus_in_adiutorium)
+\vspace{-9mm}
+
+!{Deus_in_adiutorium}
 
 #### Hymnus
 
-!2[mode](Nunc_Sancte)
+!{Nunc_Sancte}
 
-!2{Pueri_Hebraeorum_vestimenta}[118e,118f,118g]
+!{Pueri_Hebraeorum_vestimenta}
+
+#### Psalmus
+
+@(1f)[118eG,118fG,118gG]
+
+!{Pueri_Hebraeorum_vestimenta.ant}
 
 #### Capitulum {Philipp. 2, 5-7}
 
@@ -18,15 +26,15 @@ sed semetípsum exinanívit, formam servi accípiens, \*
 in similitúdinem hóminum factus, et hábitu invéntus ut homo.
 \R Deo grátias.
 
-!3[](versiculi/erue_a_framea)
+!{versiculi/erue_a_framea}
 
-!2[](varia/kyrie_eleison)
+!{varia/kyrie_eleison}
 
-!2[](varia/pater_noster_secreto)
+!{varia/pater_noster_secreto}
 
 > Deinde dicitur :
 
-!2[](versiculi/dominus_vobiscum)
+!{versiculi/dominus_vobiscum}
 
 #### Orémus. {Oratio}
 
@@ -40,13 +48,13 @@ qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
 
 > Post orationem additur
 
-!3[](versiculi/dominus_vobiscum)
+!{versiculi/dominus_vobiscum}
 
-!3[](versiculi/benedicamus_domino.simplex)
+!{versiculi/benedicamus_domino.simplex}
 
 &> Ante Missam pontificalem dicitur
 
-!2[mode](versiculi/benedicamus_domino.pontificalis)
+!{versiculi/benedicamus_domino.pontificalis}
 
 ### De solemni processione in honorem Christi Regis <Ad processionem>
 

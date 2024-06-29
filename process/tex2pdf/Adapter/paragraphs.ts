@@ -1,21 +1,25 @@
-import { Adapter } from "./Adapter.i";
+import { adapterType } from "./adapter.t";
 
-const makeRubric: Adapter["makeRubric"] = function (content) {
+function paragraphLettrine(text: string): string {
+    const initial = text[0];
+    const body = text.slice(1);
+    return `\\initial{${initial}}${body}`;
+}
+
+const makeRubric: adapterType["blocks"]["makeRubric"] = function (content) {
     return `\\begin{rubric}${content}\\end{rubric}`;
 };
 
-const makeReplace: Adapter["makeReplace"] = function (content) {
+const makeReplace: adapterType["blocks"]["makeReplace"] = function (content) {
     return `\\begin{remplacement}${content}\\end{remplacement}`;
 };
 
-const makeLesson: Adapter["makeLesson"] = function (content) {
-    const initial = content[0];
-    const body = content.slice(1);
-    return `\\begin{lectio}\\initial{${initial}}${body}\\end{lectio}`;
+const makeLesson: adapterType["blocks"]["makeLesson"] = function (content) {
+    return `\\begin{lectio}${paragraphLettrine(content)}\\end{lectio}`;
 };
 
-const paragraphStd: Adapter["paragraphStd"] = function (content) {
+const paragraphStd: adapterType["blocks"]["paragraphStd"] = function (content) {
     return content;
 };
 
-export { makeRubric, makeReplace, makeLesson, paragraphStd };
+export { paragraphLettrine, makeRubric, makeReplace, makeLesson, paragraphStd };

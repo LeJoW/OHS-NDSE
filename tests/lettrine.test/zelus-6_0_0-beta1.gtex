@@ -2,13 +2,13 @@
 \GregorioTeXAPIVersion{6.0.0}%
 \GreBeginHeaders %
 \GreEndHeaders %
-\GreBeginScore{9694e58fed97bd9bd96bf76d24cb9e7191ea04b2}{13}{8}{0}{0}{}{4}{\GreInitialClefPosition{4}{0}}%
+\GreBeginScore{4f218e2fa46c3339fc871f142c886bc853c7d327}{13}{8}{0}{0}{}{4}{\GreInitialClefPosition{4}{0}}%
 \GreSetLargestClef{c}{4}{3}{c}{0}{3}%
 \GreScoreOpening{%
 }{%
 \GreSetInitialClef{c}{4}{3}{c}{0}{3}{1}%
 }{%
-}{\GreSyllable}{\GreSetFirstSyllableText{Z}{Z}{e}{{\GreFirstWord{\GreFirstSyllable{\GreFirstSyllableInitial{Z}}}}{\GreFirstWord{\GreFirstSyllable{e}}}{}}{{\GreFirstWord{\GreFirstSyllable{\GreFirstSyllableInitial{Z}Z}}}{\GreFirstWord{\GreFirstSyllable{e}}}{}}{}}{}{\GreFirstWord}{0}{\GreSetNextSyllable{\GreFirstWord{l}}{\GreFirstWord{u}}{\GreFirstWord{s}}{\GreFirstWord{l}}{\GreFirstWord{u}\GreFirstWord{s}}}{}{{0}{0}}{}{%
+}{\GreSyllable}{\GreSetFirstSyllableText{Z}{e}{}{{}{\GreFirstWord{\GreFirstSyllable{\GreFirstSyllableInitial{e}}}}{}}{{\GreFirstWord{\GreFirstSyllable{\GreFirstSyllableInitial{Z}}}}{\GreFirstWord{\GreFirstSyllable{e}}}{}}{}}{}{\GreFirstWord}{0}{\GreSetNextSyllable{\GreFirstWord{l}}{\GreFirstWord{u}}{\GreFirstWord{s}}{\GreFirstWord{l}}{\GreFirstWord{u}\GreFirstWord{s}}}{}{{0}{0}}{}{%
 \GreSyllableNoteCount{1}%
 \GreGlyph{\GreCPPunctum}{12}{\GreNextCustos{12}{}}{0}%
 {%

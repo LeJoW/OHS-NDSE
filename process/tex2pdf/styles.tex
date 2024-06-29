@@ -1,10 +1,9 @@
+\newcommand{\hstyle}[1]{\large #1}
+
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[RO,LE]{\thepage}
-\fancyhead[CE]{\dayTitleShort}
-\fancyhead[CO]{\officeTitleShort}
+\fancyhead[RO,LE]{\hstyle{\thepage}}
+\fancyhead[CE]{\hstyle{\dayTitleShort}}
+\fancyhead[CO]{\hstyle{\officeTitleShort}}
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot{}
-
-%\grechangedim{intersyllablespacenotes}{0.4cm}{fixed}
-%\grechangestyle{translation}{}

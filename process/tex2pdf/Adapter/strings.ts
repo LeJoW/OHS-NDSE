@@ -1,28 +1,26 @@
-import { Adapter } from "./Adapter.i";
+import { adapterType } from "./adapter.t";
 
-const charsReplacement: { [key: string]: string } = {
-    á: "\\'a",
-    é: "\\'e",
-    í: "\\'i",
-    ó: "\\'o",
-    ú: "\\'u",
-    æ: "{\\ae}",
-    œ: "{\\oe}",
-    ǽ: "\\'{\\ae}",
-};
-
-const replaceUnreadeableChar: Adapter["replaceUnreadeableChar"] = function (
-    char
-) {
-    return char; charsReplacement[char] ? charsReplacement[char] : char;
-};
+const starSymbol = "~{\\gstella}";
+const cruxSymbol = "~{\\gcrux}";
 
 const symbols: { [key: string]: string } = {
-    " \\*": "~\\symbol{42}",
-    " +": "~\\symbol{8224}",
+    " \\*": starSymbol,
+    " +": cruxSymbol,
 };
-const replaceSymbols: Adapter["replaceSymbols"] = function (symbol) {
+const replaceSymbols: adapterType["strings"]["replaceSymbols"] = function (
+    symbol
+) {
     return symbols[symbol] ? symbols[symbol] : symbol;
 };
 
-export { replaceUnreadeableChar, replaceSymbols };
+const italic: adapterType["strings"]["italic"] = function (
+    text: string
+): string {
+    return `\\italic{${text}}`;
+};
+
+const bold: adapterType["strings"]["bold"] = function (text: string): string {
+    return `\\bold{${text}}`;
+};
+
+export { replaceSymbols, starSymbol, cruxSymbol, italic, bold };

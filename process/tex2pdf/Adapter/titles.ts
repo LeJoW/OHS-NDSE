@@ -1,18 +1,30 @@
-import { Adapter } from "./Adapter.i";
+import { adapterType } from "./adapter.t";
 
-const makeDayTite: Adapter["makeDayTite"] = function (title, dayClass, short) {
-    return `\\dayTitle{${title.replace(/\s+/g, "{\\titleSpace}")}}{${dayClass}}{${short}}`;
+const makeDayTite: adapterType["blocks"]["makeDayTite"] = function (
+    title,
+    dayClass,
+    short
+) {
+    return `\\dayTitle{${title.replace(
+        /\s+/g,
+        "{\\titleSpace}"
+    )}}{${dayClass}}{${short}}`;
 };
 
-const makeOfficeTitle: Adapter["makeOfficeTitle"] = function (title, short) {
+const makeOfficeTitle: adapterType["blocks"]["makeOfficeTitle"] = function (
+    title,
+    short
+) {
     return `\\officeTitle{${title.replace(/\s+/g, "{\\titleSpace}")}}`;
 };
 
-const makeSectionTitle: Adapter["makeSectionTitle"] = function (title) {
+const makeSectionTitle: adapterType["blocks"]["makeSectionTitle"] = function (
+    title
+) {
     return `\\sectionTitle{${title}}`;
 };
 
-const makeChapterTitle: Adapter["makeChapterTitle"] = function (
+const makeChapterTitle: adapterType["blocks"]["makeChapterTitle"] = function (
     title,
     addendum
 ) {

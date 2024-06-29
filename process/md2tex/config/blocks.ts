@@ -1,7 +1,11 @@
 import { BlockConfigType } from "../Engine/Engine.i";
-import { Adapter } from "../../tex2pdf/Adapter/Adapter.i";
+import { adapterType } from "../../tex2pdf/adapter/adapter.t";
+import { PsalmBuilder } from "../../buildPsalm/PsalmBuilder";
 
-const blockConfig = (adapter: Adapter): BlockConfigType => ({
+const blockConfig = (
+    { blocks }: adapterType,
+    psBuilder: PsalmBuilder
+): BlockConfigType => ({
     desc: [
         {
             test: /^(#+)\s+([\S\s]+?)\s*(?:<([\S\s]+?)>)?\s*(?:\{([\S\s]+?)\})?\s*$/i,
@@ -14,61 +18,81 @@ const blockConfig = (adapter: Adapter): BlockConfigType => ({
             ) {
                 switch (titleLevel) {
                     case "##":
-                        return adapter.makeDayTite(
+                        return blocks.makeDayTite(
                             title,
                             subTitle,
                             summary.length > 0 ? summary : title
                         );
                     case "###":
-                        return adapter.makeOfficeTitle(
+                        return blocks.makeOfficeTitle(
                             title,
                             summary.length > 0 ? summary : title
                         );
                     case "####":
-                        return adapter.makeChapterTitle(title, subTitle);
+                        return blocks.makeChapterTitle(title, subTitle);
                     default:
-                        return adapter.makeSectionTitle(title);
+                        return blocks.makeSectionTitle(title);
                 }
             },
         },
         {
             test: /^>{1}\s+([\s\S]+)/,
             callback: function rubrique(_, text) {
-                return adapter.makeRubric(text);
+                return blocks.makeRubric(text);
             },
         },
         {
             test: /^(?:&>){1}\s+([\s\S]+)/,
             callback: function remplacement(_, text) {
-                return adapter.makeReplace(text);
+                return blocks.makeReplace(text);
             },
         },
         {
             test: /^:+\s*([\S\s]+)$/,
             callback: function lecture(_, text) {
-                return adapter.makeLesson(text);
+                return blocks.makeLesson(text);
             },
         },
         {
-            test: /^!(\d+)\[([\S]*)\]\(([\S]+)\)$/,
-            callback: function gabc(_, style, annotation, file) {
-                return adapter.makeChant(file, style);
+            test: /^!\{([\S]+)\}$/,
+            callback: function gabc(_, file) {
+                return blocks.makeChant(file);
             },
         },
         {
-            test: /!(\d+)\{([\S]+)\}\[([\S]+)\]/,
-            callback: function psautier(_, style, file, psaumes) {
-                return adapter.makePs(
-                    { file, style },
-                    psaumes.split(",").map(function (ps) {
-                        return ps.trim();
+            test: /^@(?:\((\S+)\))?\[([\S]+)\]/,
+            callback: function psautier(_, ton, psaumes) {
+                return psaumes
+                    .split(",")
+                    .map(function (psalmDesc, index): string {
+                        const psalmDescription = psalmDesc.trim();
+                        const isDoxologie = /G$/.test(psalmDescription);
+                        const psalm = isDoxologie
+                            ? psalmDescription.slice(0, -1)
+                            : psalmDescription;
+                        try {
+                            return blocks.makePsalm(
+                                ton.length > 0 && index === 0
+                                    ? `${psalm}-${ton}`
+                                    : false,
+                                psBuilder
+                                    .buildPsalm(psalm, ton)
+                                    .slice(0, isDoxologie ? undefined : -2)
+                            );
+                        } catch (err) {
+                            return blocks.error(
+                                err instanceof Error
+                                    ? err.message
+                                    : `Psalm ${psalm}: Unkown error`
+                            );
+                        }
                     })
-                );
+                    .join("\n\n");
             },
         },
     ],
     defaultCase: function (paragraph: string) {
-        return adapter.paragraphStd(paragraph);
+        return blocks.paragraphStd(paragraph);
     },
 });
 

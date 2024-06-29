@@ -1,30 +1,43 @@
-import { Adapter } from "./Adapter.i";
+import { adapterType } from "./adapter.t";
 import { existsSync } from "fs";
 
-const buildChant: Adapter["makeChant"] = function (
-    file: string,
-    style: string
-) {
-    const pdfInput = `../content/gabc/${file}.pdf`;
+import { paragraphLettrine } from "./paragraphs";
+
+type blocks = adapterType["blocks"];
+
+const makeChant: blocks["makeChant"] = function (file: string) {
+    const pdfInput = `../content/gabc/build/${file}.pdf`;
     if (!existsSync(pdfInput)) {
         return `Cannot find file \\verb|${file}|`;
     }
     return `\\gabc{../${pdfInput}}`;
 };
 
-const buildPsalterium: Adapter["makePs"] = function (
-    { file, style }: { file: string; style: string },
-    list: string[]
-) {
-    return `
-${buildChant(file, style)}
-\\begin{enumerate}
-${list.map(function (ps) {
-    return `\\item ${ps}`;
-})}
-\\end{enumerate}
-${buildChant(file, "ant")}
-    `;
+function printIntonation(verse: string): string {
+    return [
+        "\\begin{intonation}",
+        paragraphLettrine(verse),
+        "\\end{intonation}",
+    ].join("\n");
+}
+
+function printPsalm(verses: string[]): string {
+    return [
+        "\\begin{verses}",
+        ...verses.map(function (verse) {
+            return `\\item ${verse}`;
+        }),
+        "\\end{verses}",
+    ].join("\n");
+}
+
+const makePsalm: blocks["makePsalm"] = function (intonation, psalm) {
+    return [
+        "\\begin{psalm}",
+        intonation ? makeChant(intonation) : printIntonation(psalm[0]),
+        printPsalm(psalm.slice(1)),
+        "\\end{psalm}",
+    ].join("\n");
 };
 
-export { buildChant, buildPsalterium };
+export { makeChant, makePsalm };

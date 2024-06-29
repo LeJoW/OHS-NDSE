@@ -1,4 +1,4 @@
-import { Adapter as AdapterInterface } from "./Adapter.i";
+import { adapterType } from "./adapter.t";
 import {
     makeChapterTitle,
     makeDayTite,
@@ -11,23 +11,37 @@ import {
     makeRubric,
     paragraphStd,
 } from "./paragraphs";
-import { buildChant, buildPsalterium } from "./greg";
-import { replaceSymbols, replaceUnreadeableChar } from "./strings";
+import { makeChant, makePsalm } from "./greg";
+import {
+    cruxSymbol,
+    replaceSymbols,
+    starSymbol,
+    italic,
+    bold,
+} from "./strings";
 
-export class Adapter implements AdapterInterface {
-    makeDayTite = makeDayTite;
-    makeOfficeTitle = makeOfficeTitle;
-    makeSectionTitle = makeSectionTitle;
-    makeChapterTitle = makeChapterTitle;
+export const adapter: adapterType = {
+    blocks: {
+        makeDayTite,
+        makeOfficeTitle,
+        makeSectionTitle,
+        makeChapterTitle,
+        makeRubric,
+        makeReplace,
+        makeLesson,
+        paragraphStd,
+        makeChant,
+        makePsalm,
 
-    makeRubric = makeRubric;
-    makeReplace = makeReplace;
-    makeLesson = makeLesson;
-    paragraphStd = paragraphStd;
-
-    makeChant = buildChant;
-    makePs = buildPsalterium;
-
-    replaceUnreadeableChar = replaceUnreadeableChar;
-    replaceSymbols = replaceSymbols;
-}
+        error(msg) {
+            return `\\begin{verbatim}${msg}\\end{verbatim}`;
+        },
+    },
+    strings: {
+        replaceSymbols,
+        italic,
+        bold,
+        starSymbol,
+        cruxSymbol,
+    },
+};

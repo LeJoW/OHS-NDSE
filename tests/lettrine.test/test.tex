@@ -1,7 +1,8 @@
 \documentclass[a5paper, 12pt]{book}
 
+\usepackage[urw-garamond]{mathdesign}
+\usepackage[T1]{fontenc}
 \usepackage{fontspec}
-\setmainfont{EB Garamond}
 
 \usepackage[autocompile]{gregoriotex}
 
@@ -18,12 +19,22 @@
 \gregorioscore{zelus}
 }
 
+%{
+%\greannotation{Anti-}
+%\greannotation{phona}
+%\gresetinitiallines{1}
+%\grechangedim{annotationraise}{-5mm}{scalable}
+%\grechangestyle{initial}{\color{white}}
+%\gregorioscore{zelus}
+%}
+
 {
 \greannotation{Anti-}
 \greannotation{phona}
+\grechangedim{manualinitialwidth}{1.5cm}{fixed}
+\grechangedim{afterinitialshift}{-1cm}{fixed}
+\grechangestyle{initial}{}
 \gresetinitiallines{1}
-\grechangedim{annotationraise}{-5mm}{scalable}
-\grechangestyle{initial}{\color{white}}
 \gregorioscore{zelus}
 }
 

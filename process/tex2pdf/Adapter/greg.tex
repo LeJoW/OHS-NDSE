@@ -1,4 +1,5 @@
 \usepackage{pdfpages}
+\usepackage{enumitem}
 
 \newcommand*{\pdfnumberofpages}[1]{%
 	\directlua{%
@@ -15,12 +16,31 @@
 
 \newcounter{gabcCount}
 \newcommand{\gabc}[1]{
+	\addvspace{4mm}
 	\setcounter{gabcCount}{0}
 	\setlength{\parindent}{0pt}
-	\setlength{\parskip}{0pt}
+	\setlength{\parskip}{2pt}
 	\whiledo{\value{gabcCount}<\pdfnumberofpages{#1}}{
 		\stepcounter{gabcCount}
 		\includegraphics[page=\thegabcCount,width=1\linewidth]{#1}
 
 	}
+}
+
+\newenvironment{intonation}{\justifying}{\par}
+
+\newenvironment{verses}{
+	\begin{enumerate}[left=0ex, leftmargin=0pt, labelwidth=5ex, labelsep=1ex, itemindent=6ex, itemsep=0.25ex, parsep=0pt, topsep=0pt]
+		\setcounter{enumi}{1}
+		\justifying
+		}{
+		\parshape=0
+	\end{enumerate}
+}
+
+\newenvironment{psalm}{
+	\setlength{\parsep}{0pt}
+	\setlength{\parskip}{0pt}
+}{
+	\addvspace{4mm}
 }
