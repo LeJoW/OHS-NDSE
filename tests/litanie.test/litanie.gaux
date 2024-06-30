@@ -1,0 +1,16 @@
+return {
+ ["line_heights"]={
+ },
+ ["last_syllables"]={
+  ["a480aec4c593dd38906a173ac7f2c10a977f13ff.1"]={
+   [15]=15,
+  },
+ },
+ ["saved_lengths"]={
+ },
+ ["saved_newline_before_euouae"]={
+ },
+ ["state_hashes"]={
+  ["a480aec4c593dd38906a173ac7f2c10a977f13ff.1"]="3fb050c56927e037c7b8f3e3b60daf69",
+ },
+}

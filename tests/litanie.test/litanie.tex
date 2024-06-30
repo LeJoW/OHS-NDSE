@@ -1,5 +1,13 @@
-\input{main}
+\documentclass{report}
+
+\usepackage[a5paper,margin=1cm]{geometry}
+\usepackage[autocompile]{gregoriotex}
 \usepackage[savepos]{zref}
+\usepackage{libertine}
+\usepackage{multicol}
+
+\pagestyle{empty}
+\columnseprule=0.4pt
 
 \makeatletter  
 \newcounter{score}
@@ -42,12 +50,15 @@
   {\endtabbing\stepcounter{score}}
 
 \gresetinitiallines{0}
+\gresetlastline{justified}
 
 \begin{document}
 
-\input{build/erue_a_framea.gtex}%
+\gregorioscore{Litany-I}%
 \begin{nstabbing}
-\>\Rbar. \>Et \>de \>manu \>canis \>á\>ni\>mam \>me\>am.
+\>Fili \>Re-\>démp-\>tor \>mundi \>\textbf{De}-\>us, \>mi-\>se-\>\textit{ré}-\>\textit{re} \>no-\>bis.\\
+\>Spí-\>ri-\>tus \>Sancte \>\>\textbf{De}-\>us, \>mi-\>se-\>\textit{ré}-\>\textit{re} \>no-\>bis.\\
+\>Sancta \>\>Trínitas \>\>unus \>\textbf{De}-\>us, \>mi-\>se-\>\textit{ré}-\>\textit{re} \>no-\>bis.\\
 \end{nstabbing}
 
 \end{document}

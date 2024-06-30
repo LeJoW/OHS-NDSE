@@ -6,18 +6,25 @@
 \grechangestaffsize{15}
 \grechangedim{intersyllablespacenotes}{0.25cm}{fixed}
 \grechangedim{minimalspaceatlinebeginning}{0.45cm}{fixed}
+\grechangedim{spaceaftersigns}{0.1cm}{fixed}
+\grechangedim{spacebeforeinlinecustos}{0.1cm}{fixed}
 
 \gresetclivisalignment{never}
 
 \grechangestyle{modeline}{\sc}
 
 \newcommand{\gabcDisplay}[1]{
-	\grechangestyle{initial}{\fontsize{100}{100}\selectfont}
+	\grechangestyle{initial}{\fontsize{95}{95}\selectfont}
 	\input{build/#1.gtex}
 }
 
 \newcommand{\gabcNormal}[1]{
 	\gresetinitiallines{1}
+	\input{build/#1.gtex}
+}
+
+\newcommand{\gabcSimplex}[1]{
+	\gresetinitiallines{0}
 	\input{build/#1.gtex}
 }
 

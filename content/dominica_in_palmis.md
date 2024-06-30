@@ -1,4 +1,4 @@
-## Dominica secunda passionis \\ seu in palmis <Dominica II Passionis> {Duplex I classis}
+## Dominica secunda passionis \\seu in palmis <Dominica II Passionis> {Duplex I classis}
 
 ### Ad Tertiam
 
@@ -26,15 +26,15 @@ sed semetípsum exinanívit, formam servi accípiens, \*
 in similitúdinem hóminum factus, et hábitu invéntus ut homo.
 \R Deo grátias.
 
-!{versiculi/erue_a_framea}
+!{erue_a_framea}
 
-!{varia/kyrie_eleison}
+!{kyrie_eleison}
 
-!{varia/pater_noster_secreto}
+!{pater_noster_secreto}
 
 > Deinde dicitur :
 
-!{versiculi/dominus_vobiscum}
+!{dominus_vobiscum}
 
 #### Orémus. {Oratio}
 
@@ -48,13 +48,15 @@ qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
 
 > Post orationem additur
 
-!{versiculi/dominus_vobiscum}
+!{dominus_vobiscum.simplex}
 
-!{versiculi/benedicamus_domino.simplex}
+!{benedicamus_domino.simplex}
 
-&> Ante Missam pontificalem dicitur
+\pagebreak
 
-!{versiculi/benedicamus_domino.pontificalis}
+&> Ante Missam pontificalem dicitur :
+
+!{benedicamus_domino.pontificalis}
 
 ### De solemni processione in honorem Christi Regis <Ad processionem>
 
