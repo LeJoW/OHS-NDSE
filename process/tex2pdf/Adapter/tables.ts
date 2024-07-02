@@ -1,4 +1,5 @@
 import { PsalmIndex } from "../../md2tex/config/PsalmIndex";
+import { Table } from "../../md2tex/config/Table";
 import { TableOfContents } from "../../md2tex/config/TableOfContents";
 
 export function makeTableOfContents(table: TableOfContents): string {
@@ -38,5 +39,32 @@ export function makePsalmsIndex(index: PsalmIndex): string {
                 .join(", ")}}`;
         }),
         "\\end{psIndex}",
+    ].join("\n");
+}
+
+const gregoTypes: { [key: string]: string } = {
+    ant: "Antiphonæ",
+    hymn: "Hymni",
+    rep: "Responsoria",
+};
+
+export function makeGregIndex(table: Table): string {
+    return [
+        "\\begin{gregIndex}",
+        ...Object.entries(table.getTableSorted())
+            .sort(function ([a], [b]) {
+                return a.localeCompare(b);
+            })
+            .map(function ([type, list]) {
+                return [
+                    `\\tableTitle{${gregoTypes[type]}}`,
+                    "\\begin{gregList}",
+                    ...list.map(function ({ mode, label, anchor }) {
+                        return `\\gregEntry{${mode}}{${label}}{${anchor}}`;
+                    }),
+                    "\\end{gregList}",
+                ].join("\n");
+            }),
+        "\\end{gregIndex}",
     ].join("\n");
 }

@@ -8,9 +8,9 @@
 
 #### Hymnus
 
-![](Nunc_Sancte)
+![2:hymn:Nunc, Sancte, nobis, Spiritus](Nunc_Sancte)
 
-![ant:Pueri Hebræorum… vestimenta](Pueri_Hebraeorum_vestimenta)
+![1:ant:Pueri Hebræorum… vestimenta](Pueri_Hebraeorum_vestimenta)
 
 #### Psalmus
 
@@ -69,5 +69,7 @@ qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
 ##### Index
 
 <psalms-index />
+
+<grego-index />
 
 <table-of-contents />

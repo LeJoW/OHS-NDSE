@@ -1,3 +1,11 @@
+\usepackage{multicol}
+
+\newcommand{\tableTitle}[1]{
+	\begin{center}
+		\bf\garamond #1
+	\end{center}
+}
+
 \newenvironment{tableOfContents}{
 	\pagebreak
 	\thispagestyle{empty}
@@ -11,16 +19,32 @@
 	\end{itemize}
 }
 
-\newcommand{\tableSectionTitle}[1]{{\sc\garamond #1}}
-\newcommand{\sectionEntry}[2]{\item[] #1\dotfill\pageref{#2}}
+\newcommand{\tableSectionTitle}[1]{{\small\sc\garamond #1}}
+\newcommand{\sectionEntry}[2]{\small\item[] #1\dotfill\pageref{#2}}
 
 \newenvironment{psIndex}{
 	\thispagestyle{empty}
-	\chapterTitle{Psalmi}{}
-	\begin{itemize}[left=0ex, leftmargin=0pt, labelwidth=1cm, labelsep=1cm, itemindent=2cm]
+	\tableTitle{Psalmi}{}
+	\begin{itemize}[left=0pt, leftmargin=0pt, labelwidth=1cm, labelsep=1cm, itemindent=2cm]
 		}{
 	\end{itemize}
 }
 
-\newcommand{\psEntry}[3]{\item[#1] #2. #3.}
-\newcommand{\psMode}[1]{{\sc\garamond (#1)}}
+\newcommand{\psEntry}[3]{\small\item[#1] #2. #3.}
+\newcommand{\psMode}[1]{({\sc\garamond #1})}
+
+\setlength\columnsep{5mm}
+\setlength\columnseprule{0.4pt}
+
+\newenvironment{gregIndex}{
+	\begin{multicols}{2}
+		}{
+	\end{multicols}
+}
+\newenvironment{gregList}{
+	\begin{itemize}[leftmargin=3mm, rightmargin=3mm]
+		}{
+	\end{itemize}
+}
+
+\newcommand{\gregEntry}[3]{\small\item[#1] #2\dotfill\pageref{#3}\hspace{-3mm}}

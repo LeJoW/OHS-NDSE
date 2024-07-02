@@ -19,7 +19,7 @@ import {
     italic,
     bold,
 } from "./strings";
-import { makeTableOfContents, makePsalmsIndex } from "./tables";
+import { makeTableOfContents, makePsalmsIndex, makeGregIndex } from "./tables";
 
 export const adapter: adapterType = {
     blocks: {
@@ -35,6 +35,7 @@ export const adapter: adapterType = {
         makePsalm,
         makeTableOfContents,
         makePsalmsIndex,
+        makeGregIndex,
 
         error(msg) {
             return `\\begin{verbatim}${msg}\\end{verbatim}`;

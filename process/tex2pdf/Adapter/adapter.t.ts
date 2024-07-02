@@ -1,4 +1,5 @@
 import { PsalmIndex } from "../../md2tex/config/PsalmIndex";
+import { Table } from "../../md2tex/config/Table";
 import { TableOfContents } from "../../md2tex/config/TableOfContents";
 
 export type adapterType = {
@@ -17,15 +18,16 @@ export type adapterType = {
         makeLesson: (content: string) => string;
         paragraphStd: (content: string) => string;
 
-        makeChant: (file: string) => string;
+        makeChant: (file: string, anchor?: string) => string;
         makePsalm: (
             intonation: string | false,
             psalm: string[],
             anchor: string
         ) => string;
 
-        makeTableOfContents: (table: TableOfContents) => string;
         makePsalmsIndex: (psIndex: PsalmIndex) => string;
+        makeGregIndex: (table: Table) => string;
+        makeTableOfContents: (table: TableOfContents) => string;
 
         error: (msg: string) => string;
     };

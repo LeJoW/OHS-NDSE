@@ -3,9 +3,11 @@ import { adapterType } from "../../tex2pdf/adapter/adapter.t";
 import { PsalmBuilder } from "../../buildPsalm/PsalmBuilder";
 import { TableOfContents } from "./TableOfContents";
 import { PsalmIndex } from "./PsalmIndex";
+import { Table } from "./Table";
 
-const table = new TableOfContents();
 const psalmIndex = new PsalmIndex();
+const gregoTable = new Table();
+const table = new TableOfContents();
 
 const blockConfig = (
     { blocks }: adapterType,
@@ -59,9 +61,15 @@ const blockConfig = (
             },
         },
         {
-            test: /^!\[.*\]\(([\S]+)\)$/,
-            callback: function gabc(_, file) {
-                return blocks.makeChant(file);
+            test: /^!\[(.*)\]\(([\S]+)\)$/,
+            callback: function gabc(_, label, file) {
+                let anchor;
+                const matches = label.match(/(?:(\d+):)?(\w+):(.+)/);
+                if (matches !== null) {
+                    const [, ton, type, title] = matches as string[];
+                    anchor = gregoTable.addChant(title, parseInt(ton), type);
+                }
+                return blocks.makeChant(file, anchor);
             },
         },
         {
@@ -101,15 +109,18 @@ const blockConfig = (
             },
         },
         {
-            test: /<table-of-contents\s*\/>/,
-            callback: function () {
-                return blocks.makeTableOfContents(table);
-            },
-        },
-        {
-            test: /<psalms-index\s*\/>/,
-            callback: function () {
-                return blocks.makePsalmsIndex(psalmIndex);
+            test: /<\s*(\S+)\s*\/>/,
+            callback: function (_, tag) {
+                switch (tag) {
+                    case "psalms-index":
+                        return blocks.makePsalmsIndex(psalmIndex);
+                    case "grego-index":
+                        return blocks.makeGregIndex(gregoTable);
+                    case "table-of-contents":
+                        return blocks.makeTableOfContents(table);
+                    default:
+                        return "";
+                }
             },
         },
     ],

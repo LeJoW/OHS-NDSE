@@ -14,12 +14,12 @@ export class PsalmIndex {
             return num === psalm;
         });
         let anchor: string;
-        if (getPsalmId >= 0) {
+        if (~getPsalmId !== 0) {
             const occurs = this.content[getPsalmId].occurrences;
-            anchor = this.generateAnchor(getPsalmId, occurs.length);
+            anchor = this.generateAnchor(psalm, occurs.length);
             occurs.push({ anchor, mode });
         } else {
-            anchor = this.generateAnchor(0, 0);
+            anchor = this.generateAnchor(psalm, 0);
             const incipit = incipits[psalm] || "Psalmus";
             this.content.push({
                 num: psalm,
@@ -49,7 +49,7 @@ export class PsalmIndex {
         });
     }
 
-    private generateAnchor(nthPs: number, nthOcc: number): string {
-        return `ps${nthPs}-x${nthOcc}`;
+    private generateAnchor(psalm: string, nthOcc: number): string {
+        return `ps${psalm}-x${nthOcc}`;
     }
 }

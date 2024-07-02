@@ -5,12 +5,12 @@ import { paragraphLettrine } from "./paragraphs";
 
 type blocks = adapterType["blocks"];
 
-const makeChant: blocks["makeChant"] = function (file: string) {
+const makeChant: blocks["makeChant"] = function (file, anchor = undefined) {
     const pdfInput = `../content/gabc/build/${file}.pdf`;
     if (!existsSync(pdfInput)) {
         return `Cannot find file \\verb|${file}|`;
     }
-    return `\\gabc{../${pdfInput}}`;
+    return (anchor ? `\\label{${anchor}}` : "") + `\\gabc{../${pdfInput}}`;
 };
 
 function printIntonation(verse: string): string {
