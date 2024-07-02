@@ -6,30 +6,27 @@ OUTPUT_DIR=$(WORK_DIR)/build
 TXT_FILES=$(wildcard $(MARKDOWN)/psalms/*.txt)
 JSON_FILES_FROM_TXT=$(TXT_FILES:$(MARKDOWN)/psalms/%.txt=buildPsalm/psalms/%.json)
 
-MD_FILES=$(wildcard $(MARKDOWN)/*.md)
-TEX_FILES_FROM_MD=$(MD_FILES:$(MARKDOWN)/%.md=$(SOURCE)/%.tex)
-
 LATEX_FILES=$(wildcard $(MARKDOWN)/*.tex)
 COPIED_LATEX_FILES=$(LATEX_FILES:$(MARKDOWN)/%.tex=$(SOURCE)/%.tex)
 
-all: $(OUTPUT_DIR)/core.pdf
+all: latex
 
-$(OUTPUT_DIR)/core.pdf: $(TEX_FILES_FROM_MD) $(COPIED_LATEX_FILES) $(JSON_FILES_FROM_TXT) $(WORK_DIR)/core.tex $(SOURCE)/hyphens.tex | $(OUTPUT_DIR)
+latex: parse $(COPIED_LATEX_FILES) $(JSON_FILES_FROM_TXT) $(WORK_DIR)/core.tex hyphenate | $(OUTPUT_DIR)
 	cd $(WORK_DIR) && lualatex --output-directory=build core.tex
 
-$(SOURCE)/%.tex: $(MARKDOWN)/%.md | $(SOURCE)
-	node dist/md2tex/main.js parse $< -o $@
+parse: $(MARKDOWN)/*.md | $(SOURCE)
+	node dist/md2tex/main.js parse ../content/md.list -o $(SOURCE)/parsed.tex
 
 $(SOURCE)/%.tex: $(MARKDOWN)/%.tex | $(SOURCE)
 	cp $< $@
 
-buildPsalm/psalms/%.json: $(MARKDOWN)/psalms/%.txt | buildPsalm
+buildPsalm/psalms/%.json: $(MARKDOWN)/psalms/%.txt
 	cat $< | php buildPsalm/parsePsalms.php > $@
 
-$(SOURCE)/hyphens.tex: $(MARKDOWN)/*.tex $(MARKDOWN)/*.md $(MARKDOWN)/psalms/*.txt
-	echo "\\hyphenation{" > $@
-	cat $(MARKDOWN)/*.tex $(MARKDOWN)/*.md $(MARKDOWN)/psalms/*.txt | php $(WORK_DIR)/hyphen/get-words.php | example $(WORK_DIR)/hyphen/hyph_la_VA.dic /dev/stdin | sed 's/=/-/g' >> $@
-	echo "}" >> $@
+hyphenate: $(MARKDOWN)/*.tex $(MARKDOWN)/*.md $(MARKDOWN)/psalms/*.txt
+	echo "\\hyphenation{" > $(SOURCE)/hyphens.tex
+	cat $(MARKDOWN)/*.tex $(MARKDOWN)/*.md $(MARKDOWN)/psalms/*.txt | php $(WORK_DIR)/hyphen/get-words.php | example $(WORK_DIR)/hyphen/hyph_la_VA.dic /dev/stdin | sed 's/=/-/g' >> $(SOURCE)/hyphens.tex
+	echo "}" >> $(SOURCE)/hyphens.tex
 
 $(SOURCE):
 	mkdir -p $(SOURCE)

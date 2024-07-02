@@ -1,7 +1,7 @@
 import { Syllabifier } from "./Syllabifier";
 
 test("", function () {
-    const syllabifier = new Syllabifier("tex2pdf/hyphen/hyph_la_VA.dic");
+    const syllabifier = new Syllabifier("tex2pdf/hyphen/hyph_la_VA_all.dic");
 
     expect(syllabifier.getSyllabsOf("semper")).toStrictEqual(["sem", "per"]);
     expect(syllabifier.getSyllabsOf("eam semper")).toStrictEqual([

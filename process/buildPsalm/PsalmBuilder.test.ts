@@ -11,7 +11,7 @@ adapter.strings.starSymbol = " *";
 adapter.strings.cruxSymbol = " +";
 
 const sys = new System();
-const syllabifier = new Syllabifier("tex2pdf/hyphen/hyph_la_VA.dic");
+const syllabifier = new Syllabifier("tex2pdf/hyphen/hyph_la_VA_all.dic");
 const psalmList = new PsalmList("buildPsalm/psalms", sys);
 const psalmCache = new PsalmCache("buildPsalm/cache", sys);
 
