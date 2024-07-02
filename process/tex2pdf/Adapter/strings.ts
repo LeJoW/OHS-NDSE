@@ -6,6 +6,7 @@ const cruxSymbol = "~{\\gcrux}";
 const symbols: { [key: string]: string } = {
     "\\*": starSymbol,
     "+": cruxSymbol,
+    "&": "\\&",
 };
 const replaceSymbols: adapterType["strings"]["replaceSymbols"] = function (
     symbol
@@ -23,8 +24,8 @@ const bold: adapterType["strings"]["bold"] = function (text) {
     return `\\bold{${text}}`;
 };
 
-const charsToReplace: { [key: string]: string } = {
-    ǽ: "{\\acae}",
+const romain: adapterType["strings"]["romain"] = function (text) {
+    return `\\romain{${text}}`;
 };
 
-export { replaceSymbols, starSymbol, cruxSymbol, italic, bold };
+export { replaceSymbols, starSymbol, cruxSymbol, italic, bold, romain };

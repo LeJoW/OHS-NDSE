@@ -18,6 +18,7 @@ import {
     starSymbol,
     italic,
     bold,
+    romain,
 } from "./strings";
 import { makeTableOfContents, makePsalmsIndex, makeGregIndex } from "./tables";
 
@@ -45,6 +46,7 @@ export const adapter: adapterType = {
         replaceSymbols,
         italic,
         bold,
+        romain,
         starSymbol,
         cruxSymbol,
     },

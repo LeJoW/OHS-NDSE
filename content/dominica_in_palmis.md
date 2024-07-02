@@ -1,6 +1,6 @@
-## Dominica secunda passionis \\seu in palmis <Dominica II Passionis> {Duplex I classis}
+## Dominica secunda passionis \\seu in palmis <Dominica II Passionis> {I classis}
 
-### Ad Tertiam
+### Ad Primam
 
 \vspace{-12mm}
 
@@ -8,33 +8,32 @@
 
 #### Hymnus
 
-![2:hymn:Nunc, Sancte, nobis, Spiritus](Nunc_Sancte)
+![2:hymn:Iam lucis orto sidere](Iam_lucis)
 
-![1:ant:Pueri Hebræorum… vestimenta](Pueri_Hebraeorum_vestimenta)
+![1:ant:Pueri Hebræorum… portantes](Pueri_Hebraeorum_portantes)
 
 #### Psalmus
 
-@(1f)[118eG,118fG,118gG]
+@(1f)[53G,118aG,118bG]
 
-![](Pueri_Hebraeorum_vestimenta.ant)
+![](Pueri_Hebraeorum_portantes.ant)
 
-#### Capitulum {Philipp. 2, 5-7}
+#### Capitulum {1 Tim 1, 17}
 
-: Fratres : Hoc enim sentíte in vobis, quod et in Christo Iesu : +
-qui, cum in forma Dei esset, non rapínam arbitrátus est esse se æquálem Deo :
-sed semetípsum exinanívit, formam servi accípiens, \*
-in similitúdinem hóminum factus, et hábitu invéntus ut homo.
+: Regi sæculórum immortáli et invisíbili, +
+soli Deo honor et glória \* in sǽcula sæculórum. Amen.
 \R Deo grátias.
 
-![](erue_a_framea)
+> Dicto capitulo subiungitur :
 
-![](kyrie_eleison)
+![](Christe_fili_Dei)
 
-![](pater_noster_secreto)
+\V Exsúrge, Christe, ádiuva nos.
+\R Et líbera nos propter nomen tuum.
 
 > Deinde dicitur :
 
-![](dominus_vobiscum)
+\DomineExaudi
 
 #### Orémus. {Oratio}
 
@@ -48,21 +47,75 @@ qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
 
 > Post orationem additur
 
-![](dominus_vobiscum.simplex)
+\DomineExaudi
 
 ![](benedicamus_domino.simplex)
 
-\pagebreak
+> Deinde in choro legitur martyrologium,
+> quod laudabiliter fit etiam extra chorum.
 
-&> Ante Missam pontificalem dicitur :
+> Postea hebdomadarius dicit :
 
-![](benedicamus_domino.pontificalis)
+\V Pretiósa in conspéctu Dómini.
+\R Mors sanctórum eius.
+
+> Et absolute sine _Orémus_.
+
+#### Oratio
+
+: Sancta María et omnes Sancti intercédant pro nobis ad Dóminum, +
+ut nos mereámur ab eo adiuvári et salvári, \*
+qui vivit et regnat in sǽcula sæculórum. \R Amen.
+
+\V Deus in adiutórium meum inténde.
+\R Dómine, ad adiuvándum me festína.
+
+> Et dicitur ter : ultimo additur :
+
+\V Gloria Patri. \R Sicut erat.
+
+![](kyrie_eleison)
+
+![](pater_noster_secreto)
+
+\V Réspice in servos tuos, Dómine, et in ópera tua, et dírige fílios eórum.
+\R Et sit splendor Dómini Dei nostri super nos, et ópera mánuum nostrárum dírige super nos,
+et opus mánuum nostrárum dírige.
+\V Gloria Patri. \R Sicut erat.
+
+#### Orémus. {Oratio}
+
+: Dirígere et sanctificáre, régere et gubernáre dignáre, Dómine Deus, Rex cæli et terræ, +
+hódie corda et córpora nostra, sensus, sermónes et actus nostros
+in lege tua, et in opéribus mandatórum tuórum: \*
+ut hic et in ætérnum, te auxiliánte, salvi et líberi esse mereámur,
+Salvátor mundi: Qui vivis et regnas in sǽcula sæculórum. ℟. Amen.
+
+\V Iube, Dómine, benedícere.
+
+_Benedictio_ Dies et actus nostros in sua pace dispónat Dóminus omnípotens. \R Amen.
+
+#### Lectio brevis {Is 50, 6 & 7}
+
+: Fáciem meam non avérti ab increpántibus, et conspuéntibus in me.
+Dóminus Deus auxiliátor meus, et ídeo non sum confúsus. Tu autem, Dómine.
+
+> Post lectionem brevem dicitur :
+
+\V Adiutórium nóstrum in nómine Dómini.
+\R Qui fecit cælum et terram.
+
+\V Benedicite. \R Deus.
+
+_Benedictio_ Dóminus nos benedícat, + et ab omni malo deféndat, \*
+et ad vitam perdúcat ætérnam.
+Et fidélium ánimæ per misericórdiam Dei requiéscant in pace. \R Amen.
 
 ### De solemni processione in honorem Christi Regis <Ad processionem>
 
 ### Ad Missam
 
-### Ad Sextam
+### Ad Vesperas
 
 \pagebreak
 

@@ -45,7 +45,7 @@ const blockConfig = (
         {
             test: /^>{1}\s+([\s\S]+)/,
             callback: function rubrique(_, text) {
-                return blocks.makeRubric(text);
+                return blocks.makeRubric(text.replace(/(\s*>\s*)/g, " "));
             },
         },
         {

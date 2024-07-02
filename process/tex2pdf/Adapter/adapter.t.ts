@@ -36,6 +36,7 @@ export type adapterType = {
 
         italic: (text: string) => string;
         bold: (text: string) => string;
+        romain: (text: string) => string;
 
         starSymbol: string;
         cruxSymbol: string;
