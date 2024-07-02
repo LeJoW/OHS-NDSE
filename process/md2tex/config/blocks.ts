@@ -1,6 +1,11 @@
 import { BlockConfigType } from "../Engine/Engine.i";
 import { adapterType } from "../../tex2pdf/adapter/adapter.t";
 import { PsalmBuilder } from "../../buildPsalm/PsalmBuilder";
+import { TableOfContents } from "./TableOfContents";
+import { PsalmIndex } from "./PsalmIndex";
+
+const table = new TableOfContents();
+const psalmIndex = new PsalmIndex();
 
 const blockConfig = (
     { blocks }: adapterType,
@@ -18,15 +23,15 @@ const blockConfig = (
             ) {
                 switch (titleLevel) {
                     case "##":
-                        return blocks.makeDayTite(
-                            title,
-                            subTitle,
-                            summary.length > 0 ? summary : title
-                        );
+                        var short = summary.length > 0 ? summary : title;
+                        table.addDay(short);
+                        return blocks.makeDayTite(title, subTitle, short);
                     case "###":
+                        var short = summary.length > 0 ? summary : title;
                         return blocks.makeOfficeTitle(
                             title,
-                            summary.length > 0 ? summary : title
+                            short,
+                            table.addOffice(short)
                         );
                     case "####":
                         return blocks.makeChapterTitle(title, subTitle);
@@ -54,7 +59,7 @@ const blockConfig = (
             },
         },
         {
-            test: /^!\{([\S]+)\}$/,
+            test: /^!\[.*\]\(([\S]+)\)$/,
             callback: function gabc(_, file) {
                 return blocks.makeChant(file);
             },
@@ -70,6 +75,10 @@ const blockConfig = (
                         const psalm = isDoxologie
                             ? psalmDescription.slice(0, -1)
                             : psalmDescription;
+                        const mode =
+                            ton.length > 0
+                                ? parseInt(ton.replace(/^(\d+)/, "$1"), 10)
+                                : null;
                         try {
                             return blocks.makePsalm(
                                 ton.length > 0 && index === 0
@@ -77,7 +86,8 @@ const blockConfig = (
                                     : false,
                                 psBuilder
                                     .buildPsalm(psalm, ton)
-                                    .slice(0, isDoxologie ? undefined : -2)
+                                    .slice(0, isDoxologie ? undefined : -2),
+                                psalmIndex.addPsalm(psalm, mode)
                             );
                         } catch (err) {
                             return blocks.error(
@@ -88,6 +98,18 @@ const blockConfig = (
                         }
                     })
                     .join("\n\n");
+            },
+        },
+        {
+            test: /<table-of-contents\s*\/>/,
+            callback: function () {
+                return blocks.makeTableOfContents(table);
+            },
+        },
+        {
+            test: /<psalms-index\s*\/>/,
+            callback: function () {
+                return blocks.makePsalmsIndex(psalmIndex);
             },
         },
     ],

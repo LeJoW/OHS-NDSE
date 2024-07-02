@@ -1,8 +1,20 @@
 \usepackage[french]{babel}
 \babelprovide[transforms = punctuation.space]{french}
 \usepackage[utf8]{inputenc}
+\usepackage[urw-garamond]{mathdesign}
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
-\usepackage[sc,osf]{mathpazo}
+\usepackage{newunicodechar}
 
-\setmainfont{EB Garamond}
+
+\setmainfont{PlantinStd-Light}[
+	Ligatures=Common,
+	BoldFont=PlantinStd-Bold,
+	ItalicFont=PlantinStd-LightItalic,
+	BoldItalicFont=PlantinStd-BoldItalic
+]
+\newunicodechar{℣}{\mbox{V\kern-0.85em\reflectbox{\rotatebox[origin=c]{25}{∫}}\kern-0.05em}}
+\newunicodechar{℟}{\mbox{R\kern-0.5em\reflectbox{\rotatebox[origin=c]{30}{∫}}\kern-0.25em}}
+\newunicodechar{ǽ}{æ\kern-0.5em´\kern0.15em}
+
+\newfontfamily\garamond[Numbers=OldStyle,WordSpace=2.5,ItalicFont=EBGaramond-Italic]{EBGaramond}

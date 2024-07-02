@@ -1,0 +1,26 @@
+\newenvironment{tableOfContents}{
+	\pagebreak
+	\thispagestyle{empty}
+	\sectionTitle{Index generalis}
+}{}
+
+\newenvironment{tableSection}{}{}
+\newenvironment{sectionEntries}{
+	\begin{itemize}
+		}{
+	\end{itemize}
+}
+
+\newcommand{\tableSectionTitle}[1]{{\sc\garamond #1}}
+\newcommand{\sectionEntry}[2]{\item[] #1\dotfill\pageref{#2}}
+
+\newenvironment{psIndex}{
+	\thispagestyle{empty}
+	\chapterTitle{Psalmi}{}
+	\begin{itemize}[left=0ex, leftmargin=0pt, labelwidth=1cm, labelsep=1cm, itemindent=2cm]
+		}{
+	\end{itemize}
+}
+
+\newcommand{\psEntry}[3]{\item[#1] #2. #3.}
+\newcommand{\psMode}[1]{{\sc\garamond (#1)}}

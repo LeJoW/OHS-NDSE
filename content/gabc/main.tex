@@ -3,29 +3,37 @@
 \input{../../process/tex2pdf/share}
 \usepackage{gregoriotex}
 
+\gresetspecial{R/}{℟}
+\gresetspecial{V/}{℣}
+\renewcommand{\GreStar}{\plantin *}
+\renewcommand{\GreDagger}{\plantin †}
+
 \grechangestaffsize{15}
 \grechangedim{intersyllablespacenotes}{0.25cm}{fixed}
 \grechangedim{minimalspaceatlinebeginning}{0.45cm}{fixed}
 \grechangedim{spaceaftersigns}{0.1cm}{fixed}
 \grechangedim{spacebeforeinlinecustos}{0.1cm}{fixed}
+\grechangedim{spacebeforeeolcustos}{0.4cm}{fixed}
 
 \gresetclivisalignment{never}
 
-\grechangestyle{modeline}{\sc}
+\grechangestyle{modeline}{\sc\garamond}
+\grechangestyle{annotation}{\garamond}
 
 \newcommand{\gabcDisplay}[1]{
-	\grechangestyle{initial}{\fontsize{95}{95}\selectfont}
-	\input{build/#1.gtex}
+	\grechangestyle{initial}{\fontsize{92}{92}\selectfont\garamond}
+	\gabcsnippet{#1}
 }
 
 \newcommand{\gabcNormal}[1]{
+	\grechangestyle{initial}{\fontsize{40}{40}\selectfont\garamond}
 	\gresetinitiallines{1}
-	\input{build/#1.gtex}
+	\gabcsnippet{#1}
 }
 
 \newcommand{\gabcSimplex}[1]{
 	\gresetinitiallines{0}
-	\input{build/#1.gtex}
+	\gabcsnippet{#1}
 }
 
 \newcommand{\gabcAnt}[1]{
@@ -34,5 +42,5 @@
 	\grechangedim{annotationraise}{-4mm}{scalable}
 	\gresetinitiallines{1}
 	\grechangestyle{initial}{\color{white}}
-	\input{build/#1.gtex}
+	\gabcsnippet{#1}
 }

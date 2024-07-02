@@ -9,22 +9,23 @@
 \newcommand{\dayTitle}[3]{
 \thispagestyle{empty}
 \begin{center}
-	{\titleSpaceLength=1.1em \onehalfspacing \Huge\MakeUppercase{#1}\par}
+	{\titleSpaceLength=1.1em \onehalfspacing \Huge\MakeUppercase{\garamond #1}\par}
 
 	{\vspace{1em}}
-	{\it #2}
+	{\it\garamond #2}
 \end{center}
 {\addvspace{1em}}
 \def\dayTitleShort{#3}
 }
 
-\newcommand{\officeTitle}[1]{
+\newcommand{\officeTitle}[2]{
+\titleSpaceLength=0.5em
 {\addvspace{1.5em}}
 \begin{center}
-	{\it\MakeUppercase{#1}}
+	{\MakeUppercase{\it\garamond #1}}
 \end{center}
 {\addvspace{1em}}
-\def\officeTitleShort{#1}
+\def\officeTitleShort{#2}
 }
 
 \newcommand{\sectionTitle}[1]{
@@ -39,9 +40,9 @@
 	\def\detail{#2}
 	\ifx\empty\detail
 		\begin{center}
-			#1
+			\garamond #1
 		\end{center}
 	\else
-		\hfill#1\hfill\hfill{\it #2}\hfill
+		{\hfill\garamond#1\hfill\hfill{\it\garamond #2}\hfill}
 	\fi
 }

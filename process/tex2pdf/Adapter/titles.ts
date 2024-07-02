@@ -1,21 +1,25 @@
 import { adapterType } from "./adapter.t";
 
+function setTitleSpace(title: string): string {
+    return title.replace(/\s+/g, "{\\titleSpace}");
+}
+
 const makeDayTite: adapterType["blocks"]["makeDayTite"] = function (
     title,
     dayClass,
     short
 ) {
-    return `\\dayTitle{${title.replace(
-        /\s+/g,
-        "{\\titleSpace}"
-    )}}{${dayClass}}{${short}}`;
+    return `\\dayTitle{${setTitleSpace(title)}}{${dayClass}}{${short}}`;
 };
 
 const makeOfficeTitle: adapterType["blocks"]["makeOfficeTitle"] = function (
     title,
-    short
+    short,
+    anchor
 ) {
-    return `\\officeTitle{${title.replace(/\s+/g, "{\\titleSpace}")}}`;
+    return `\\label{${anchor}}\\officeTitle{${setTitleSpace(title)}}{${
+        short.length > 0 ? short : title
+    }}`;
 };
 
 const makeSectionTitle: adapterType["blocks"]["makeSectionTitle"] = function (

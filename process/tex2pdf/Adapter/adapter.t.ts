@@ -1,7 +1,14 @@
+import { PsalmIndex } from "../../md2tex/config/PsalmIndex";
+import { TableOfContents } from "../../md2tex/config/TableOfContents";
+
 export type adapterType = {
     blocks: {
         makeDayTite: (title: string, dayClass: string, short: string) => string;
-        makeOfficeTitle: (title: string, short: string) => string;
+        makeOfficeTitle: (
+            title: string,
+            short: string,
+            anchor: string
+        ) => string;
         makeSectionTitle: (title: string) => string;
         makeChapterTitle: (title: string, addendum: string) => string;
 
@@ -11,7 +18,14 @@ export type adapterType = {
         paragraphStd: (content: string) => string;
 
         makeChant: (file: string) => string;
-        makePsalm: (intonation: string | false, psalm: string[]) => string;
+        makePsalm: (
+            intonation: string | false,
+            psalm: string[],
+            anchor: string
+        ) => string;
+
+        makeTableOfContents: (table: TableOfContents) => string;
+        makePsalmsIndex: (psIndex: PsalmIndex) => string;
 
         error: (msg: string) => string;
     };

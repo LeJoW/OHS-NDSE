@@ -4,8 +4,8 @@ const starSymbol = "~{\\gstella}";
 const cruxSymbol = "~{\\gcrux}";
 
 const symbols: { [key: string]: string } = {
-    " \\*": starSymbol,
-    " +": cruxSymbol,
+    "\\*": starSymbol,
+    "+": cruxSymbol,
 };
 const replaceSymbols: adapterType["strings"]["replaceSymbols"] = function (
     symbol
@@ -19,8 +19,12 @@ const italic: adapterType["strings"]["italic"] = function (
     return `\\italic{${text}}`;
 };
 
-const bold: adapterType["strings"]["bold"] = function (text: string): string {
+const bold: adapterType["strings"]["bold"] = function (text) {
     return `\\bold{${text}}`;
+};
+
+const charsToReplace: { [key: string]: string } = {
+    ǽ: "{\\acae}",
 };
 
 export { replaceSymbols, starSymbol, cruxSymbol, italic, bold };

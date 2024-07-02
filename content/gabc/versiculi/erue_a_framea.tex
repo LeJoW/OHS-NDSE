@@ -1,7 +1,9 @@
 \input{main}
 \usepackage[savepos]{zref}
 
-\makeatletter  
+\renewcommand{\Rbar}{℟}
+
+\makeatletter
 \newcounter{score}
 \newcounter{tabstop}[score]
 \newcommand{\grealign}{%
@@ -16,38 +18,38 @@
 }
 
 \newcommand{\setstops}{%
-  \gdef\nstabbing@stops{%
-    \hspace*{-\oddsidemargin}\hspace{-1in}%
-    \hspace*{\zposx{stop-\thescore-1} sp}\=%
-  }%
-  \count@=\@ne
-  \loop\ifnum\count@<\value{tabstop}%
-    \begingroup\edef\x{\endgroup
-      \noexpand\g@addto@macro\noexpand\nstabbing@stops{%
-        \noexpand\hspace{-\noexpand\zposx{stop-\thescore-\the\count@} sp}%
-        \noexpand\hspace{\noexpand\zposx{stop-\thescore-\the\numexpr\count@+1} sp}\noexpand\=%
-      }%
-    }\x
-    \advance\count@\@ne
-  \repeat
-  \nstabbing@stops\kill
+	\gdef\nstabbing@stops{%
+		\hspace*{-\oddsidemargin}\hspace{-1in}%
+		\hspace*{\zposx{stop-\thescore-1} sp}\=%
+	}%
+	\count@=\@ne
+	\loop\ifnum\count@<\value{tabstop}%
+	\begingroup\edef\x{\endgroup
+		\noexpand\g@addto@macro\noexpand\nstabbing@stops{%
+			\noexpand\hspace{-\noexpand\zposx{stop-\thescore-\the\count@} sp}%
+			\noexpand\hspace{\noexpand\zposx{stop-\thescore-\the\numexpr\count@+1} sp}\noexpand\=%
+		}%
+	}\x
+	\advance\count@\@ne
+	\repeat
+	\nstabbing@stops\kill
 }
 \makeatother
 
 \newenvironment{nstabbing}
-  {\setlength{\topsep}{0pt}%
-   \setlength{\partopsep}{0pt}%
-   \tabbing%
-   \setstops}
-  {\endtabbing\stepcounter{score}}
+{\setlength{\topsep}{0pt}%
+	\setlength{\partopsep}{0pt}%
+	\tabbing%
+	\setstops}
+{\endtabbing\stepcounter{score}}
 
 \gresetinitiallines{0}
 
 \begin{document}
 
-\input{build/erue_a_framea.gtex}%
+\input{build/erue_a_framea.gtex}
 \begin{nstabbing}
-\>\Rbar. \>Et \>de \>manu \>canis \>á\>ni\>mam \>me\>am.
+	\>\Rbar. \>Et \>de \>manu \>canis \>á\>ni\>mam \>me-\>am.
 \end{nstabbing}
 
 \end{document}

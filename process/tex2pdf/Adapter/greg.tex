@@ -19,11 +19,11 @@
 	\addvspace{4mm}
 	\setcounter{gabcCount}{0}
 	\setlength{\parindent}{0pt}
-	\setlength{\parskip}{2pt}
+	\setlength{\parskip}{4pt}
 	\whiledo{\value{gabcCount}<\pdfnumberofpages{#1}}{
 		\stepcounter{gabcCount}
 		\includegraphics[page=\thegabcCount,width=1\linewidth]{#1}
-
+		\par
 	}
 }
 

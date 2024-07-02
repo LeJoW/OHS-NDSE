@@ -31,9 +31,9 @@ function printPsalm(verses: string[]): string {
     ].join("\n");
 }
 
-const makePsalm: blocks["makePsalm"] = function (intonation, psalm) {
+const makePsalm: blocks["makePsalm"] = function (intonation, psalm, anchor) {
     return [
-        "\\begin{psalm}",
+        `\\label{${anchor}}\\begin{psalm}`,
         intonation ? makeChant(intonation) : printIntonation(psalm[0]),
         printPsalm(psalm.slice(1)),
         "\\end{psalm}",
