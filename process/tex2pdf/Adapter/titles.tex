@@ -7,42 +7,42 @@
 \newcommand{\titleSpace}{\hspace{\titleSpaceLength}}
 
 \newcommand{\dayTitle}[3]{
-\thispagestyle{empty}
-\begin{center}
-	{\titleSpaceLength=1.1em \onehalfspacing \Huge\MakeUppercase{\garamond #1}\par}
-
-	{\vspace{1em}}
-	{\it\garamond #2}
-\end{center}
-{\addvspace{1em}}
-\def\dayTitleShort{#3}
+	\pagebreak
+	\vspace*{4mm}
+	{
+		\titleSpaceLength=1.1em
+		\thispagestyle{empty}
+		{\centering \onehalfspacing \Huge\MakeUppercase{\garamond #1}\par}
+		\vspace{5mm}
+		{\centering\it\garamond #2\par}
+	}
+	\def\dayTitleShort{#3}
 }
 
 \newcommand{\officeTitle}[2]{
+\addvspace{5mm}
+{
 \titleSpaceLength=0.5em
-{\addvspace{1.5em}}
-\begin{center}
-	{\MakeUppercase{\it\garamond #1}}
-\end{center}
-{\addvspace{1em}}
+{\centering \MakeUppercase{\it\garamond #1}\par}
+}
+\addvspace{5mm}
 \def\officeTitleShort{#2}
 }
 
 \newcommand{\sectionTitle}[1]{
-	\begin{center}
-		{\MakeUppercase{#1}}
-	\end{center}
+	{\centering\MakeUppercase{#1}\par}
 }
 
 \newcommand{\chapterTitle}[2]{
-	\vspace{1em}
-	\needspace{2em}
+	\needspace{5mm}
+	\vspace{2mm}
 	\def\detail{#2}
 	\ifx\empty\detail
-		\begin{center}
-			\garamond #1
-		\end{center}
+		{\centering\garamond #1\par}
+		\vspace{2mm}
 	\else
 		{\hfill\garamond#1\hfill\hfill{\it\garamond #2}\hfill}
 	\fi
 }
+
+\newcommand{\psalmTitle}[1]{\needspace{1cm}{\centering #1\par}}

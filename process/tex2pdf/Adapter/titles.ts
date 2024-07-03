@@ -1,38 +1,25 @@
-import { adapterType } from "./adapter.t";
-
 function setTitleSpace(title: string): string {
     return title.replace(/\s+/g, "{\\titleSpace}");
 }
 
-const makeDayTite: adapterType["blocks"]["makeDayTite"] = function (
-    title,
-    dayClass,
-    short
-) {
+export function makeDayTite(title: string, dayClass: string, short: string) {
     return `\\dayTitle{${setTitleSpace(title)}}{${dayClass}}{${short}}`;
-};
+}
 
-const makeOfficeTitle: adapterType["blocks"]["makeOfficeTitle"] = function (
-    title,
-    short,
-    anchor
-) {
+export function makeOfficeTitle(title: string, short: string, anchor: string) {
     return `\\label{${anchor}}\\officeTitle{${setTitleSpace(title)}}{${
         short.length > 0 ? short : title
     }}`;
-};
+}
 
-const makeSectionTitle: adapterType["blocks"]["makeSectionTitle"] = function (
-    title
-) {
+export function makeSectionTitle(title: string) {
     return `\\sectionTitle{${title}}`;
-};
+}
 
-const makeChapterTitle: adapterType["blocks"]["makeChapterTitle"] = function (
-    title,
-    addendum
-) {
+export function makeChapterTitle(title: string, addendum: string) {
     return `\\chapterTitle{${title}}{${addendum}}`;
-};
+}
 
-export { makeDayTite, makeOfficeTitle, makeSectionTitle, makeChapterTitle };
+export function makePsalmTitle(title: string) {
+    return `\\psalmTitle{${title}}`;
+}

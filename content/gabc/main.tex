@@ -31,6 +31,13 @@
 	\gabcsnippet{#1}
 }
 
+\newcommand{\gabcAnnotation}[3]{
+	\greannotation{#1}
+	\greannotation{#2}
+	\grechangedim{annotationraise}{1mm}{fixed}
+	\gabcNormal{#3}
+}
+
 \newcommand{\gabcSimplex}[1]{
 	\gresetinitiallines{0}
 	\gabcsnippet{#1}

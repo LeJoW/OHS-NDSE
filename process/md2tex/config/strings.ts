@@ -3,7 +3,7 @@ import { adapterType } from "../../tex2pdf/adapter/adapter.t";
 
 const strConfig = ({ strings }: adapterType): StringConfigType => [
     {
-        test: /\s*((\+)|(&)|(\\\*))/g,
+        test: /\s*((\+)|(\\\*))/g,
         callback: function symbols(_, symbol) {
             return strings.replaceSymbols(symbol.trim());
         },
@@ -16,7 +16,13 @@ const strConfig = ({ strings }: adapterType): StringConfigType => [
             }
             return /^>/.test(ctx) ? strings.romain(text) : strings.italic(text);
         },
-    }
+    },
+    {
+        test: /(&|¶)/g,
+        callback: function chars(_, char) {
+            return strings.replaceChars(char);
+        },
+    },
 ];
 
 export default strConfig;

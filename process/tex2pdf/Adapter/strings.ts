@@ -1,31 +1,32 @@
-import { adapterType } from "./adapter.t";
-
-const starSymbol = "~{\\gstella}";
-const cruxSymbol = "~{\\gcrux}";
+export const starSymbol = "~{\\gstella}";
+export const cruxSymbol = "~{\\gcrux}";
 
 const symbols: { [key: string]: string } = {
     "\\*": starSymbol,
     "+": cruxSymbol,
+};
+
+const chars: { [key: string]: string } = {
     "&": "\\&",
-};
-const replaceSymbols: adapterType["strings"]["replaceSymbols"] = function (
-    symbol
-) {
-    return symbols[symbol] ? symbols[symbol] : symbol;
+    "¶": "\\par",
 };
 
-const italic: adapterType["strings"]["italic"] = function (
-    text: string
-): string {
+export function replaceSymbols(symbol: string) {
+    return symbols[symbol] || symbol;
+}
+
+export function italic(text: string): string {
     return `\\italic{${text}}`;
-};
+}
 
-const bold: adapterType["strings"]["bold"] = function (text) {
+export function bold(text: string) {
     return `\\bold{${text}}`;
-};
+}
 
-const romain: adapterType["strings"]["romain"] = function (text) {
+export function romain(text: string) {
     return `\\romain{${text}}`;
-};
+}
 
-export { replaceSymbols, starSymbol, cruxSymbol, italic, bold, romain };
+export function replaceChars(char: string) {
+    return chars[char] || char;
+}

@@ -4,6 +4,7 @@ import {
     makeDayTite,
     makeOfficeTitle,
     makeSectionTitle,
+    makePsalmTitle,
 } from "./titles";
 import {
     makeLesson,
@@ -15,6 +16,7 @@ import { makeChant, makePsalm } from "./greg";
 import {
     cruxSymbol,
     replaceSymbols,
+    replaceChars,
     starSymbol,
     italic,
     bold,
@@ -28,6 +30,7 @@ export const adapter: adapterType = {
         makeOfficeTitle,
         makeSectionTitle,
         makeChapterTitle,
+        makePsalmTitle,
         makeRubric,
         makeReplace,
         makeLesson,
@@ -43,6 +46,7 @@ export const adapter: adapterType = {
         },
     },
     strings: {
+        replaceChars,
         replaceSymbols,
         italic,
         bold,

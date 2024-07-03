@@ -2,7 +2,7 @@
 
 ### Ad Primam
 
-\vspace{-12mm}
+\vspace{-9mm}
 
 ![](Deus_in_adiutorium)
 
@@ -12,7 +12,7 @@
 
 ![1:ant:Pueri Hebræorum… portantes](Pueri_Hebraeorum_portantes)
 
-#### Psalmus
+##### Psalmus
 
 @(1f)[53G,118aG,118bG]
 
@@ -28,7 +28,7 @@ soli Deo honor et glória \* in sǽcula sæculórum. Amen.
 
 ![](Christe_fili_Dei)
 
-\V Exsúrge, Christe, ádiuva nos.
+\V Exsúrge, Christe, ádiuva nos.¶
 \R Et líbera nos propter nomen tuum.
 
 > Deinde dicitur :
@@ -56,18 +56,18 @@ qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
 
 > Postea hebdomadarius dicit :
 
-\V Pretiósa in conspéctu Dómini.
+\V Pretiósa in conspéctu Dómini.¶
 \R Mors sanctórum eius.
 
 > Et absolute sine _Orémus_.
 
-#### Oratio
+##### Oratio
 
 : Sancta María et omnes Sancti intercédant pro nobis ad Dóminum, +
 ut nos mereámur ab eo adiuvári et salvári, \*
 qui vivit et regnat in sǽcula sæculórum. \R Amen.
 
-\V Deus in adiutórium meum inténde.
+\V Deus in adiutórium meum inténde.¶
 \R Dómine, ad adiuvándum me festína.
 
 > Et dicitur ter : ultimo additur :
@@ -78,9 +78,9 @@ qui vivit et regnat in sǽcula sæculórum. \R Amen.
 
 ![](pater_noster_secreto)
 
-\V Réspice in servos tuos, Dómine, et in ópera tua, et dírige fílios eórum.
+\V Réspice in servos tuos, Dómine, et in ópera tua, et dírige fílios eórum.¶
 \R Et sit splendor Dómini Dei nostri super nos, et ópera mánuum nostrárum dírige super nos,
-et opus mánuum nostrárum dírige.
+et opus mánuum nostrárum dírige.¶
 \V Gloria Patri. \R Sicut erat.
 
 #### Orémus. {Oratio}
@@ -89,20 +89,20 @@ et opus mánuum nostrárum dírige.
 hódie corda et córpora nostra, sensus, sermónes et actus nostros
 in lege tua, et in opéribus mandatórum tuórum: \*
 ut hic et in ætérnum, te auxiliánte, salvi et líberi esse mereámur,
-Salvátor mundi: Qui vivis et regnas in sǽcula sæculórum. ℟. Amen.
+Salvátor mundi: Qui vivis et regnas in sǽcula sæculórum. \R Amen.
 
 \V Iube, Dómine, benedícere.
 
 _Benedictio_ Dies et actus nostros in sua pace dispónat Dóminus omnípotens. \R Amen.
 
-#### Lectio brevis {Is 50, 6 & 7}
+#### Lectio brevis {Is 50, 6 et 7}
 
 : Fáciem meam non avérti ab increpántibus, et conspuéntibus in me.
 Dóminus Deus auxiliátor meus, et ídeo non sum confúsus. Tu autem, Dómine.
 
 > Post lectionem brevem dicitur :
 
-\V Adiutórium nóstrum in nómine Dómini.
+\V Adiutórium nóstrum in nómine Dómini.¶
 \R Qui fecit cælum et terram.
 
 \V Benedicite. \R Deus.
@@ -119,7 +119,7 @@ Et fidélium ánimæ per misericórdiam Dei requiéscant in pace. \R Amen.
 
 \pagebreak
 
-##### Index
+###### Index
 
 <psalms-index />
 

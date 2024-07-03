@@ -11,6 +11,7 @@ export type adapterType = {
             anchor: string
         ) => string;
         makeSectionTitle: (title: string) => string;
+        makePsalmTitle: (title: string) => string;
         makeChapterTitle: (title: string, addendum: string) => string;
 
         makeRubric: (content: string) => string;
@@ -33,6 +34,7 @@ export type adapterType = {
     };
     strings: {
         replaceSymbols: (symbol: string) => string;
+        replaceChars: (char: string) => string;
 
         italic: (text: string) => string;
         bold: (text: string) => string;

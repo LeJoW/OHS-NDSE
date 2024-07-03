@@ -1,4 +1,4 @@
-\documentclass[a5paper,12pt]{extarticle}
+\documentclass[12pt]{article}
 \usepackage[twoside,
     paperwidth=13cm,
     paperheight=19.7cm,
@@ -10,10 +10,8 @@
     headsep=5mm
 ]{geometry}
 \input{share}
-\usepackage{textcomp}
 \usepackage{microtype}
 \usepackage{hyperref}
-\usepackage{tabularx}
 \usepackage{needspace}
 \usepackage{lettrine}
 \usepackage{fancyhdr}
@@ -24,9 +22,7 @@
 \input{styles}
 
 \begin{document}
-\fontdimen2\font=1ex
-\fontdimen3\font=1ex
-\fontdimen4\font=0ex
-
-\UseRawInputEncoding{\input{include}}
+\begin{body}
+	\UseRawInputEncoding{\input{include}}
+\end{body}
 \end{document}

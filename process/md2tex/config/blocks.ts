@@ -37,6 +37,8 @@ const blockConfig = (
                         );
                     case "####":
                         return blocks.makeChapterTitle(title, subTitle);
+                    case "#####":
+                        return blocks.makePsalmTitle(title);
                     default:
                         return blocks.makeSectionTitle(title);
                 }
