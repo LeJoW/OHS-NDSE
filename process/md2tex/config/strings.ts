@@ -16,13 +16,7 @@ const strConfig = ({ strings }: adapterType): StringConfigType => [
             }
             return /^>/.test(ctx) ? strings.romain(text) : strings.italic(text);
         },
-    },
-    {
-        test: /^((\\R)|(\\V))/,
-        callback: function (_, symb) {
-            return `\n${symb}`;
-        },
-    },
+    }
 ];
 
 export default strConfig;
