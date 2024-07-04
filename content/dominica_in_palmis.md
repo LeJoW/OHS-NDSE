@@ -12,9 +12,13 @@
 
 ![1:ant:Pueri Hebræorum… portantes](Pueri_Hebraeorum_portantes)
 
-##### Psalmus
+##### Psalmus 53
 
-@(1f)[53G,118aG,118bG]
+@(1f)[53G]
+
+##### Psalmus 118
+
+@(1f)[,118aG,118bG]
 
 ![](Pueri_Hebraeorum_portantes.ant)
 
@@ -28,7 +32,7 @@ soli Deo honor et glória \* in sǽcula sæculórum. Amen.
 
 ![](Christe_fili_Dei)
 
-\V Exsúrge, Christe, ádiuva nos.¶
+\V Exsúrge, Christe, ádiuva nos.§
 \R Et líbera nos propter nomen tuum.
 
 > Deinde dicitur :
@@ -56,7 +60,7 @@ qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
 
 > Postea hebdomadarius dicit :
 
-\V Pretiósa in conspéctu Dómini.¶
+\V Pretiósa in conspéctu Dómini.§
 \R Mors sanctórum eius.
 
 > Et absolute sine _Orémus_.
@@ -67,7 +71,7 @@ qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula
 ut nos mereámur ab eo adiuvári et salvári, \*
 qui vivit et regnat in sǽcula sæculórum. \R Amen.
 
-\V Deus in adiutórium meum inténde.¶
+\V Deus in adiutórium meum inténde.§
 \R Dómine, ad adiuvándum me festína.
 
 > Et dicitur ter : ultimo additur :
@@ -78,9 +82,9 @@ qui vivit et regnat in sǽcula sæculórum. \R Amen.
 
 ![](pater_noster_secreto)
 
-\V Réspice in servos tuos, Dómine, et in ópera tua, et dírige fílios eórum.¶
+\V Réspice in servos tuos, Dómine, et in ópera tua, et dírige fílios eórum.§
 \R Et sit splendor Dómini Dei nostri super nos, et ópera mánuum nostrárum dírige super nos,
-et opus mánuum nostrárum dírige.¶
+et opus mánuum nostrárum dírige.§
 \V Gloria Patri. \R Sicut erat.
 
 #### Orémus. {Oratio}
@@ -102,7 +106,7 @@ Dóminus Deus auxiliátor meus, et ídeo non sum confúsus. Tu autem, Dómine.
 
 > Post lectionem brevem dicitur :
 
-\V Adiutórium nóstrum in nómine Dómini.¶
+\V Adiutórium nóstrum in nómine Dómini.§
 \R Qui fecit cælum et terram.
 
 \V Benedicite. \R Deus.

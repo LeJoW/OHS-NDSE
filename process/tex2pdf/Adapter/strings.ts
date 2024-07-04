@@ -8,7 +8,7 @@ const symbols: { [key: string]: string } = {
 
 const chars: { [key: string]: string } = {
     "&": "\\&",
-    "¶": "\\par",
+    "§": "\\newline\\indent",
 };
 
 export function replaceSymbols(symbol: string) {

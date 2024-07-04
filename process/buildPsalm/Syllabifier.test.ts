@@ -48,4 +48,7 @@ test("", function () {
         "á",
         "rum:",
     ]);
+
+    expect(syllabifier.getSyllabsOf("semper _")).toStrictEqual(["sem", "per _"]);
+    expect(syllabifier.getSyllabsOf("semper ---")).toStrictEqual(["sem", "per ---"]);
 });

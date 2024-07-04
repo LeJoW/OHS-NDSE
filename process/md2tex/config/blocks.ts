@@ -81,6 +81,9 @@ const blockConfig = (
                     .split(",")
                     .map(function (psalmDesc, index): string {
                         const psalmDescription = psalmDesc.trim();
+                        if (psalmDescription.length === 0) {
+                            return "";
+                        }
                         const isDoxologie = /G$/.test(psalmDescription);
                         const psalm = isDoxologie
                             ? psalmDescription.slice(0, -1)
@@ -103,7 +106,7 @@ const blockConfig = (
                             return blocks.error(
                                 err instanceof Error
                                     ? err.message
-                                    : `Psalm ${psalm}: Unkown error`
+                                    : `Psalm '${psalm}': Unkown error`
                             );
                         }
                     })

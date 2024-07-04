@@ -39,7 +39,7 @@ export class PsalmBuilder {
 
     setUpPsalm(verses: string[][], ton: string): string[] {
         if (tons[ton] === undefined) {
-            throw new Error(`The ton ${ton} is not configured.`);
+            throw new Error(`The ton '${ton}' is not configured.`);
         }
         const tonConfig = tons[ton];
         return verses.map((verse) => this.setUpVerse(verse, tonConfig));

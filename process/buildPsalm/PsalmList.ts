@@ -24,7 +24,7 @@ export class PsalmList implements PsalmListInterface {
         try {
             psalm = this.system.readJSON(`${this.path}/${psalmDivision}.json`);
         } catch (error) {
-            throw new Error(`The psalm ${psalmDivision} is not stored`);
+            throw new Error(`The psalm '${psalmDivision}' is not stored`);
         }
         return [...psalm, ...this.doxologie];
     }

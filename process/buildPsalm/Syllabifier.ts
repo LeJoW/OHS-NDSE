@@ -25,6 +25,13 @@ export class Syllabifier implements SyllabifierInterface {
                 const output = sentence.slice(scanIndex, newScanIndex);
                 scanIndex = newScanIndex;
                 return output;
-            });
+            })
+            .reduce(function (acc: string[], syllab): string[] {
+                if (!/[a-záéíóúǽæœ́œ]/i.test(syllab) && acc.length > 0) {
+                    acc[acc.length - 1] += syllab;
+                    return acc;
+                }
+                return [...acc, syllab];
+            }, []);
     }
 }

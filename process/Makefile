@@ -9,12 +9,12 @@ JSON_FILES_FROM_TXT=$(TXT_FILES:$(MARKDOWN)/psalms/%.txt=buildPsalm/psalms/%.jso
 LATEX_FILES=$(wildcard $(MARKDOWN)/*.tex)
 COPIED_LATEX_FILES=$(LATEX_FILES:$(MARKDOWN)/%.tex=$(SOURCE)/%.tex)
 
-all: parse $(COPIED_LATEX_FILES) $(JSON_FILES_FROM_TXT) $(WORK_DIR)/core.tex hyphenate pdf | $(OUTPUT_DIR)
+all: parse $(COPIED_LATEX_FILES) $(WORK_DIR)/core.tex hyphenate pdf | $(OUTPUT_DIR)
 
 pdf:
 	cd $(WORK_DIR) && lualatex --output-directory=build core.tex
 
-parse: $(MARKDOWN)/*.md | $(SOURCE)
+parse: $(JSON_FILES_FROM_TXT) $(MARKDOWN)/*.md | $(SOURCE)
 	node dist/md2tex/main.js parse ../content/md.list -o $(SOURCE)/parsed.tex
 
 $(SOURCE)/%.tex: $(MARKDOWN)/%.tex | $(SOURCE)

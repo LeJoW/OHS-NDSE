@@ -38,15 +38,15 @@ export class PsalmIndex {
             return [...acc, el];
         },
         []);
-        return copy.sort(function ({ num: A }, { num: B }) {
-            if (A < B) {
-                return -1;
-            }
-            if (B < A) {
-                return 1;
-            }
-            return 0;
-        });
+        return copy.sort(({ num: a }, { num: b }) =>
+            this.setUpPsalmRefToCompare(a).localeCompare(
+                this.setUpPsalmRefToCompare(b)
+            )
+        );
+    }
+
+    private setUpPsalmRefToCompare(ref: string): string {
+        return ref.padStart(3, "0").padEnd(4, "a");
     }
 
     private generateAnchor(psalm: string, nthOcc: number): string {

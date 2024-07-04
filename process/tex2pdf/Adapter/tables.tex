@@ -23,7 +23,7 @@
 \newenvironment{psIndex}{
 	\thispagestyle{empty}
 	\tableTitle{Psalmi}{}
-	\begin{itemize}[left=0pt, leftmargin=0pt, labelwidth=1cm, labelsep=1cm, itemindent=2cm]
+	\begin{itemize}[left=0pt, leftmargin=0pt, labelwidth=*, labelsep=1cm, itemindent=*]
 		}{
 	\end{itemize}
 }
@@ -41,9 +41,9 @@
 	\end{multicols}
 }
 \newenvironment{gregList}{
-	\begin{itemize}[leftmargin=3mm, rightmargin=3mm]
+	\begin{itemize}[leftmargin=7.5mm, labelsep=2mm, itemindent=-3mm, rightmargin=4mm]
 		}{
 	\end{itemize}
 }
 
-\newcommand{\gregEntry}[3]{\small\item[#1] #2\dotfill\pageref{#3}\hspace{-3mm}}
+\newcommand{\gregEntry}[3]{\small\item[#1] #2\dotfill\pageref{#3}\hspace{-4mm}}

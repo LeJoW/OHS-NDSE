@@ -18,7 +18,7 @@ const strConfig = ({ strings }: adapterType): StringConfigType => [
         },
     },
     {
-        test: /(&|¶)/g,
+        test: /(&|§)/g,
         callback: function chars(_, char) {
             return strings.replaceChars(char);
         },
