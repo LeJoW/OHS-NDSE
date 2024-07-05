@@ -1,5 +1,5 @@
 export const incipits: { [ps: string]: string } = {
-    "118e": "Legem pone mihi Domine",
-    "118f": "Et veniat super me misericordia tua",
-    "118g": "Memor esto verbi tui",
+    "53": "Deus, in nomine tuo salvum me fac",
+    "118a": "Beati immaculati in via",
+    "118b": "Retribue servo tuo, vivifica me",
 };

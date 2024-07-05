@@ -12,13 +12,11 @@
 
 ![1:ant:Pueri Hebræorum… portantes](Pueri_Hebraeorum_portantes)
 
-##### Psalmus 53
-
-@(1f)[53G]
-
-##### Psalmus 118
-
-@(1f)[,118aG,118bG]
+@(1f)[
+    53G:    Psalmus 53;;
+    118aG:  Psalmus 118;;
+    118bG
+]
 
 ![](Pueri_Hebraeorum_portantes.ant)
 

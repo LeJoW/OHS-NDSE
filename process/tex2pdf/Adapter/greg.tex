@@ -29,6 +29,11 @@
 	\addvspace{4mm}
 }
 
+\newenvironment{psalm}{
+	\setlength{\parsep}{0pt}
+	\setlength{\parskip}{0pt}
+}{}
+
 \newenvironment{intonation}{}{\par}
 
 \newenvironment{verses}{
@@ -39,9 +44,5 @@
 	\end{enumerate}
 }
 
-\newenvironment{psalm}{
-	\setlength{\parsep}{0pt}
-	\setlength{\parskip}{0pt}
-}{
-	%\addvspace{4mm}
-}
+\newenvironment{psalmBody}{
+}{}

@@ -75,40 +75,51 @@ const blockConfig = (
             },
         },
         {
-            test: /^@(?:\((\S+)\))?\[([\S]+)\]/,
+            test: /^@(?:\((\S+)\))?\[([\S\s]+)\]/,
             callback: function psautier(_, ton, psaumes) {
                 return psaumes
-                    .split(",")
+                    .split(";;")
                     .map(function (psalmDesc, index): string {
-                        const psalmDescription = psalmDesc.trim();
-                        if (psalmDescription.length === 0) {
+                        if (psalmDesc.trim().length === 0) {
                             return "";
                         }
-                        const isDoxologie = /G$/.test(psalmDescription);
-                        const psalm = isDoxologie
-                            ? psalmDescription.slice(0, -1)
-                            : psalmDescription;
-                        const mode =
-                            ton.length > 0
-                                ? parseInt(ton.replace(/^(\d+)/, "$1"), 10)
-                                : null;
-                        try {
-                            return blocks.makePsalm(
-                                ton.length > 0 && index === 0
-                                    ? `${psalm}-${ton}`
-                                    : false,
-                                psBuilder
-                                    .buildPsalm(psalm, ton)
-                                    .slice(0, isDoxologie ? undefined : -2),
-                                psalmIndex.addPsalm(psalm, mode)
-                            );
-                        } catch (err) {
-                            return blocks.error(
-                                err instanceof Error
-                                    ? err.message
-                                    : `Psalm '${psalm}': Unkown error`
-                            );
-                        }
+                        return psalmDesc.replace(
+                            /^\s*(\S+?)\s*(?::\s*(.+))?\s*$/,
+                            function (_, psalmDescription, title) {
+                                const isDoxologie = /G$/.test(psalmDescription);
+                                const psalm = isDoxologie
+                                    ? psalmDescription.slice(0, -1)
+                                    : psalmDescription;
+                                const mode =
+                                    ton.length > 0
+                                        ? parseInt(
+                                              ton.replace(/^(\d+)/, "$1"),
+                                              10
+                                          )
+                                        : null;
+                                try {
+                                    return blocks.makePsalm(
+                                        title && title.length > 0 ? title : false,
+                                        ton.length > 0 && index === 0
+                                            ? `${psalm}-${ton}`
+                                            : false,
+                                        psBuilder
+                                            .buildPsalm(psalm, ton)
+                                            .slice(
+                                                0,
+                                                isDoxologie ? undefined : -2
+                                            ),
+                                        psalmIndex.addPsalm(psalm, mode)
+                                    );
+                                } catch (err) {
+                                    return blocks.error(
+                                        err instanceof Error
+                                            ? err.message
+                                            : `Psalm '${psalm}': Unkown error`
+                                    );
+                                }
+                            }
+                        );
                     })
                     .join("\n\n");
             },

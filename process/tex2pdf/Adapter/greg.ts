@@ -31,13 +31,21 @@ function printPsalm(verses: string[]): string {
     ].join("\n");
 }
 
-const makePsalm: blocks["makePsalm"] = function (intonation, psalm, anchor) {
-    return [
-        `\\label{${anchor}}\\begin{psalm}`,
-        intonation ? makeChant(intonation) : printIntonation(psalm[0]),
-        printPsalm(psalm.slice(1)),
-        "\\end{psalm}",
-    ].join("\n");
+const makePsalm: blocks["makePsalm"] = function (
+    title,
+    intonation,
+    psalm,
+    anchor
+) {
+    const outTitle = title ? `\\psalmTitle{${title}}` : "";
+    const output = [`\\label{${anchor}}\\begin{psalm}`];
+    if (intonation) {
+        output.push(outTitle, makeChant(intonation), "\\begin{psalmBody}");
+    } else {
+        output.push("\\begin{psalmBody}", outTitle, printIntonation(psalm[0]));
+    }
+    output.push(printPsalm(psalm.slice(1)), "\\end{psalmBody}", "\\end{psalm}");
+    return output.join("\n");
 };
 
 export { makeChant, makePsalm };

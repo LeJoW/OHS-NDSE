@@ -10,27 +10,4 @@ test("blocks", function () {
         "Nothing to see here. But set a title :",
         "# Fancy title",
     ]);
-
-    expect(new Document(content).getEveryWords()).toStrictEqual([
-        "nothing",
-        "to",
-        "see",
-        "here",
-        "but",
-        "set",
-        "title",
-        "fancy",
-    ]);
-
-    expect(
-        new Document("Deus, in adiutórium meum inténde.").getEveryWords()
-    ).toStrictEqual(["deus", "in", "adiutórium", "meum", "inténde"]);
-
-    expect(
-        new Document("Ástitit regína a dextris tuis.").getEveryWords()
-    ).toStrictEqual(["ástitit", "regína", "dextris", "tuis"]);
-
-    expect(
-        new Document("et in sǽcula sæculórum. Amen.").getEveryWords()
-    ).toStrictEqual(["et", "in", "sǽcula", "sæculórum", "amen"]);
 });

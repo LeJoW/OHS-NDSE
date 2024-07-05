@@ -1,5 +1,3 @@
-\usepackage{multicol}
-
 \newcommand{\tableTitle}[1]{
 	{\centering\bf\garamond #1\par}
 }
@@ -31,14 +29,10 @@
 \newcommand{\psEntry}[3]{\small\item[#1] #2. #3.}
 \newcommand{\psMode}[1]{({\sc\garamond #1})}
 
-\setlength\columnsep{5mm}
-\setlength\columnseprule{0.4pt}
-\setlength\multicolsep{0pt}
-
 \newenvironment{gregIndex}{
-	\begin{multicols}{2}
+	\begin{colonnes}
 		}{
-	\end{multicols}
+	\end{colonnes}
 }
 \newenvironment{gregList}{
 	\begin{itemize}[leftmargin=7.5mm, labelsep=2mm, itemindent=-3mm, rightmargin=4mm]

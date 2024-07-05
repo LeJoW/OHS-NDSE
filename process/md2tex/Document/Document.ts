@@ -11,16 +11,6 @@ export default class Document implements DocumentInterface {
         return this.rawContent
             .split(/(?:\n[\s]*\n)+/)
             .filter((block) => block.length > 0)
-            .map((block) => block.replace("\n", " "));
-    }
-
-    getEveryWords(): string[] {
-        return this.rawContent
-            .split(/[^\wáéíóúæǽœ]+/i)
-            .filter((w) => w.length > 1 && !/\d|_/.test(w))
-            .map((w) => w.toLowerCase())
-            .reduce(function (acc: string[], word: string) {
-                return acc.includes(word) ? acc : [...acc, word];
-            }, []);
+            .map((block) => block.replace(/\n/g, " ").trim());
     }
 }

@@ -21,6 +21,7 @@ export type adapterType = {
 
         makeChant: (file: string, anchor?: string) => string;
         makePsalm: (
+            title: string | false,
             intonation: string | false,
             psalm: string[],
             anchor: string

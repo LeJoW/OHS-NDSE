@@ -17,12 +17,14 @@
 \usepackage{fancyhdr}
 \usepackage[document]{ragged2e}
 \usepackage{setspace}
+\usepackage{multicol}
+
 \input{source/hyphens}
 \input{adapter/adapter}
 \input{styles}
 
 \begin{document}
 \begin{body}
-	\UseRawInputEncoding{\input{include}}
+	\UseRawInputEncoding{\input{./source/main.tex}}
 \end{body}
 \end{document}
