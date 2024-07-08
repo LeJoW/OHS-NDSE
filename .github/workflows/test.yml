@@ -15,7 +15,7 @@ jobs:
                   autoreconf -fvi
                   ./configure
                   make
-                  make install
+                  sudo make install
             - name: Install modules
               run: npm i
             - name: Run tests
