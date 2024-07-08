@@ -8,9 +8,15 @@ jobs:
                 working-directory: ./process
         steps:
             - uses: actions/checkout@v2
-            - name: Install modules
+            - name: Build example
               run: |
-                sudo apt-get install libhunspell
-                npm i
+                  git clone 'https://github.com/hunspell/hyphen.git'
+                  cd hyphen
+                  autoreconf -fvi
+                  ./configure
+                  make
+                  make install
+            - name: Install modules
+              run: npm i
             - name: Run tests
               run: npm test
