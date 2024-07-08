@@ -1,16 +1,31 @@
 import { BlockConfigType } from "../Engine/Engine.i";
 import { adapterType } from "../../tex2pdf/adapter/adapter.t";
 import { PsalmBuilder } from "../../buildPsalm/PsalmBuilder";
-import { TableOfContents } from "./TableOfContents";
+import { TableOfContents } from "../Abstract/TableOfContents";
 import { PsalmIndex } from "./PsalmIndex";
 import { Table } from "./Table";
+import {
+    DayTitle,
+    LessonTitle,
+    OfficeTitle,
+    PsalmTitle,
+    SectionTitle,
+} from "../Abstract/titles";
+import {
+    Lesson,
+    ParagraphStd,
+    RemplacementRubric,
+    Rubric,
+} from "../Abstract/paragraphs";
+import { Cantus } from "../Abstract/Catnus";
+import { Psalmus, Psalterium } from "../Abstract/Psalterium";
 
 const psalmIndex = new PsalmIndex();
 const gregoTable = new Table();
 const table = new TableOfContents();
 
 const blockConfig = (
-    { blocks }: adapterType,
+    adapter: adapterType,
     psBuilder: PsalmBuilder
 ): BlockConfigType => ({
     desc: [
@@ -25,53 +40,68 @@ const blockConfig = (
             ) {
                 switch (titleLevel) {
                     case "##":
-                        var short = summary.length > 0 ? summary : title;
-                        table.addDay(short);
-                        return blocks.makeDayTite(title, subTitle, short);
+                        const dayTitle = new DayTitle(title);
+                        dayTitle.dayClass = subTitle;
+                        if (summary.length > 0) {
+                            dayTitle.shortTitle = summary;
+                        }
+                        table.addDay(dayTitle.shortTitle);
+                        return dayTitle.toString(adapter);
                     case "###":
-                        var short = summary.length > 0 ? summary : title;
-                        return blocks.makeOfficeTitle(
-                            title,
-                            short,
-                            table.addOffice(short)
+                        const officeTitle = new OfficeTitle(title);
+                        if (summary.length > 0) {
+                            officeTitle.shortTitle = summary;
+                        }
+                        officeTitle.anchor = table.addOffice(
+                            officeTitle.shortTitle
                         );
+                        return officeTitle.toString(adapter);
                     case "####":
-                        return blocks.makeChapterTitle(title, subTitle);
+                        const lessonTitle = new LessonTitle(title);
+                        lessonTitle.addendum = subTitle;
+                        return lessonTitle.toString(adapter);
                     case "#####":
-                        return blocks.makePsalmTitle(title);
+                        return new PsalmTitle(title).toString(adapter);
                     default:
-                        return blocks.makeSectionTitle(title);
+                        return new SectionTitle(title).toString(adapter);
                 }
             },
         },
         {
             test: /^>{1}\s+([\s\S]+)/,
             callback: function rubrique(_, text) {
-                return blocks.makeRubric(text.replace(/(\s*>\s*)/g, " "));
+                return new Rubric(text.replace(/>/g, " ")).toString(adapter);
             },
         },
         {
             test: /^(?:&>){1}\s+([\s\S]+)/,
             callback: function remplacement(_, text) {
-                return blocks.makeReplace(text);
+                return new RemplacementRubric(text).toString(adapter);
             },
         },
         {
             test: /^:+\s*([\S\s]+)$/,
             callback: function lecture(_, text) {
-                return blocks.makeLesson(text);
+                return new Lesson(text).toString(adapter);
             },
         },
         {
             test: /^!\[(.*)\]\(([\S]+)\)$/,
             callback: function gabc(_, label, file) {
-                let anchor;
                 const matches = label.match(/(?:(\d+):)?(\w+):(.+)/);
+                const cantus = new Cantus(file);
                 if (matches !== null) {
                     const [, ton, type, title] = matches as string[];
-                    anchor = gregoTable.addChant(title, parseInt(ton), type);
+                    cantus.type = type;
+                    cantus.mode = parseInt(ton);
+                    cantus.incipit = title;
+                    cantus.anchor = gregoTable.addChant(
+                        cantus.incipit,
+                        cantus.mode,
+                        cantus.type
+                    );
                 }
-                return blocks.makeChant(file, anchor);
+                return cantus.toString(adapter);
             },
         },
         {
@@ -79,49 +109,41 @@ const blockConfig = (
             callback: function psautier(_, ton, psaumes) {
                 return psaumes
                     .split(";;")
-                    .map(function (psalmDesc, index): string {
-                        if (psalmDesc.trim().length === 0) {
-                            return "";
-                        }
-                        return psalmDesc.replace(
-                            /^\s*(\S+?)\s*(?::\s*(.+))?\s*$/,
-                            function (_, psalmDescription, title) {
-                                const isDoxologie = /G$/.test(psalmDescription);
-                                const psalm = isDoxologie
-                                    ? psalmDescription.slice(0, -1)
-                                    : psalmDescription;
-                                const mode =
-                                    ton.length > 0
-                                        ? parseInt(
-                                              ton.replace(/^(\d+)/, "$1"),
-                                              10
-                                          )
-                                        : null;
-                                try {
-                                    return blocks.makePsalm(
-                                        title && title.length > 0 ? title : false,
-                                        ton.length > 0 && index === 0
-                                            ? `${psalm}-${ton}`
-                                            : false,
-                                        psBuilder
-                                            .buildPsalm(psalm, ton)
-                                            .slice(
-                                                0,
-                                                isDoxologie ? undefined : -2
-                                            ),
-                                        psalmIndex.addPsalm(psalm, mode)
-                                    );
-                                } catch (err) {
-                                    return blocks.error(
-                                        err instanceof Error
-                                            ? err.message
-                                            : `Psalm '${psalm}': Unkown error`
-                                    );
-                                }
-                            }
-                        );
+                    .filter(function () {
+                        return true;
                     })
-                    .join("\n\n");
+                    .map(function (psalmDesc): Psalmus {
+                        const [, psalmDescription, title] = psalmDesc.match(
+                            /^\s*(\S+?)\s*(?::\s*(.+))?\s*$/
+                        ) as string[];
+                        const isDoxologie = /G$/.test(psalmDescription);
+                        const psalm = isDoxologie
+                            ? psalmDescription.slice(0, -1)
+                            : psalmDescription;
+                        const mode =
+                            ton.length > 0
+                                ? parseInt(ton.replace(/^(\d+)/, "$1"))
+                                : null;
+                        const psalmus = new Psalmus(
+                            ton.length > 0 ? ton : null,
+                            psalm,
+                            psBuilder
+                        );
+                        psalmus.anchor = psalmIndex.addPsalm(psalm, mode);
+                        psalmus.doxologie = isDoxologie;
+                        psalmus.title =
+                            title && title.length > 0 ? title : false;
+                        return psalmus;
+                    })
+                    .reduce(function (
+                        acc: Psalterium,
+                        psalm: Psalmus
+                    ): Psalterium {
+                        acc.addPsalm(psalm);
+                        return acc;
+                    },
+                    new Psalterium(ton.length > 0 ? ton : null))
+                    .toString(adapter);
             },
         },
         {
@@ -129,19 +151,19 @@ const blockConfig = (
             callback: function (_, tag) {
                 switch (tag) {
                     case "psalms-index":
-                        return blocks.makePsalmsIndex(psalmIndex);
+                        return adapter.blocks.makePsalmsIndex(psalmIndex);
                     case "grego-index":
-                        return blocks.makeGregIndex(gregoTable);
+                        return adapter.blocks.makeGregIndex(gregoTable);
                     case "table-of-contents":
-                        return blocks.makeTableOfContents(table);
+                        return table.toString(adapter);
                     default:
-                        return "";
+                        return tag;
                 }
             },
         },
     ],
     defaultCase: function (paragraph: string) {
-        return blocks.paragraphStd(paragraph);
+        return new ParagraphStd(paragraph).toString(adapter);
     },
 });
 

@@ -2,6 +2,9 @@ import { adapterType } from "./adapter.t";
 import { existsSync } from "fs";
 
 import { paragraphLettrine } from "./paragraphs";
+import { Cantus } from "../../md2tex/Abstract/Catnus";
+import { Psalmus } from "../../md2tex/Abstract/Psalterium";
+import { adapter } from "./adapter";
 
 type blocks = adapterType["blocks"];
 
@@ -31,11 +34,11 @@ function printPsalm(verses: string[]): string {
     ].join("\n");
 }
 
-const makePsalm: blocks["makePsalm"] = function (
-    title,
-    intonation,
-    psalm,
-    anchor
+const makePsalm = function (
+    title: string | false,
+    intonation: string | false,
+    psalm: string[],
+    anchor: string
 ) {
     const outTitle = title ? `\\psalmTitle{${title}}` : "";
     const output = [`\\label{${anchor}}\\begin{psalm}`];
@@ -48,4 +51,17 @@ const makePsalm: blocks["makePsalm"] = function (
     return output.join("\n");
 };
 
-export { makeChant, makePsalm };
+export { makeChant };
+
+export function makePsalterium(intonation: Cantus | false, psalms: Psalmus[]) {
+    return adapter.blocks.join(
+        psalms.map((psalm, index) =>
+            makePsalm(
+                psalm.title,
+                index === 0 && intonation ? intonation.scorePath : false,
+                psalm.versi,
+                psalm.anchor
+            )
+        )
+    );
+}

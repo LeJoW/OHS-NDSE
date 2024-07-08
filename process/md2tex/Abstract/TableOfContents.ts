@@ -1,3 +1,5 @@
+import { adapterType } from "../../tex2pdf/adapter/adapter.t";
+
 type tableEntry = { office: string; anchor: string };
 
 export class TableOfContents {
@@ -27,5 +29,9 @@ export class TableOfContents {
 
     private generateAnchor(dayTitle: string, officeTitle: string): string {
         return `e-${dayTitle}-${officeTitle}`;
+    }
+
+    toString({ blocks }: adapterType): string {
+        return blocks.makeTableOfContents(this);
     }
 }

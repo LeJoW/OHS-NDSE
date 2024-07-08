@@ -1,6 +1,6 @@
 import { PsalmIndex } from "../../md2tex/config/PsalmIndex";
 import { Table } from "../../md2tex/config/Table";
-import { TableOfContents } from "../../md2tex/config/TableOfContents";
+import { TableOfContents } from "../../md2tex/Abstract/TableOfContents";
 
 export function makeTableOfContents(table: TableOfContents): string {
     return [

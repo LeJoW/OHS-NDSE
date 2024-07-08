@@ -12,7 +12,7 @@ import {
     makeRubric,
     paragraphStd,
 } from "./paragraphs";
-import { makeChant, makePsalm } from "./greg";
+import { makeChant, makePsalterium } from "./greg";
 import {
     cruxSymbol,
     replaceSymbols,
@@ -36,11 +36,17 @@ export const adapter: adapterType = {
         makeLesson,
         paragraphStd,
         makeChant,
-        makePsalm,
+        makePsalterium,
         makeTableOfContents,
         makePsalmsIndex,
         makeGregIndex,
 
+        join: function (elements) {
+            return elements.join("\n\n");
+        },
+        setAnchor: function (anchor) {
+            return `\\label{${anchor}}`;
+        },
         error(msg) {
             return `\\begin{verbatim}${msg}\\end{verbatim}`;
         },
