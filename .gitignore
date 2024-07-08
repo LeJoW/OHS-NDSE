@@ -4,3 +4,4 @@ dist
 *.log
 *.glog
 source
+node_modules
