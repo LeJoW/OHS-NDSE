@@ -10,7 +10,7 @@ jobs:
             - uses: actions/checkout@v2
             - name: Install modules
               run: |
+                sudo apt-get install libhunspell
                 npm i
-                apt-get install libhunspell
             - name: Run tests
               run: npm test
