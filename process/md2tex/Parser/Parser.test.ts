@@ -1,6 +1,11 @@
 import Parser from "./Parser";
-import Document from "../Document/Document";
-import Engine from "../Engine/Engine";
+import { Document } from "../Document/Document";
+import Rules from "../Rules/Rules";
+import { adapter } from "../../tex2pdf/adapter/adapter";
+import { GenericElement } from "../Abstract/GenericElement";
+import { preprocess } from "../config/preprocess";
+import { translate } from "../config/translation";
+import { adapterType } from "../../tex2pdf/adapter/adapter.t";
 
 const content = `Nothing to see *here*.
 But set a title :
@@ -8,44 +13,76 @@ But set a title :
 # Fancy title
 `;
 
-test("", function () {
-    const id = (b: string) => "std: " + b;
-    const title = (_: string, b: string) => "title: " + b;
+class Title extends GenericElement {
+    toString(adapter: adapterType): string {
+        return (
+            (this.translation ? `trad: ${this.translation}\n` : "") +
+            `title: ${this.content}`
+        );
+    }
+}
 
-    const engine = new Engine(
+const id = (b: string) => new GenericElement("std: " + b);
+const title = (_: string, b: string) => new Title(b);
+const saveTranslationDefault = function (
+    element: GenericElement,
+    translation: string
+) {
+    element.setTranslation(translation);
+};
+
+const rules = new Rules(
+    {
+        desc: [
+            {
+                test: /^#+\s*(.+)$/,
+                callback: title,
+                saveTranslation: saveTranslationDefault,
+            },
+        ],
+        defaultCase: id,
+    },
+    [
         {
-            desc: [{ test: /^#+\s*(.+)$/, callback: title }],
-            defaultCase: id,
+            test: /([éá])/g,
+            callback: function (_, c) {
+                const chars: { [key: string]: string } = {
+                    é: "e",
+                    á: "a",
+                };
+                return "\\'" + chars[c];
+            },
         },
-        [
-            {
-                test: /([éá])/g,
-                callback: function (_, c) {
-                    const chars: { [key: string]: string } = {
-                        é: "e",
-                        á: "a",
-                    };
-                    return "\\'" + chars[c];
-                },
+        {
+            test: /\*([\S\s]+)\*/g,
+            callback: function (_, text) {
+                return `{\\it ${text}}`;
             },
-            {
-                test: /\*([\S\s]+)\*/g,
-                callback: function (_, text) {
-                    return `{\\it ${text}}`;
-                },
-            },
-        ]
-    );
-    const doc = new Document(content);
-    const parser = new Parser(engine);
+        },
+    ]
+);
+rules.preprocessor = preprocess;
+rules.translater = translate;
 
+const parser = new Parser(rules, adapter);
+
+test("", function () {
+    const doc = new Document(content);
     expect(parser.parseBlocks(doc)).toStrictEqual([
         {
             block: "Nothing to see *here*. But set a title :",
+            translation: false,
             mask: /(?:)/,
+            storeTranslation: undefined,
             replace: id,
         },
-        { block: "# Fancy title", mask: /^#+\s*(.+)$/, replace: title },
+        {
+            block: "# Fancy title",
+            translation: false,
+            mask: /^#+\s*(.+)$/,
+            storeTranslation: saveTranslationDefault,
+            replace: title,
+        },
     ]);
 
     expect(parser.parseString("é")).toStrictEqual("\\'e");
@@ -57,4 +94,33 @@ test("", function () {
         .toStrictEqual(`std: Nothing to see {\\it here}. But set a title :
 
 title: Fancy title`);
+});
+
+test("Translation", function () {
+    const doc = new Document("# Fancy title $Titre fantaisiste$");
+
+    expect(parser.parseBlocks(doc)).toStrictEqual([
+        {
+            block: "# Fancy title",
+            mask: /^#+\s*(.+)$/,
+            translation: "Titre fantaisiste",
+            storeTranslation: saveTranslationDefault,
+            replace: title,
+        },
+    ]);
+
+    expect(parser.parse(doc)).toStrictEqual(
+        "trad: Titre fantaisiste\ntitle: Fancy title"
+    );
+
+    expect(
+        parser.parse(
+            new Document(`# Fancy title
+
+$
+Titre fantaisiste
+$
+`)
+        )
+    ).toStrictEqual("trad: Titre fantaisiste\ntitle: Fancy title");
 });

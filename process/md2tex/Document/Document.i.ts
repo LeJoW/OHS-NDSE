@@ -1,3 +1,3 @@
-export default interface Document {
-    getBlocks(): string[];
+export interface Document {
+    getContent(): string;
 }

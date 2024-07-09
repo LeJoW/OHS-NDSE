@@ -3,7 +3,7 @@ import { adapterType } from "./adapter.t";
 function paragraphLettrine(text: string): string {
     const initial = text[0];
     const body = text.slice(1);
-    return `\\initial{${initial}}${body}`;
+    return `{\\initial{${initial}}${body}\\par}`;
 }
 
 const makeRubric: adapterType["blocks"]["makeRubric"] = function (content) {

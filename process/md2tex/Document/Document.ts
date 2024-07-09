@@ -1,16 +1,13 @@
-import { default as DocumentInterface } from "./Document.i";
+import { Document as DocumentInterface } from "./Document.i";
 
-export default class Document implements DocumentInterface {
+export class Document implements DocumentInterface {
     protected rawContent: string;
 
     constructor(content: string) {
         this.rawContent = content.trim();
     }
 
-    getBlocks(): string[] {
-        return this.rawContent
-            .split(/(?:\n[\s]*\n)+/)
-            .filter((block) => block.length > 0)
-            .map((block) => block.replace(/\n/g, " ").trim());
+    getContent(): string {
+        return this.rawContent.trim();
     }
 }

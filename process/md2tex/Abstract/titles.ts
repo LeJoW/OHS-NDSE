@@ -1,9 +1,11 @@
 import { adapterType } from "../../tex2pdf/adapter/adapter.t";
+import { GenericElement } from "./GenericElement";
 
-class Title {
+class Title extends GenericElement {
     title: string;
 
     constructor(title: string) {
+        super(title);
         this.title = title;
     }
 

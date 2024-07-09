@@ -1,5 +1,9 @@
 ## Dominica secunda passionis \\seu in palmis <Dominica II Passionis> {I classis}
 
+$
+Dimanche des rameaux
+$
+
 ### Ad Primam
 
 \vspace{-9mm}
@@ -13,9 +17,9 @@
 ![1:ant:Pueri Hebræorum… portantes](Pueri_Hebraeorum_portantes)
 
 @(1f)[
-    53G:    Psalmus 53;;
-    118aG:  Psalmus 118;;
-    118bG
+53G: Psalmus 53;;
+118aG: Psalmus 118;;
+118bG
 ]
 
 ![](Pueri_Hebraeorum_portantes.ant)
@@ -80,8 +84,8 @@ qui vivit et regnat in sǽcula sæculórum. \R Amen.
 
 ![](pater_noster_secreto)
 
-\V Réspice in servos tuos, Dómine, et in ópera tua, et dírige fílios eórum.§
-\R Et sit splendor Dómini Dei nostri super nos, et ópera mánuum nostrárum dírige super nos,
+\V Réspice in servos tuos, Dómine, et in ópera tua, \* et dírige fílios eórum.§
+\R Et sit splendor Dómini Dei nostri super nos, + et ópera mánuum nostrárum dírige super nos, \*
 et opus mánuum nostrárum dírige.§
 \V Gloria Patri. \R Sicut erat.
 

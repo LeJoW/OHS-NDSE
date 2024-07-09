@@ -1,14 +1,12 @@
 import { adapterType } from "../../tex2pdf/adapter/adapter.t";
+import { GenericElement } from "./GenericElement";
 
-export class ParagraphStd {
+export class ParagraphStd extends GenericElement {
     text: string;
 
     constructor(text: string) {
-        this.text = text;
-    }
-
-    toString({ blocks }: adapterType): string {
-        return blocks.paragraphStd(this.text);
+        super(text);
+        this.text = this.content;
     }
 }
 

@@ -1,8 +1,6 @@
 import { PsalmIndex } from "../../md2tex/config/PsalmIndex";
 import { Table } from "../../md2tex/config/Table";
 import { TableOfContents } from "../../md2tex/Abstract/TableOfContents";
-import { Cantus } from "../../md2tex/Abstract/Catnus";
-import { Psalmus } from "../../md2tex/Abstract/Psalterium";
 
 export type adapterType = {
     blocks: {
@@ -13,19 +11,18 @@ export type adapterType = {
         ) => string;
         makeOfficeTitle: (title: string, short: string) => string;
         makeSectionTitle: (title: string) => string;
-        makePsalmTitle: (title: string) => string;
+        makePsalmTitle: (title: string | false) => string;
         makeChapterTitle: (title: string, addendum: string | null) => string;
 
         makeRubric: (content: string) => string;
         makeReplace: (content: string) => string;
         makeLesson: (content: string) => string;
         paragraphStd: (content: string) => string;
+        paragraphLettrine: (text: string) => string;
 
-        makeChant: (file: string, anchor?: string) => string;
-        makePsalterium: (
-            intonation: Cantus | false,
-            psalms: Psalmus[]
-        ) => string;
+        makeChant: (file: string) => string;
+        psalterium: (header: string, body: string) => string;
+        psalm: (verses: string[]) => string;
 
         makePsalmsIndex: (psIndex: PsalmIndex) => string;
         makeGregIndex: (table: Table) => string;

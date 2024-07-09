@@ -11,8 +11,9 @@ import {
     makeReplace,
     makeRubric,
     paragraphStd,
+    paragraphLettrine,
 } from "./paragraphs";
-import { makeChant, makePsalterium } from "./greg";
+import { makeChant, psalterium, psalm } from "./greg";
 import {
     cruxSymbol,
     replaceSymbols,
@@ -31,18 +32,23 @@ export const adapter: adapterType = {
         makeSectionTitle,
         makeChapterTitle,
         makePsalmTitle,
+
         makeRubric,
         makeReplace,
         makeLesson,
         paragraphStd,
+        paragraphLettrine,
+
         makeChant,
-        makePsalterium,
+        psalterium,
+        psalm,
+
         makeTableOfContents,
         makePsalmsIndex,
         makeGregIndex,
 
         join: function (elements) {
-            return elements.join("\n\n");
+            return elements.join("\n");
         },
         setAnchor: function (anchor) {
             return `\\label{${anchor}}`;

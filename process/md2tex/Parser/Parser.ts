@@ -1,23 +1,37 @@
-import Document from "../Document/Document.i";
-import Engine from "../Engine/Engine.i";
+import { adapterType } from "../../tex2pdf/adapter/adapter.t";
+import { Document } from "../Document/Document.i";
+import Rules from "../Rules/Rules.i";
 
 export default class Parser {
-    private engine: Engine;
+    private rules: Rules;
+    private adapter: adapterType;
 
-    constructor(engine: Engine) {
-        this.engine = engine;
+    constructor(rules: Rules, adapter: adapterType) {
+        this.rules = rules;
+        this.adapter = adapter;
     }
 
     parseBlocks(doc: Document) {
-        return doc.getBlocks().map((block: string) => {
-            const { mask, replace } = this.engine.getBlockConverter(block);
-            return { block, mask, replace };
+        return this.rules.preprocess(doc).map((rawBlock: string) => {
+            const { block, translation } = this.rules.getTranslation(rawBlock);
+            const {
+                mask,
+                replace,
+                storeTranslation,
+            } = this.rules.getBlockConverter(block);
+            return {
+                block,
+                translation,
+                mask,
+                replace,
+                storeTranslation,
+            };
         });
     }
 
     parseString(input: string): string {
-        return this.engine
-            .getStringConverter()
+        return this.rules
+            .getStringConverters()
             .reduce(function (acc: string, { mask, replace }): string {
                 return acc.replace(mask, replace);
             }, input);
@@ -25,12 +39,13 @@ export default class Parser {
 
     parse(doc: Document): string {
         return this.parseBlocks(doc)
-            .map(({ block, mask, replace }) => {
-                return this.parseString(block).replace(mask, function (
-                    m,
-                    ...params
-                ) {
-                    return replace(m, ...params);
+            .map(({ block, translation, mask, replace, storeTranslation }) => {
+                return this.parseString(block).replace(mask, (...params) => {
+                    const element = replace(...params);
+                    if (storeTranslation && translation) {
+                        storeTranslation(element, translation);
+                    }
+                    return element.toString(this.adapter);
                 });
             })
             .join("\n\n");

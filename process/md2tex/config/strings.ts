@@ -1,4 +1,4 @@
-import { StringConfigType } from "../Engine/Engine.i";
+import { StringConfigType } from "../Rules/Rules.i";
 import { adapterType } from "../../tex2pdf/adapter/adapter.t";
 
 const strConfig = ({ strings }: adapterType): StringConfigType => [

@@ -3,8 +3,8 @@ import { dirname } from "path";
 
 import blockConfig from "./config/blocks";
 import strConfig from "./config/strings";
-import Document from "./Document/Document";
-import Engine from "./Engine/Engine";
+import { Document } from "./Document/Document";
+import Engine from "./Rules/Rules";
 import Parser from "./Parser/Parser";
 import { adapter } from "../tex2pdf/adapter/adapter";
 
@@ -14,6 +14,8 @@ import { Syllabifier } from "../buildPsalm/Syllabifier";
 import { PsalmList } from "../buildPsalm/PsalmList";
 import { PsalmCache } from "../buildPsalm/PsalmCache";
 import { System } from "../buildPsalm/System";
+import { preprocess } from "./config/preprocess";
+import { translate } from "./config/translation";
 
 const program = new Command();
 const system = new System();
@@ -27,7 +29,9 @@ const engine = new Engine(
     blockConfig(adapter, psalmBuilder),
     strConfig(adapter)
 );
-const parser = new Parser(engine);
+engine.preprocessor = preprocess;
+engine.translater = translate;
+const parser = new Parser(engine, adapter);
 
 function parse(input: string, output: string, wordsOutput: string) {
     readFile(input, { encoding: "utf-8" }, function (err, list: string) {

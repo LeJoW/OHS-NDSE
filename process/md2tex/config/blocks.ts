@@ -1,4 +1,4 @@
-import { BlockConfigType } from "../Engine/Engine.i";
+import { BlockConfigType } from "../Rules/Rules.i";
 import { adapterType } from "../../tex2pdf/adapter/adapter.t";
 import { PsalmBuilder } from "../../buildPsalm/PsalmBuilder";
 import { TableOfContents } from "../Abstract/TableOfContents";
@@ -17,8 +17,9 @@ import {
     RemplacementRubric,
     Rubric,
 } from "../Abstract/paragraphs";
-import { Cantus } from "../Abstract/Catnus";
+import { Cantus } from "../Abstract/Cantus";
 import { Psalmus, Psalterium } from "../Abstract/Psalterium";
+import { GenericElement } from "../Abstract/GenericElement";
 
 const psalmIndex = new PsalmIndex();
 const gregoTable = new Table();
@@ -45,44 +46,42 @@ const blockConfig = (
                         if (summary.length > 0) {
                             dayTitle.shortTitle = summary;
                         }
-                        table.addDay(dayTitle.shortTitle);
-                        return dayTitle.toString(adapter);
+                        table.addDay(dayTitle);
+                        return dayTitle;
                     case "###":
                         const officeTitle = new OfficeTitle(title);
                         if (summary.length > 0) {
                             officeTitle.shortTitle = summary;
                         }
-                        officeTitle.anchor = table.addOffice(
-                            officeTitle.shortTitle
-                        );
-                        return officeTitle.toString(adapter);
+                        table.addOffice(officeTitle);
+                        return officeTitle;
                     case "####":
                         const lessonTitle = new LessonTitle(title);
                         lessonTitle.addendum = subTitle;
-                        return lessonTitle.toString(adapter);
+                        return lessonTitle;
                     case "#####":
-                        return new PsalmTitle(title).toString(adapter);
+                        return new PsalmTitle(title);
                     default:
-                        return new SectionTitle(title).toString(adapter);
+                        return new SectionTitle(title);
                 }
             },
         },
         {
             test: /^>{1}\s+([\s\S]+)/,
             callback: function rubrique(_, text) {
-                return new Rubric(text.replace(/>/g, " ")).toString(adapter);
+                return new Rubric(text.replace(/>/g, " "));
             },
         },
         {
             test: /^(?:&>){1}\s+([\s\S]+)/,
             callback: function remplacement(_, text) {
-                return new RemplacementRubric(text).toString(adapter);
+                return new RemplacementRubric(text);
             },
         },
         {
             test: /^:+\s*([\S\s]+)$/,
             callback: function lecture(_, text) {
-                return new Lesson(text).toString(adapter);
+                return new Lesson(text);
             },
         },
         {
@@ -101,7 +100,7 @@ const blockConfig = (
                         cantus.type
                     );
                 }
-                return cantus.toString(adapter);
+                return cantus;
             },
         },
         {
@@ -142,28 +141,27 @@ const blockConfig = (
                         acc.addPsalm(psalm);
                         return acc;
                     },
-                    new Psalterium(ton.length > 0 ? ton : null))
-                    .toString(adapter);
+                    new Psalterium(ton.length > 0 ? ton : null));
             },
         },
         {
             test: /<\s*(\S+)\s*\/>/,
             callback: function (_, tag) {
                 switch (tag) {
-                    case "psalms-index":
+                    /* case "psalms-index":
                         return adapter.blocks.makePsalmsIndex(psalmIndex);
                     case "grego-index":
-                        return adapter.blocks.makeGregIndex(gregoTable);
+                        return adapter.blocks.makeGregIndex(gregoTable); */
                     case "table-of-contents":
-                        return table.toString(adapter);
+                        return table;
                     default:
-                        return tag;
+                        return new GenericElement(tag);
                 }
             },
         },
     ],
     defaultCase: function (paragraph: string) {
-        return new ParagraphStd(paragraph).toString(adapter);
+        return new ParagraphStd(paragraph);
     },
 });
 

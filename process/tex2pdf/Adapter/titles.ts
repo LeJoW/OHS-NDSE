@@ -22,6 +22,6 @@ export function makeChapterTitle(title: string, addendum: string | null) {
     return `\\chapterTitle{${title}}{${addendum || ""}}`;
 }
 
-export function makePsalmTitle(title: string) {
-    return `\\psalmTitle{${title}}`;
+export function makePsalmTitle(title: string | false) {
+    return title ? `\\psalmTitle{${title}}` : "";
 }
