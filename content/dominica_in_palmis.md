@@ -1,7 +1,7 @@
 ## Dominica secunda passionis \\seu in palmis <Dominica II Passionis> {I classis}
 
 $
-Dimanche des rameaux
+Deuxième dimanche de la Passion \\ou des rameaux|Dimanche des rameaux|Première classe
 $
 
 ### Ad Primam
@@ -9,6 +9,13 @@ $
 \vspace{-9mm}
 
 ![](Deus_in_adiutorium)
+$
+O Dieu venez à mon aide.
+Seigneur, hâtez-vous de me secourir.
+Gloire au Père, au Fils, et au Saint-Esprit.
+Comme il était au commencement, maintenant et toujours, et dans les siècles des siècles. Ainsi soit-il.
+Louange à vous Seigneur, Roi d'éternelle gloire.
+$
 
 #### Hymnus
 
@@ -29,6 +36,10 @@ $
 : Regi sæculórum immortáli et invisíbili, +
 soli Deo honor et glória \* in sǽcula sæculórum. Amen.
 \R Deo grátias.
+$
+Au roi des siècles, immortel et invisible,
+seul Dieu, honneur et gloire dans les siècles des siècles! Amen.
+$
 
 > Dicto capitulo subiungitur :
 
@@ -43,12 +54,11 @@ soli Deo honor et glória \* in sǽcula sæculórum. Amen.
 
 #### Orémus. {Oratio}
 
-: Omnípotens sempitérne Deus, qui humáno géneri,
-ad imitándum humilitátis exémplum, Salvatórem nostrum carnem súmere,
-et crucem subíre fecísti : + concéde propítius ; ut et patiéntiæ ipsíus habére documénta, \*
-et resurrectiónis consórtia mereámur.
-Per eúndem Dóminum nostrum Iesum Christum Fílium tuum,
-qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.
+: Dómine Deus omnípotens, qui ad princípium huius diéi nos perveníre fecísti: +
+tua nos hódie salva virtúte; \* ut in hac die ad nullum declinémus peccátum,
+sed semper ad tuam iustítiam faciéndam nostra procédant elóquia, dirigántur cogitatiónes et ópera.
+Per Dóminum nostrum Iesum Christum Fílium tuum, +
+qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, \* per ómnia sǽcula sæculórum.
 \R Amen.
 
 > Post orationem additur
@@ -132,3 +142,4 @@ Et fidélium ánimæ per misericórdiam Dei requiéscant in pace. \R Amen.
 <grego-index />
 
 <table-of-contents />
+$$

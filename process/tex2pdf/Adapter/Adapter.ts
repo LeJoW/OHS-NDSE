@@ -13,7 +13,7 @@ import {
     paragraphStd,
     paragraphLettrine,
 } from "./paragraphs";
-import { makeChant, psalterium, psalm } from "./greg";
+import { makeChant, makeChantTranslation, psalterium, psalm } from "./greg";
 import {
     cruxSymbol,
     replaceSymbols,
@@ -40,6 +40,7 @@ export const adapter: adapterType = {
         paragraphLettrine,
 
         makeChant,
+        makeChantTranslation,
         psalterium,
         psalm,
 

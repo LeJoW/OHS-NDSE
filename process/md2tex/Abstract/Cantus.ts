@@ -17,6 +17,9 @@ export class Cantus extends GenericElement {
         return blocks.join([
             this.anchor ? blocks.setAnchor(this.anchor) : undefined,
             blocks.makeChant(this.scorePath),
+            this.translation
+                ? blocks.makeChantTranslation(this.translation)
+                : undefined,
         ]);
     }
 }

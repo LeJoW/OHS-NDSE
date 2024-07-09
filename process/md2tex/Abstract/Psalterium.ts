@@ -21,12 +21,12 @@ export class Psalmus extends GenericElement {
         this.versi = psalmBuilder.buildPsalm(psalmDivision, ton || "none");
     }
 
-    toString({ blocks }: adapterType): string {
+    toString({ blocks }: adapterType, traduction: boolean): string {
         return blocks.join([
             blocks.makePsalmTitle(this.title),
             blocks.setAnchor(this.anchor),
             blocks.paragraphLettrine(this.versi[0]),
-            blocks.psalm(this.versi.slice(1)),
+            blocks.psalm(this.versi.slice(1), traduction),
         ]);
     }
 }
@@ -49,7 +49,7 @@ export class Psalterium extends GenericElement {
         this.psalms.push(psalm);
     }
 
-    toString(adapter: adapterType): string {
+    toString(adapter: adapterType, traduction: boolean): string {
         const blocks = adapter.blocks;
 
         const beforePsalmBody = [];
@@ -61,14 +61,14 @@ export class Psalterium extends GenericElement {
                 this.intonation.toString(adapter)
             );
             psalmBody = [
-                blocks.psalm(this.psalms[0].versi.slice(1)),
+                blocks.psalm(this.psalms[0].versi.slice(1), traduction),
                 ...this.psalms.slice(1).map(function (psalm) {
-                    return psalm.toString(adapter);
+                    return psalm.toString(adapter, traduction);
                 }),
             ];
         } else {
             psalmBody = this.psalms.map(function (psalm) {
-                return psalm.toString(adapter);
+                return psalm.toString(adapter, traduction);
             });
         }
 

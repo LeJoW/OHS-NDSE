@@ -9,7 +9,7 @@ class Title extends GenericElement {
         this.title = title;
     }
 
-    toString({ blocks }: adapterType): string {
+    toString({ blocks }: adapterType, translation: boolean): string {
         return blocks.makeSectionTitle(this.title);
     }
 }
@@ -17,13 +17,25 @@ class Title extends GenericElement {
 export class DayTitle extends Title {
     shortTitle: string;
     dayClass: string | null = null;
+    translation:
+        | { title: string; dayClass: string; short: string }
+        | false = false;
 
     constructor(title: string) {
         super(title);
         this.shortTitle = title;
     }
 
-    toString({ blocks }: adapterType): string {
+    setTranslation(translation: DayTitle["translation"]): void {
+        this.translation = translation;
+    }
+
+    toString({ blocks }: adapterType, translation: boolean): string {
+        if (translation && this.translation) {
+            this.title = this.translation.title;
+            this.dayClass = this.translation.dayClass;
+            this.shortTitle = this.translation.short;
+        }
         return blocks.makeDayTite(this.title, this.dayClass, this.shortTitle);
     }
 }

@@ -5,6 +5,7 @@ import Rules from "../Rules/Rules.i";
 export default class Parser {
     private rules: Rules;
     private adapter: adapterType;
+    enableTranslation: boolean = false;
 
     constructor(rules: Rules, adapter: adapterType) {
         this.rules = rules;
@@ -45,7 +46,10 @@ export default class Parser {
                     if (storeTranslation && translation) {
                         storeTranslation(element, translation);
                     }
-                    return element.toString(this.adapter);
+                    return element.toString(
+                        this.adapter,
+                        this.enableTranslation
+                    );
                 });
             })
             .join("\n\n");

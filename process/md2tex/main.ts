@@ -33,7 +33,8 @@ engine.preprocessor = preprocess;
 engine.translater = translate;
 const parser = new Parser(engine, adapter);
 
-function parse(input: string, output: string, wordsOutput: string) {
+function parse(input: string, translation: boolean, output: string) {
+    parser.enableTranslation = translation;
     readFile(input, { encoding: "utf-8" }, function (err, list: string) {
         const dir = dirname(input);
         const outputTex = list
@@ -58,9 +59,10 @@ function parse(input: string, output: string, wordsOutput: string) {
 program
     .command("parse")
     .argument("<string>", "path to input file list")
+    .option("-t", "enable translate mode")
     .option("-o, --output <string>", "path to output file")
     .action(function (input, options) {
-        parse(input, options.output, options.words);
+        parse(input, options.t || false, options.output);
     });
 
 program.parse();

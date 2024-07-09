@@ -8,10 +8,10 @@ export function makeTableOfContents(table: TableOfContents): string {
         ...table.contents.map(function ({ day, entries }) {
             return [
                 "\\begin{tableSection}",
-                day === null ? "" : `\\tableSectionTitle{${day}}`,
+                day === null ? "" : `\\tableSectionTitle{${day.shortTitle}}`,
                 `\\begin{sectionEntries}`,
                 ...entries.map(function ({ office, anchor }) {
-                    return `\\sectionEntry{${office}}{${anchor}}`;
+                    return `\\sectionEntry{${office.shortTitle}}{${anchor}}`;
                 }),
                 `\\end{sectionEntries}`,
                 "\\end{tableSection}",

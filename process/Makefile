@@ -14,8 +14,14 @@ all: parse $(COPIED_LATEX_FILES) $(WORK_DIR)/core.tex hyphenate pdf | $(OUTPUT_D
 pdf:
 	cd $(WORK_DIR) && lualatex --output-directory=build core.tex
 
+pdf-fr:
+	cd $(WORK_DIR) && lualatex --output-directory=build core-fr.tex
+
 parse: $(JSON_FILES_FROM_TXT) $(MARKDOWN)/*.md | $(SOURCE)
 	node dist/md2tex/main.js parse ../content/md.list -o $(SOURCE)/parsed.tex
+
+parse-fr: $(JSON_FILES_FROM_TXT) $(MARKDOWN)/*.md | $(SOURCE)
+	node dist/md2tex/main.js parse -t ../content/md.list -o $(SOURCE)/parsed-fr.tex
 
 $(SOURCE)/%.tex: $(MARKDOWN)/%.tex | $(SOURCE)
 	cp $< $@

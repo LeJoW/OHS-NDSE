@@ -21,8 +21,9 @@ export type adapterType = {
         paragraphLettrine: (text: string) => string;
 
         makeChant: (file: string) => string;
+        makeChantTranslation: (traduction: string) => string;
         psalterium: (header: string, body: string) => string;
-        psalm: (verses: string[]) => string;
+        psalm: (verses: string[], cols: boolean) => string;
 
         makePsalmsIndex: (psIndex: PsalmIndex) => string;
         makeGregIndex: (table: Table) => string;

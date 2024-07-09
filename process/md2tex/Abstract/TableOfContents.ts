@@ -2,15 +2,15 @@ import { adapterType } from "../../tex2pdf/adapter/adapter.t";
 import { GenericElement } from "./GenericElement";
 import { DayTitle, OfficeTitle } from "./titles";
 
-type tableEntry = { office: string; anchor: string };
+type tableEntry = { office: OfficeTitle; anchor: string };
 
 export class TableOfContents extends GenericElement {
     lastDayTitle: string | null = null;
 
-    contents: { day: string | null; entries: tableEntry[] }[] = [];
+    contents: { day: DayTitle | null; entries: tableEntry[] }[] = [];
 
     addDay(title: DayTitle): void {
-        this.contents.push({ day: title.shortTitle, entries: [] });
+        this.contents.push({ day: title, entries: [] });
     }
     addOffice(office: OfficeTitle) {
         const anchor = this.generateAnchor(
@@ -20,11 +20,11 @@ export class TableOfContents extends GenericElement {
         if (this.contents.length === 0) {
             this.contents.push({
                 day: null,
-                entries: [{ office: office.shortTitle, anchor }],
+                entries: [{ office: office, anchor }],
             });
         } else {
             const lastDay = this.contents[this.contents.length - 1];
-            lastDay.entries.push({ office: office.shortTitle, anchor });
+            lastDay.entries.push({ office, anchor });
         }
         office.anchor = anchor;
     }

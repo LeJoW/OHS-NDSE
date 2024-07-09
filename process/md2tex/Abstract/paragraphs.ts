@@ -23,7 +23,7 @@ export class RemplacementRubric extends ParagraphStd {
 }
 
 export class Lesson extends ParagraphStd {
-    toString({ blocks }: adapterType): string {
+    toString({ blocks }: adapterType, translation: boolean): string {
         return blocks.makeLesson(this.text);
     }
 }

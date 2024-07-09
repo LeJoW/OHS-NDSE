@@ -2,9 +2,9 @@ import { adapterType } from "../../tex2pdf/adapter/adapter.t";
 
 export interface GenericElement {
     content: string;
-    translation: string | false;
+    translation: any | false;
 
-    setTranslation(translation: string): void;
+    setTranslation(translation: any): void;
 
-    toString(adapter: adapterType): string;
+    toString(adapter: adapterType, translation?: boolean): string;
 }

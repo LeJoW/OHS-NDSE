@@ -9,6 +9,10 @@ export function makeChant(file: string) {
     return `\\gabc{../${pdfInput}}`;
 }
 
+export function makeChantTranslation(traduction: string) {
+    return `\\traduction{${traduction}}`;
+}
+
 export function psalterium(header: string, body: string) {
     return [
         "\\begin{psalm}",
@@ -20,6 +24,6 @@ export function psalterium(header: string, body: string) {
     ].join("\n\n");
 }
 
-export function psalm(verses: string[]) {
+export function psalm(verses: string[], traduction: boolean) {
     return [, ...verses, undefined].join("\n\n");
 }

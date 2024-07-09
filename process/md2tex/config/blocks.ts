@@ -65,6 +65,21 @@ const blockConfig = (
                         return new SectionTitle(title);
                 }
             },
+            saveTranslation: function (
+                titreElement: GenericElement,
+                trad: string
+            ) {
+                if (titreElement instanceof DayTitle) {
+                    const matches = trad.split("|");
+                    if (matches.length === 3) {
+                        titreElement.setTranslation({
+                            title: matches[0],
+                            dayClass: matches[2],
+                            short: matches[1],
+                        });
+                    }
+                }
+            },
         },
         {
             test: /^>{1}\s+([\s\S]+)/,
@@ -82,6 +97,9 @@ const blockConfig = (
             test: /^:+\s*([\S\s]+)$/,
             callback: function lecture(_, text) {
                 return new Lesson(text);
+            },
+            saveTranslation: function (lesson, trad: string) {
+                lesson.setTranslation(trad);
             },
         },
         {
@@ -101,6 +119,9 @@ const blockConfig = (
                     );
                 }
                 return cantus;
+            },
+            saveTranslation: function (cantus, trad) {
+                cantus.setTranslation(trad);
             },
         },
         {
