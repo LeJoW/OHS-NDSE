@@ -1,4 +1,4 @@
-import { adapterType } from "../../tex2pdf/adapter/adapter.t";
+import { Render } from "../Render/Render.i";
 import { GenericElement } from "./GenericElement";
 
 class Title extends GenericElement {
@@ -9,8 +9,8 @@ class Title extends GenericElement {
         this.title = title;
     }
 
-    toString({ blocks }: adapterType, translation: boolean): string {
-        return blocks.makeSectionTitle(this.title);
+    toString(render: Render): string {
+        return render.block("sectionTitle", this.title);
     }
 }
 
@@ -30,13 +30,11 @@ export class DayTitle extends Title {
         this.translation = translation;
     }
 
-    toString({ blocks }: adapterType, translation: boolean): string {
-        if (translation && this.translation) {
-            this.title = this.translation.title;
-            this.dayClass = this.translation.dayClass;
-            this.shortTitle = this.translation.short;
-        }
-        return blocks.makeDayTite(this.title, this.dayClass, this.shortTitle);
+    toString(render: Render): string {
+        return render.block("dayTitle", this.title, {
+            class: this.dayClass,
+            short: this.shortTitle,
+        });
     }
 }
 
@@ -49,11 +47,15 @@ export class OfficeTitle extends Title {
         this.shortTitle = title;
     }
 
-    toString({ blocks }: adapterType): string {
-        return [
-            this.anchor ? blocks.setAnchor(this.anchor) : undefined,
-            blocks.makeOfficeTitle(this.title, this.shortTitle),
-        ].join("");
+    toString(render: Render): string {
+        return render.concat([
+            this.anchor
+                ? render.inline("setAnchor", { achor: this.anchor })
+                : undefined,
+            render.block("officeTitle", this.title, {
+                short: this.shortTitle,
+            }),
+        ]);
     }
 }
 
@@ -65,14 +67,16 @@ export class LessonTitle extends Title {
         this.title = title;
     }
 
-    toString({ blocks }: adapterType): string {
-        return blocks.makeChapterTitle(this.title, this.addendum);
+    toString(render: Render): string {
+        return render.block("dayTitle", this.title, {
+            addendum: this.addendum,
+        });
     }
 }
 
 export class PsalmTitle extends Title {
-    toString({ blocks }: adapterType): string {
-        return blocks.makePsalmTitle(this.title);
+    toString(render: Render): string {
+        return render.block("psalmTitle", this.title);
     }
 }
 

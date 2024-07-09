@@ -1,15 +1,15 @@
-import { adapterType } from "../../tex2pdf/adapter/adapter.t";
 import { Document } from "../Document/Document.i";
-import Rules from "../Rules/Rules.i";
+import { Render } from "../Render/Render.i";
+import { Rules } from "../Rules/Rules.i";
 
 export default class Parser {
     private rules: Rules;
-    private adapter: adapterType;
+    private render: Render;
     enableTranslation: boolean = false;
 
-    constructor(rules: Rules, adapter: adapterType) {
+    constructor(rules: Rules, render: Render) {
         this.rules = rules;
-        this.adapter = adapter;
+        this.render = render;
     }
 
     parseBlocks(doc: Document) {
@@ -46,10 +46,9 @@ export default class Parser {
                     if (storeTranslation && translation) {
                         storeTranslation(element, translation);
                     }
-                    return element.toString(
-                        this.adapter,
-                        this.enableTranslation
-                    );
+                    return translation
+                        ? element.toStringWithTranslation(this.render)
+                        : element.toString(this.render);
                 });
             })
             .join("\n\n");

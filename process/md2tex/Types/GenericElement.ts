@@ -1,4 +1,4 @@
-import { adapterType } from "../../tex2pdf/adapter/adapter.t";
+import { Render } from "../Render/Render.i";
 import { GenericElement as GenericElementInterface } from "./GenericElement.i";
 
 export class GenericElement implements GenericElementInterface {
@@ -13,7 +13,11 @@ export class GenericElement implements GenericElementInterface {
         this.translation = translation;
     }
 
-    toString(adapter: adapterType, translation = false): string {
-        return adapter.blocks.paragraphStd(this.content);
+    toString(render: Render): string {
+        return render.block("paragraphStd", this.content);
+    }
+
+    toStringWithTranslation(render: Render): string {
+        return this.toString(render);
     }
 }

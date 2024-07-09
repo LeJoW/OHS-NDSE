@@ -1,11 +1,10 @@
 import Parser from "./Parser";
 import { Document } from "../Document/Document";
-import Rules from "../Rules/Rules";
-import { adapter } from "../../tex2pdf/adapter/adapter";
-import { GenericElement } from "../Abstract/GenericElement";
+import { Rules } from "../Rules/Rules";
+import { GenericElement } from "../Types/GenericElement";
 import { preprocess } from "../config/preprocess";
 import { translate } from "../config/translation";
-import { adapterType } from "../../tex2pdf/adapter/adapter.t";
+import { Render } from "../Render/Render.i";
 
 const content = `Nothing to see *here*.
 But set a title :
@@ -14,7 +13,7 @@ But set a title :
 `;
 
 class Title extends GenericElement {
-    toString(adapter: adapterType): string {
+    toString(render: Render): string {
         return (
             (this.translation ? `trad: ${this.translation}\n` : "") +
             `title: ${this.content}`
@@ -64,7 +63,26 @@ const rules = new Rules(
 rules.preprocessor = preprocess;
 rules.translater = translate;
 
-const parser = new Parser(rules, adapter);
+class RenderTest implements Render {
+    inline(type: string, attributes?: { [attr: string]: any }): string {
+        throw new Error("Method not implemented.");
+    }
+    block(
+        type: string,
+        content: any,
+        attributes?: { [attr: string]: any }
+    ): string {
+        return content as string;
+    }
+    join(lines: (string | undefined)[]): string {
+        throw new Error("Method not implemented.");
+    }
+    concat(lines: (string | undefined)[]): string {
+        throw new Error("Method not implemented.");
+    }
+}
+
+const parser = new Parser(rules, new RenderTest());
 
 test("", function () {
     const doc = new Document(content);

@@ -1,5 +1,5 @@
 import { Document } from "../Document/Document.i";
-import { GenericElement } from "../Abstract/GenericElement.i";
+import { GenericElement } from "../Types/GenericElement.i";
 
 type matchCallback = (mask: string, ...input: string[]) => GenericElement;
 type replaceCallback = (mask: string, ...input: string[]) => string;
@@ -27,7 +27,7 @@ export type BlockConfigType = {
 
 export type StringConfigType = { test: RegExp; callback: replaceCallback }[];
 
-export default interface Rules {
+export interface Rules {
     preprocessor: (block: string) => string[];
     translater: (block: string) => translatedBlock;
 

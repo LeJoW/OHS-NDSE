@@ -24,6 +24,6 @@ export function psalterium(header: string, body: string) {
     ].join("\n\n");
 }
 
-export function psalm(verses: string[], traduction: boolean) {
+export function psalm(verses: string[]) {
     return [, ...verses, undefined].join("\n\n");
 }

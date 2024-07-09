@@ -1,13 +1,13 @@
 import { Document } from "../Document/Document.i";
 import {
-    default as RulesInterface,
+    Rules as RulesInterface,
     BlockConfigType,
     StringConfigType,
     translatedBlock,
     parser,
 } from "./Rules.i";
 
-export default class Rules implements RulesInterface {
+export class Rules implements RulesInterface {
     private desc: BlockConfigType["desc"];
     private defaultCase: BlockConfigType["defaultCase"];
     private strConverters: StringConfigType;

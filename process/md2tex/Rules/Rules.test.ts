@@ -1,6 +1,6 @@
-import { GenericElement } from "../Abstract/GenericElement";
+import { GenericElement } from "../Types/GenericElement";
 import { translate } from "../config/translation";
-import Rules from "./Rules";
+import { Rules } from "./Rules";
 
 test("block-operators", function () {
     function replaceDefault(input: string): GenericElement {

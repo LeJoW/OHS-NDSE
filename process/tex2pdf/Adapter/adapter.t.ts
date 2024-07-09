@@ -1,6 +1,6 @@
 import { PsalmIndex } from "../../md2tex/config/PsalmIndex";
 import { Table } from "../../md2tex/config/Table";
-import { TableOfContents } from "../../md2tex/Abstract/TableOfContents";
+import { TableOfContents } from "../../md2tex/Types/TableOfContents";
 
 export type adapterType = {
     blocks: {
@@ -23,7 +23,7 @@ export type adapterType = {
         makeChant: (file: string) => string;
         makeChantTranslation: (traduction: string) => string;
         psalterium: (header: string, body: string) => string;
-        psalm: (verses: string[], cols: boolean) => string;
+        psalm: (verses: string[]) => string;
 
         makePsalmsIndex: (psIndex: PsalmIndex) => string;
         makeGregIndex: (table: Table) => string;

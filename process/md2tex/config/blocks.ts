@@ -1,7 +1,7 @@
 import { BlockConfigType } from "../Rules/Rules.i";
 import { adapterType } from "../../tex2pdf/adapter/adapter.t";
 import { PsalmBuilder } from "../../buildPsalm/PsalmBuilder";
-import { TableOfContents } from "../Abstract/TableOfContents";
+import { TableOfContents } from "../Types/TableOfContents";
 import { PsalmIndex } from "./PsalmIndex";
 import { Table } from "./Table";
 import {
@@ -10,16 +10,16 @@ import {
     OfficeTitle,
     PsalmTitle,
     SectionTitle,
-} from "../Abstract/titles";
+} from "../Types/titles";
 import {
     Lesson,
     ParagraphStd,
     RemplacementRubric,
     Rubric,
-} from "../Abstract/paragraphs";
-import { Cantus } from "../Abstract/Cantus";
-import { Psalmus, Psalterium } from "../Abstract/Psalterium";
-import { GenericElement } from "../Abstract/GenericElement";
+} from "../Types/paragraphs";
+import { Cantus } from "../Types/Cantus";
+import { Psalmus, Psalterium } from "../Types/Psalterium";
+import { GenericElement } from "../Types/GenericElement";
 
 const psalmIndex = new PsalmIndex();
 const gregoTable = new Table();
