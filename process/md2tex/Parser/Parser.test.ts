@@ -64,6 +64,9 @@ rules.preprocessor = preprocess;
 rules.translater = translate;
 
 class RenderTest implements Render {
+    symbol(name: string): string {
+        throw new Error("Method not implemented.");
+    }
     inline(type: string, attributes?: { [attr: string]: any }): string {
         throw new Error("Method not implemented.");
     }

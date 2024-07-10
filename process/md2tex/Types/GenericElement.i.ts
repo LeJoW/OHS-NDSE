@@ -1,4 +1,4 @@
-import { Render } from "../Render/Render.i";
+import { Adapter } from "../Render/Adapter.i";
 
 export interface GenericElement {
     content: string;
@@ -6,7 +6,7 @@ export interface GenericElement {
 
     setTranslation(translation: any): void;
 
-    toString(adapter: Render): string;
+    toString(adapter: Adapter): string;
 
-    toStringWithTranslation(adapter: Render): string;
+    toStringWithTranslation(adapter: Adapter): string;
 }

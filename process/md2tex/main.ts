@@ -4,9 +4,8 @@ import { dirname } from "path";
 import blockConfig from "./config/blocks";
 import strConfig from "./config/strings";
 import { Document } from "./Document/Document";
-import Engine from "./Rules/Rules";
+import { Rules } from "./Rules/Rules";
 import Parser from "./Parser/Parser";
-import { adapter } from "../tex2pdf/adapter/adapter";
 
 import { Command } from "commander";
 import { PsalmBuilder } from "../buildPsalm/PsalmBuilder";
@@ -16,22 +15,21 @@ import { PsalmCache } from "../buildPsalm/PsalmCache";
 import { System } from "../buildPsalm/System";
 import { preprocess } from "./config/preprocess";
 import { translate } from "./config/translation";
+import { TexRender } from "./Render/TexRender";
 
 const program = new Command();
 const system = new System();
+const tex = new TexRender();
 const psalmBuilder = new PsalmBuilder(
     new Syllabifier("tex2pdf/hyphen/hyph_la_VA_all.dic"),
-    adapter,
+    tex,
     new PsalmList("buildPsalm/psalms", system),
     new PsalmCache("buildPsalm/cache", system)
 );
-const engine = new Engine(
-    blockConfig(adapter, psalmBuilder),
-    strConfig(adapter)
-);
-engine.preprocessor = preprocess;
-engine.translater = translate;
-const parser = new Parser(engine, adapter);
+const rules = new Rules(blockConfig(psalmBuilder), strConfig(tex));
+rules.preprocessor = preprocess;
+rules.translater = translate;
+const parser = new Parser(rules, tex);
 
 function parse(input: string, translation: boolean, output: string) {
     parser.enableTranslation = translation;

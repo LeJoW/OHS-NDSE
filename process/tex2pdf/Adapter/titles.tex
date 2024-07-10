@@ -6,28 +6,21 @@
 
 \newcommand{\titleSpace}{\hspace{\titleSpaceLength}}
 
-\newcommand{\dayTitle}[3]{
+\newenvironment{dayTitle}[2]{
 	\pagebreak
-	\vspace*{4mm}
-	{
-		\titleSpaceLength=1.1em
-		\thispagestyle{empty}
-		{\centering \onehalfspacing \Huge\MakeUppercase{\garamond #1}\par}
-		\vspace{5mm}
-		{\centering\it\garamond #2\par}
-	}
-	\def\dayTitleShort{#3}
+	\titleSpaceLength=1.1em
+	\thispagestyle{empty}
+	\def\dayTitleShort{#2}
+	\centering \onehalfspacing \Huge\garamond\MakeUppercase
+}{
+	%{\centering\it\garamond #1\par}
 }
 
-\newcommand{\officeTitle}[2]{
-\addvspace{5mm}
-{
-\titleSpaceLength=0.5em
-{\centering \MakeUppercase{\it\garamond #1}\par}
-}
-\addvspace{5mm}
-\def\officeTitleShort{#2}
-}
+\newenvironment{officeTitle}[1]{
+	\titleSpaceLength=0.5em
+	\def\officeTitleShort{#1}
+	\centering \MakeUppercase\it\garamond
+}{}
 
 \newcommand{\sectionTitle}[1]{
 	\addvspace{5mm}
@@ -47,4 +40,4 @@
 	\fi
 }
 
-\newcommand{\psalmTitle}[1]{\needspace{5mm}\addvspace{2mm}{\centering #1\par}}
+\newenvironment{psalmTitle}{\needspace{5mm}\addvspace{2mm}\centering}{}

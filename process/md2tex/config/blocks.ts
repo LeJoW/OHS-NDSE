@@ -25,10 +25,7 @@ const psalmIndex = new PsalmIndex();
 const gregoTable = new Table();
 const table = new TableOfContents();
 
-const blockConfig = (
-    adapter: adapterType,
-    psBuilder: PsalmBuilder
-): BlockConfigType => ({
+const blockConfig = (psBuilder: PsalmBuilder): BlockConfigType => ({
     desc: [
         {
             test: /^(#+)\s+([\S\s]+?)\s*(?:<([\S\s]+?)>)?\s*(?:\{([\S\s]+?)\})?\s*$/i,

@@ -15,7 +15,7 @@
 }
 
 \newcounter{gabcCount}
-\newcommand{\gabc}[1]{
+\newenvironment{cantus}[1]{
 	\setcounter{gabcCount}{0}
 	{
 		\setlength{\parindent}{0pt}
@@ -27,18 +27,14 @@
 		}
 	}
 	\addvspace{4mm}
-}
+}{}
 
-\newcommand{\traduction}[1]{%
-	Trad. {\it #1}
-}
+\newenvironment{psalterium}{}{}
 
 \newenvironment{psalm}{
 	\setlength{\parsep}{0pt}
 	\setlength{\parskip}{0pt}
 }{}
-
-\newenvironment{intonation}{}{\par}
 
 \newenvironment{verses}{
 	\begin{enumerate}[left=0ex, leftmargin=0pt, labelwidth=5ex, labelsep=1ex, itemindent=6ex]

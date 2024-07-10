@@ -1,4 +1,4 @@
-import { Render } from "../Render/Render.i";
+import { Adapter } from "../Render/Adapter.i";
 import { GenericElement as GenericElementInterface } from "./GenericElement.i";
 
 export class GenericElement implements GenericElementInterface {
@@ -13,11 +13,11 @@ export class GenericElement implements GenericElementInterface {
         this.translation = translation;
     }
 
-    toString(render: Render): string {
-        return render.block("paragraphStd", this.content);
+    toString(adapter: Adapter): string {
+        return adapter.render(this);
     }
 
-    toStringWithTranslation(render: Render): string {
-        return this.toString(render);
+    toStringWithTranslation(adapter: Adapter): string {
+        return this.toString(adapter);
     }
 }

@@ -50,7 +50,7 @@ export class OfficeTitle extends Title {
     toString(render: Render): string {
         return render.concat([
             this.anchor
-                ? render.inline("setAnchor", { achor: this.anchor })
+                ? render.inline("anchor", { label: this.anchor })
                 : undefined,
             render.block("officeTitle", this.title, {
                 short: this.shortTitle,

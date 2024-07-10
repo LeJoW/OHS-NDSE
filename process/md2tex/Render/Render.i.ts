@@ -1,4 +1,5 @@
 export interface Render {
+    symbol(name: string): string;
     inline(type: string, attributes?: { [attr: string]: any }): string;
     block(
         type: string,

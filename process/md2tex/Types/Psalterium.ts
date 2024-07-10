@@ -1,5 +1,5 @@
 import { PsalmBuilder } from "../../buildPsalm/PsalmBuilder";
-import { adapterType } from "../../tex2pdf/adapter/adapter.t";
+import { Render } from "../Render/Render.i";
 import { Cantus } from "./Cantus";
 import { GenericElement } from "./GenericElement";
 
@@ -21,12 +21,12 @@ export class Psalmus extends GenericElement {
         this.versi = psalmBuilder.buildPsalm(psalmDivision, ton || "none");
     }
 
-    toString({ blocks }: adapterType): string {
-        return blocks.join([
-            blocks.makePsalmTitle(this.title),
-            blocks.setAnchor(this.anchor),
-            blocks.paragraphLettrine(this.versi[0]),
-            blocks.psalm(this.versi.slice(1)),
+    toString(render: Render): string {
+        return render.concat([
+            render.block("psalmTitle", this.title),
+            render.inline("anchor", { label: this.anchor }),
+            render.block("paragraphLettrine", this.versi[0]),
+            render.block("psalm", render.join(this.versi.slice(1))),
         ]);
     }
 }
@@ -49,32 +49,30 @@ export class Psalterium extends GenericElement {
         this.psalms.push(psalm);
     }
 
-    toString(adapter: adapterType): string {
-        const blocks = adapter.blocks;
-
-        const beforePsalmBody = [];
+    toString(render: Render): string {
+        const beforePsalmBody: string[] = [];
         let psalmBody;
         if (this.intonation) {
             beforePsalmBody.push(
-                blocks.makePsalmTitle(this.psalms[0].title),
-                blocks.setAnchor(this.psalms[0].anchor),
-                this.intonation.toString(adapter)
+                render.block("psalmTitle", this.psalms[0].title),
+                render.inline("anchor", { label: this.psalms[0].anchor }),
+                this.intonation.toString(render)
             );
             psalmBody = [
-                blocks.psalm(this.psalms[0].versi.slice(1)),
+                render.block("psalm", render.join(this.psalms[0].versi.slice(1))),
                 ...this.psalms.slice(1).map(function (psalm) {
-                    return psalm.toString(adapter);
+                    return psalm.toString(render);
                 }),
             ];
         } else {
             psalmBody = this.psalms.map(function (psalm) {
-                return psalm.toString(adapter);
+                return psalm.toString(render);
             });
         }
 
-        return blocks.psalterium(
-            blocks.join(beforePsalmBody),
-            blocks.join(psalmBody)
+        return render.block(
+            "psalterium",
+            render.join([...beforePsalmBody, ...psalmBody])
         );
     }
 }

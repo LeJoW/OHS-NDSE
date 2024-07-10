@@ -1,4 +1,4 @@
-import { adapterType } from "../../tex2pdf/adapter/adapter.t";
+import { Render } from "../Render/Render.i";
 import { GenericElement } from "./GenericElement";
 
 export class ParagraphStd extends GenericElement {
@@ -11,19 +11,19 @@ export class ParagraphStd extends GenericElement {
 }
 
 export class Rubric extends ParagraphStd {
-    toString({ blocks }: adapterType): string {
-        return blocks.makeRubric(this.text);
+    toString(render: Render): string {
+        return render.block("rubric", this.text);
     }
 }
 
 export class RemplacementRubric extends ParagraphStd {
-    toString({ blocks }: adapterType): string {
-        return blocks.makeReplace(this.text);
+    toString(render: Render): string {
+        return render.block("replace", this.text);
     }
 }
 
 export class Lesson extends ParagraphStd {
-    toString({ blocks }: adapterType): string {
-        return blocks.makeLesson(this.text);
+    toString(render: Render): string {
+        return render.block("lesson", this.text);
     }
 }

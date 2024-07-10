@@ -1,4 +1,4 @@
-import { adapterType } from "../../tex2pdf/adapter/adapter.t";
+import { Render } from "../Render/Render.i";
 import { GenericElement } from "./GenericElement";
 
 export class Cantus extends GenericElement {
@@ -13,13 +13,12 @@ export class Cantus extends GenericElement {
         this.scorePath = file;
     }
 
-    toString({ blocks }: adapterType): string {
-        return blocks.join([
-            this.anchor ? blocks.setAnchor(this.anchor) : undefined,
-            blocks.makeChant(this.scorePath),
-            this.translation
-                ? blocks.makeChantTranslation(this.translation)
+    toString(render: Render): string {
+        return render.concat([
+            this.anchor
+                ? render.inline("anchor", { label: this.anchor })
                 : undefined,
+            render.block("cantus", undefined, { file: this.scorePath }),
         ]);
     }
 }

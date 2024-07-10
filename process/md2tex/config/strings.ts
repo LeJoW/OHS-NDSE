@@ -1,11 +1,20 @@
 import { StringConfigType } from "../Rules/Rules.i";
-import { adapterType } from "../../tex2pdf/adapter/adapter.t";
+import { Render } from "../Render/Render.i";
 
-const strConfig = ({ strings }: adapterType): StringConfigType => [
+const symbols: { [char: string]: string } = {
+    "&": "ampersand",
+    "§": "parnum",
+    "+": "gcrux",
+    "\\*": "gstella",
+};
+
+const strConfig = (render: Render): StringConfigType => [
     {
         test: /\s*((\+)|(\\\*))/g,
-        callback: function symbols(_, symbol) {
-            return strings.replaceSymbols(symbol.trim());
+        callback: function (_, symbol) {
+            return (
+                render.symbol("nbsp") + render.inline(symbols[symbol.trim()])
+            );
         },
     },
     {
@@ -14,13 +23,15 @@ const strConfig = ({ strings }: adapterType): StringConfigType => [
             if (/^!/.test(ctx)) {
                 return all;
             }
-            return /^>/.test(ctx) ? strings.romain(text) : strings.italic(text);
+            return /^>/.test(ctx)
+                ? render.inline("romain", { value: text })
+                : render.inline("italic", { value: text });
         },
     },
     {
         test: /(&|§)/g,
-        callback: function chars(_, char) {
-            return strings.replaceChars(char);
+        callback: function (_, char) {
+            return render.inline(symbols[char]);
         },
     },
 ];
