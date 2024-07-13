@@ -3,7 +3,13 @@ import { GenericElement } from "../Types/GenericElement";
 import { Lesson, ParagraphLettrine, Rubric } from "../Types/paragraphs";
 import { Psalmus, Psalterium } from "../Types/Psalterium";
 import { TableOfContents } from "../Types/TableOfContents";
-import { DayTitle, LessonTitle, OfficeTitle, Title } from "../Types/titles";
+import {
+    DayTitle,
+    LessonTitle,
+    OfficeTitle,
+    PsalmTitle,
+    Title,
+} from "../Types/titles";
 
 export interface Adapter {
     translation: boolean;
@@ -11,6 +17,7 @@ export interface Adapter {
     render(element: DayTitle): string;
     render(element: OfficeTitle): string;
     render(element: LessonTitle): string;
+    render(element: PsalmTitle): string;
     render(element: Title): string;
     render(element: ParagraphLettrine): string;
     render(element: Cantus): string;

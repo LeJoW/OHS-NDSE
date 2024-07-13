@@ -1,7 +1,13 @@
 import { GenericElement } from "../Types/GenericElement";
 import { Adapter as AdapterInterface } from "./Adapter.i";
 import { Render } from "../Render/Render.i";
-import { DayTitle, LessonTitle, OfficeTitle, Title } from "../Types/titles";
+import {
+    DayTitle,
+    LessonTitle,
+    OfficeTitle,
+    PsalmTitle,
+    Title,
+} from "../Types/titles";
 import { Psalmus, Psalterium } from "../Types/Psalterium";
 import { Cantus } from "../Types/Cantus";
 import { Lesson, ParagraphLettrine, Rubric } from "../Types/paragraphs";
@@ -49,6 +55,8 @@ export class Adapter implements AdapterInterface {
             );
         } else if (element instanceof LessonTitle) {
             return this.renderLessonTitle(element.title, element.addendum);
+        } else if (element instanceof PsalmTitle) {
+            return this.renderPsalmTitle(element.title);
         } else if (element instanceof Title) {
             return this.renderTitle(element.title);
         } else if (element instanceof Psalterium) {
@@ -114,9 +122,7 @@ export class Adapter implements AdapterInterface {
             beforePsalmBody.push(
                 this.engine.concat([
                     firstPsalm.title
-                        ? this.engine.orphan("psalmTitle", {
-                              title: firstPsalm.title,
-                          })
+                        ? this.renderPsalmTitle(firstPsalm.title)
                         : undefined,
                     firstPsalm.anchor
                         ? this.engine.orphan("anchor", {
@@ -149,9 +155,7 @@ export class Adapter implements AdapterInterface {
     private renderPsalmus(psalm: Psalmus): string {
         return this.engine.join([
             this.engine.concat([
-                psalm.title
-                    ? this.engine.orphan("psalmTitle", { title: psalm.title })
-                    : undefined,
+                psalm.title ? this.renderPsalmTitle(psalm.title) : undefined,
                 psalm.anchor
                     ? this.engine.orphan("anchor", { href: psalm.anchor })
                     : undefined,
@@ -162,6 +166,10 @@ export class Adapter implements AdapterInterface {
                 this.engine.join(psalm.versi.slice(1))
             ),
         ]);
+    }
+
+    private renderPsalmTitle(title: string): string {
+        return this.engine.orphan("psalmTitle", { title });
     }
 
     private renderParLettrine(text: string): string {
