@@ -9,6 +9,8 @@ export class ParagraphStd extends GenericElement {
     }
 }
 
+export class ParagraphLettrine extends ParagraphStd {}
+
 export class Rubric extends ParagraphStd {}
 
 export class RemplacementRubric extends ParagraphStd {}

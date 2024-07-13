@@ -8,7 +8,7 @@ export class Psalmus extends GenericElement {
     doxologie: boolean = true;
 
     title: string | false = false;
-    anchor: string = "not-set";
+    anchor: string | null = null;
 
     constructor(
         ton: string | null,

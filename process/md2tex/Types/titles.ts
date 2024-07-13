@@ -1,6 +1,6 @@
 import { GenericElement } from "./GenericElement";
 
-class Title extends GenericElement {
+export class Title extends GenericElement {
     title: string;
 
     constructor(title: string) {

@@ -15,19 +15,20 @@
 }
 
 \newcounter{gabcCount}
-\newenvironment{cantus}[1]{
+\newcommand{\cantus}[1]{
 	\setcounter{gabcCount}{0}
 	{
+		\def\pdfFile{../../content/gabc/build/#1.pdf}
 		\setlength{\parindent}{0pt}
 		\setlength{\parskip}{4pt}
-		\whiledo{\value{gabcCount}<\pdfnumberofpages{#1}}{
+		\whiledo{\value{gabcCount}<\pdfnumberofpages{\pdfFile}}{
 			\stepcounter{gabcCount}
-			\includegraphics[page=\thegabcCount,width=1\linewidth]{#1}
+			\includegraphics[page=\thegabcCount,width=1\linewidth]{\pdfFile}
 			\par
 		}
 	}
 	\addvspace{4mm}
-}{}
+}
 
 \newenvironment{psalterium}{}{}
 

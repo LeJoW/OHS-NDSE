@@ -5,4 +5,4 @@ name=$(basename "$inputTex" .tex)
 outputPdf="build/$name.pdf"
 
 lualatex --shell-escape --output-directory=build "$inputTex"
-pdfcrop "$outputPdf" "$outputPdf"
+./pdfcrop --bbox "-1 * * *" "$outputPdf" "$outputPdf"

@@ -9,8 +9,9 @@ import { Adapter } from "../md2tex/Adapter/Adapter";
 const adapter = new Adapter(new TexRender());
 adapter.chars.italic = (text: string) => `(${text})`;
 adapter.chars.bold = (text: string) => `[${text}]`;
-adapter.symbols.cross = " +";
-adapter.symbols.star = " *";
+adapter.symbols.cross = "+";
+adapter.symbols.star = "*";
+adapter.symbols.nbsp = " ";
 
 const sys = new System();
 const syllabifier = new Syllabifier("tex2pdf/hyphen/hyph_la_VA_all.dic");

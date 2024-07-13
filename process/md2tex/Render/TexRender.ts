@@ -38,6 +38,10 @@ export class TexRender implements Render {
         return lines.join("\n\n");
     }
     concat(lines: (string | undefined)[]): string {
-        return lines.join("\n");
+        return `{${lines
+            .filter(function (item) {
+                return item !== undefined;
+            })
+            .join("\n")}}`;
     }
 }

@@ -29,7 +29,7 @@ const strConfig = (adapter: Adapter): StringConfigType => [
         },
     },
     {
-        test: /(&|§)/g,
+        test: /\s*(&|§)\s*/g,
         callback: function (_, char) {
             return adapter.symbols[symbols[char]];
         },

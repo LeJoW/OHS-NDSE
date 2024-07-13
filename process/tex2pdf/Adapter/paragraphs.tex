@@ -1,6 +1,6 @@
 \newenvironment{paragraphStd}{}{}
 
-\newenvironment{paragraphLettrine}{}{}
+\newenvironment{paragraphLettrine}[1]{\initial{#1}}{\par}
 
 \newenvironment{rubric}{
 	\it}{
@@ -10,4 +10,4 @@
 
 \newenvironment{lesson}{}{}
 
-\newcommand{\parnum}{\newline\indent}
+\newcommand{\forcebreak}{\newline\indent}

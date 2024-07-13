@@ -11,6 +11,11 @@ export class PsalmBuilder {
     adapter: Adapter;
     psalmList: PsalmList;
     psalmCache: PsalmCache;
+    symbols: { cross: string; star: string };
+    styles: {
+        italic: (text: string) => string;
+        bold: (text: string) => string;
+    };
 
     constructor(
         syllabifier: Syllabifier,
@@ -22,6 +27,14 @@ export class PsalmBuilder {
         this.adapter = adapter;
         this.psalmList = psalmList;
         this.psalmCache = psalmCache;
+        this.symbols = {
+            cross: this.adapter.symbols.nbsp + this.adapter.symbols.cross,
+            star: this.adapter.symbols.nbsp + this.adapter.symbols.star,
+        };
+        this.styles = {
+            italic: this.adapter.chars.italic,
+            bold: this.adapter.chars.bold,
+        };
     }
 
     buildPsalm(psalmDivision: string, ton: string): string[] {
@@ -52,8 +65,8 @@ export class PsalmBuilder {
         const protase = verse.slice(0, -2).join(" ");
         const [apex, appodose] = verse.slice(-2);
         return [
-            protase + (protase.length > 0 ? this.adapter.symbols.cross : ""),
-            this.setUpHalfVerse(apex, mediante) + this.adapter.symbols.star,
+            protase + (protase.length > 0 ? this.symbols.cross : ""),
+            this.setUpHalfVerse(apex, mediante) + this.symbols.star,
             this.setUpHalfVerse(appodose, end),
         ]
             .join(" ")
@@ -110,10 +123,7 @@ export class PsalmBuilder {
     }
 
     private setUpPostTonicSyllabs(accent: string, after: string[]): string {
-        return (
-            this.setSyllabStyle(accent, this.adapter.chars.bold) +
-            after.join("")
-        );
+        return this.setSyllabStyle(accent, this.styles.bold) + after.join("");
     }
 
     private setUpPreparationSyllabs(
@@ -125,7 +135,7 @@ export class PsalmBuilder {
         }
         const roman = versePart.slice(0, -preparationSyllabsCount).join("");
         const italic = versePart.slice(-preparationSyllabsCount).join("");
-        return roman + this.setSyllabStyle(italic, this.adapter.chars.italic);
+        return roman + this.setSyllabStyle(italic, this.styles.italic);
     }
 
     private isFalseAccent({ before, accent, after }: syllabSelection): boolean {
