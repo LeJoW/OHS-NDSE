@@ -12,7 +12,11 @@ export type translatedBlock = {
 export type parser = {
     mask: RegExp;
     replace: matchCallback;
-    storeTranslation?: (element: GenericElement, translation: string) => void;
+    storeTranslation?: (
+        element: GenericElement,
+        translation: string,
+        mask?: RegExp
+    ) => void;
 };
 type converter = { mask: RegExp; replace: replaceCallback };
 

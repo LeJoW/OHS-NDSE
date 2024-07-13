@@ -1,4 +1,3 @@
-import { Render } from "../Render/Render.i";
 import { GenericElement } from "./GenericElement";
 import { DayTitle, OfficeTitle } from "./titles";
 
@@ -31,36 +30,5 @@ export class TableOfContents extends GenericElement {
 
     private generateAnchor(dayTitle: string, officeTitle: string): string {
         return `e-${dayTitle}-${officeTitle}`;
-    }
-
-    toString(render: Render): string {
-        return render.block(
-            "tableOfContents",
-            render.join(
-                this.contents.map(function ({ day, entries }) {
-                    return render.block(
-                        "tableSection",
-                        render.join([
-                            day === null
-                                ? undefined
-                                : render.inline("tableSectionTitle", {
-                                      value: day.shortTitle,
-                                  }),
-                            render.block(
-                                "sectionEntries",
-                                render.join(
-                                    entries.map(function ({ office, anchor }) {
-                                        return render.inline("sectionEntry", {
-                                            value: office.shortTitle,
-                                            anchor,
-                                        });
-                                    })
-                                )
-                            ),
-                        ])
-                    );
-                })
-            )
-        );
     }
 }

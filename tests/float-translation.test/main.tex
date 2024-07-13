@@ -1,0 +1,54 @@
+\documentclass[12pt]{extarticle}
+\usepackage[paperwidth=10.2cm, paperheight=2.7cm, margin=0mm]{geometry}
+\input{../../process/tex2pdf/share}
+\usepackage{gregoriotex}
+
+\gresetspecial{R/}{℟}
+\gresetspecial{V/}{℣}
+\renewcommand{\GreStar}{\plantin *}
+\renewcommand{\GreDagger}{\plantin †}
+\renewcommand{\Rbar}{℟}
+
+\grechangestaffsize{15}
+\grechangedim{intersyllablespacenotes}{0.25cm}{scalable}
+\grechangedim{minimalspaceatlinebeginning}{0.45cm}{scalable}
+\grechangedim{spaceaftersigns}{0.1cm}{scalable}
+\grechangedim{spacebeforeinlinecustos}{0.1cm}{scalable}
+\grechangedim{spacebeforeeolcustos}{0.4cm}{scalable}
+
+\gresetclivisalignment{never}
+
+\grechangestyle{modeline}{\sc\garamond}
+\grechangestyle{annotation}{\garamond}
+
+\newcommand{\gabcDisplay}[1]{
+	\grechangestyle{initial}{\fontsize{92}{92}\selectfont\garamond}
+	\gabcsnippet{#1}
+}
+
+\newcommand{\gabcNormal}[1]{
+	\grechangestyle{initial}{\fontsize{40}{40}\selectfont\garamond}
+	\gresetinitiallines{1}
+	\gabcsnippet{#1}
+}
+
+\newcommand{\gabcAnnotation}[3]{
+	\greannotation{#1}
+	\greannotation{#2}
+	\grechangedim{annotationraise}{0.5mm}{scalable}
+	\gabcNormal{#3}
+}
+
+\newcommand{\gabcSimplex}[1]{
+	\gresetinitiallines{0}
+	\gabcsnippet{#1}
+}
+
+\newcommand{\gabcAnt}[1]{
+	\greannotation{Anti-}
+	\greannotation{phona}
+	\grechangedim{annotationraise}{-4mm}{scalable}
+	\gresetinitiallines{1}
+	\grechangestyle{initial}{\color{white}}
+	\gabcsnippet{#1}
+}

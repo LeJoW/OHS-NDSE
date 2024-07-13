@@ -2,24 +2,24 @@ import { Syllabifier } from "./Syllabifier.i";
 import { tonType, tons } from "./tons";
 import { PsalmList } from "./PsalmList.i";
 import { PsalmCache } from "./PsalmCache.i";
-import { Render } from "../md2tex/Render/Render.i";
+import { Adapter } from "../md2tex/Adapter/Adapter.i";
 
 type syllabSelection = { before: string[]; accent: string; after: string[] };
 
 export class PsalmBuilder {
     syllabifier: Syllabifier;
-    render: Render;
+    adapter: Adapter;
     psalmList: PsalmList;
     psalmCache: PsalmCache;
 
     constructor(
         syllabifier: Syllabifier,
-        render: Render,
+        adapter: Adapter,
         psalmList: PsalmList,
         psalmCache: PsalmCache
     ) {
         this.syllabifier = syllabifier;
-        this.render = render;
+        this.adapter = adapter;
         this.psalmList = psalmList;
         this.psalmCache = psalmCache;
     }
@@ -52,8 +52,8 @@ export class PsalmBuilder {
         const protase = verse.slice(0, -2).join(" ");
         const [apex, appodose] = verse.slice(-2);
         return [
-            protase + (protase.length > 0 ? this.render.inline("gcrux") : ""),
-            this.setUpHalfVerse(apex, mediante) + this.render.inline("gstella"),
+            protase + (protase.length > 0 ? this.adapter.symbols.cross : ""),
+            this.setUpHalfVerse(apex, mediante) + this.adapter.symbols.star,
             this.setUpHalfVerse(appodose, end),
         ]
             .join(" ")
@@ -110,7 +110,10 @@ export class PsalmBuilder {
     }
 
     private setUpPostTonicSyllabs(accent: string, after: string[]): string {
-        return this.setSyllabStyle(accent, "bold") + after.join("");
+        return (
+            this.setSyllabStyle(accent, this.adapter.chars.bold) +
+            after.join("")
+        );
     }
 
     private setUpPreparationSyllabs(
@@ -122,7 +125,7 @@ export class PsalmBuilder {
         }
         const roman = versePart.slice(0, -preparationSyllabsCount).join("");
         const italic = versePart.slice(-preparationSyllabsCount).join("");
-        return roman + this.setSyllabStyle(italic, "italic");
+        return roman + this.setSyllabStyle(italic, this.adapter.chars.italic);
     }
 
     private isFalseAccent({ before, accent, after }: syllabSelection): boolean {
@@ -169,9 +172,12 @@ export class PsalmBuilder {
         };
     }
 
-    private setSyllabStyle(syllab: string, style: string): string {
+    private setSyllabStyle(
+        syllab: string,
+        style: (text: string) => string
+    ): string {
         return syllab.replace(/([\wáéíóúǽæœ́œ]+)/gi, (_, syllab) =>
-            this.render.inline(style, { value: syllab })
+            style(syllab)
         );
     }
 }

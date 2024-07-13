@@ -1,4 +1,3 @@
-import { Render } from "../Render/Render.i";
 import { GenericElement } from "./GenericElement";
 
 export class ParagraphStd extends GenericElement {
@@ -10,20 +9,8 @@ export class ParagraphStd extends GenericElement {
     }
 }
 
-export class Rubric extends ParagraphStd {
-    toString(render: Render): string {
-        return render.block("rubric", this.text);
-    }
-}
+export class Rubric extends ParagraphStd {}
 
-export class RemplacementRubric extends ParagraphStd {
-    toString(render: Render): string {
-        return render.block("replace", this.text);
-    }
-}
+export class RemplacementRubric extends ParagraphStd {}
 
-export class Lesson extends ParagraphStd {
-    toString(render: Render): string {
-        return render.block("lesson", this.text);
-    }
-}
+export class Lesson extends ParagraphStd {}

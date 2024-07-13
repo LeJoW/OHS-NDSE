@@ -8,7 +8,7 @@ export class TexRender implements Render {
     symbol(name: string): string {
         return symbols[name] || name;
     }
-    inline(type: string, attributes?: { [attr: string]: any }): string {
+    orphan(type: string, attributes?: { [attr: string]: any }): string {
         return `{\\${type}${
             attributes
                 ? Object.values(attributes)
@@ -19,7 +19,7 @@ export class TexRender implements Render {
                 : ""
         }}`;
     }
-    block(
+    container(
         type: string,
         content: any,
         attributes?: { [attr: string]: any }

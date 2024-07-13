@@ -1,7 +1,7 @@
 export interface Render {
     symbol(name: string): string;
-    inline(type: string, attributes?: { [attr: string]: any }): string;
-    block(
+    orphan(type: string, attributes?: { [attr: string]: any }): string;
+    container(
         type: string,
         content: any,
         attributes?: { [attr: string]: any }

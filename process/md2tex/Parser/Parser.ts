@@ -1,15 +1,16 @@
 import { Document } from "../Document/Document.i";
-import { Render } from "../Render/Render.i";
+import { Adapter } from "../Adapter/Adapter.i";
 import { Rules } from "../Rules/Rules.i";
+import { GenericElement } from "../Types/GenericElement.i";
 
 export default class Parser {
     private rules: Rules;
-    private render: Render;
+    private adapter: Adapter;
     enableTranslation: boolean = false;
 
-    constructor(rules: Rules, render: Render) {
+    constructor(rules: Rules, adapter: Adapter) {
         this.rules = rules;
-        this.render = render;
+        this.adapter = adapter;
     }
 
     parseBlocks(doc: Document) {
@@ -22,10 +23,18 @@ export default class Parser {
             } = this.rules.getBlockConverter(block);
             return {
                 block,
-                translation,
                 mask,
                 replace,
-                storeTranslation,
+                parseTranslation:
+                    storeTranslation && translation
+                        ? function (element: GenericElement) {
+                              return storeTranslation(
+                                  element,
+                                  translation,
+                                  mask
+                              );
+                          }
+                        : undefined,
             };
         });
     }
@@ -39,16 +48,13 @@ export default class Parser {
     }
 
     parse(doc: Document): string {
+        this.adapter.translation = this.enableTranslation;
         return this.parseBlocks(doc)
-            .map(({ block, translation, mask, replace, storeTranslation }) => {
+            .map(({ block, mask, replace, parseTranslation }) => {
                 return this.parseString(block).replace(mask, (...params) => {
                     const element = replace(...params);
-                    if (storeTranslation && translation) {
-                        storeTranslation(element, translation);
-                    }
-                    return translation
-                        ? element.toStringWithTranslation(this.render)
-                        : element.toString(this.render);
+                    if (parseTranslation) parseTranslation(element);
+                    return this.adapter.render(element);
                 });
             })
             .join("\n\n");

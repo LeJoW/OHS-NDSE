@@ -16,20 +16,22 @@ import { System } from "../buildPsalm/System";
 import { preprocess } from "./config/preprocess";
 import { translate } from "./config/translation";
 import { TexRender } from "./Render/TexRender";
+import { Adapter } from "./Adapter/Adapter";
 
 const program = new Command();
 const system = new System();
 const tex = new TexRender();
+const adapter = new Adapter(tex);
 const psalmBuilder = new PsalmBuilder(
     new Syllabifier("tex2pdf/hyphen/hyph_la_VA_all.dic"),
-    tex,
+    adapter,
     new PsalmList("buildPsalm/psalms", system),
     new PsalmCache("buildPsalm/cache", system)
 );
-const rules = new Rules(blockConfig(psalmBuilder), strConfig(tex));
+const rules = new Rules(blockConfig(psalmBuilder), strConfig(adapter));
 rules.preprocessor = preprocess;
 rules.translater = translate;
-const parser = new Parser(rules, tex);
+const parser = new Parser(rules, adapter);
 
 function parse(input: string, translation: boolean, output: string) {
     parser.enableTranslation = translation;

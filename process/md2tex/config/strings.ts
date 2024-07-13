@@ -1,19 +1,19 @@
 import { StringConfigType } from "../Rules/Rules.i";
-import { Render } from "../Render/Render.i";
+import { Adapter } from "../Adapter/Adapter.i";
 
-const symbols: { [char: string]: string } = {
+const symbols: { [char: string]: keyof Adapter["symbols"] } = {
     "&": "ampersand",
-    "§": "parnum",
-    "+": "gcrux",
-    "\\*": "gstella",
+    "§": "parnumber",
+    "+": "cross",
+    "\\*": "star",
 };
 
-const strConfig = (render: Render): StringConfigType => [
+const strConfig = (adapter: Adapter): StringConfigType => [
     {
         test: /\s*((\+)|(\\\*))/g,
         callback: function (_, symbol) {
             return (
-                render.symbol("nbsp") + render.inline(symbols[symbol.trim()])
+                adapter.symbols.nbsp + adapter.symbols[symbols[symbol.trim()]]
             );
         },
     },
@@ -24,14 +24,14 @@ const strConfig = (render: Render): StringConfigType => [
                 return all;
             }
             return /^>/.test(ctx)
-                ? render.inline("romain", { value: text })
-                : render.inline("italic", { value: text });
+                ? adapter.chars.roman(text)
+                : adapter.chars.italic(text);
         },
     },
     {
         test: /(&|§)/g,
         callback: function (_, char) {
-            return render.inline(symbols[char]);
+            return adapter.symbols[symbols[char]];
         },
     },
 ];

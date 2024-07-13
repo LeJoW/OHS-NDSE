@@ -3,51 +3,21 @@ import { Syllabifier } from "./Syllabifier";
 import { PsalmList } from "./PsalmList";
 import { System } from "./System";
 import { PsalmCache } from "./PsalmCache";
-import { Render } from "../md2tex/Render/Render.i";
+import { TexRender } from "../md2tex/Render/TexRender";
+import { Adapter } from "../md2tex/Adapter/Adapter";
 
-class RenderTest implements Render {
-    symbol(name: string): string {
-        throw new Error("Method not implemented.");
-    }
-    inline(type: string, attributes?: { [attr: string]: any }): string {
-        switch (type) {
-            case "bold":
-                return attributes ? `[${attributes.value}]` : "";
-            case "italic":
-                return attributes ? `(${attributes.value})` : "";
-            case "gcrux":
-                return " +";
-            case "gstella":
-                return " *";
-        }
-        return "";
-    }
-    block(
-        type: string,
-        content: any,
-        attributes?: { [attr: string]: any }
-    ): string {
-        throw new Error("Method not implemented.");
-    }
-    join(lines: (string | undefined)[]): string {
-        throw new Error("Method not implemented.");
-    }
-    concat(lines: (string | undefined)[]): string {
-        throw new Error("Method not implemented.");
-    }
-}
+const adapter = new Adapter(new TexRender());
+adapter.chars.italic = (text: string) => `(${text})`;
+adapter.chars.bold = (text: string) => `[${text}]`;
+adapter.symbols.cross = " +";
+adapter.symbols.star = " *";
 
 const sys = new System();
 const syllabifier = new Syllabifier("tex2pdf/hyphen/hyph_la_VA_all.dic");
 const psalmList = new PsalmList("buildPsalm/psalms", sys);
 const psalmCache = new PsalmCache("buildPsalm/cache", sys);
 
-const ps = new PsalmBuilder(
-    syllabifier,
-    new RenderTest(),
-    psalmList,
-    psalmCache
-);
+const ps = new PsalmBuilder(syllabifier, adapter, psalmList, psalmCache);
 
 test("Accent detection", function () {
     expect(ps.getLastAccent(["sem", "per"])).toStrictEqual({
