@@ -137,9 +137,6 @@ Et fidélium ánimæ per misericórdiam Dei requiéscant in pace. \R Amen.
 
 ###### Index
 
-<psalms-index />
-
 <grego-index />
 
 <table-of-contents />
-$$
