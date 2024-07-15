@@ -1,0 +1,3 @@
+[submodule "process"]
+	path = process
+	url = https://github.com/LeJoW/libgen-ndse.git
